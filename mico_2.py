@@ -312,6 +312,7 @@ from utils.mico_utils import (
     representation_distances,
     target_distances,
 )
+
 # from utils.algo_models import EnsembleCritic, SACGaussianActor, Scalar, get_tree_norm
 from utils.models import EnsembleCritic, SACGaussianActor, Scalar, get_tree_norm
 from utils.types import Transition
@@ -547,9 +548,7 @@ def mico_train_step(
     next_obs = jnp.reshape(data.next_observation, (batch_size, -1))
     reward = jnp.reshape(data.reward, (batch_size,))
     discount = jnp.reshape(data.discount, (batch_size,))
-    truncation = jnp.reshape(
-        data.extras["state_extras"]["truncation"], (batch_size,)
-    )
+    truncation = jnp.reshape(data.extras["state_extras"]["truncation"], (batch_size,))
     key, key_alpha, key_critic, key_actor = jax.random.split(key, 4)
     alpha = jnp.exp(log_alpha())
 
@@ -1088,7 +1087,9 @@ def main(args, cfg_env=None):
     # [M8] per-task override, copied from sac_single.py / dhpg.py so all three
     # baselines use the SAME return length on every task. Must run BEFORE the
     # config is frozen.
-    if args.task.lower().startswith("walker"):
+    if args.task.lower().startswith("walker") or args.task.lower().startswith(
+        "humanoid"
+    ):
         config["nstep"] = 1
 
     # ── [BOUNDARY] the only place harness and algorithm touch ─────────────
@@ -1417,7 +1418,9 @@ def main(args, cfg_env=None):
 
         # ── periodic checkpoint, sac_single.py's monotone form ────────────
         if steps >= next_save:
-            logger.nn_model_save(itr=steps, nn_model_saver_element=actor, prefix="actor")
+            logger.nn_model_save(
+                itr=steps, nn_model_saver_element=actor, prefix="actor"
+            )
             logger.nn_model_save(
                 itr=steps, nn_model_saver_element=critic, prefix="critic"
             )

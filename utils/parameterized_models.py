@@ -19,9 +19,9 @@ class Models(nnx.Module):
         target_state_metric: EnsembleStateMetric,
         state_action_metric: EnsembleStateActionMetric,
         target_state_action_metric: EnsembleStateActionMetric,
-        min_state_action_to_state_metric: MinStateActiontoStateMetric,
-        target_state_action_to_state_metric: MinStateActiontoStateMetric,
         log_alpha: Scalar,
+        min_state_action_to_state_metric: MinStateActiontoStateMetric = None,
+        target_state_action_to_state_metric: MinStateActiontoStateMetric = None,
     ):
         self.critic = critic
         self.target_critic = target_critic
@@ -43,7 +43,7 @@ class Optimizers(nnx.Module):
         log_alpha,
         state_metric,
         state_action_metric,
-        min_state_action_to_state_metric,
+        min_state_action_to_state_metric=None,
         actor_rep=None,
     ):
         self.critic = critic

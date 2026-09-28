@@ -1,0 +1,1056 @@
+E0923 01:16:37.861179 3021211 cuda_executor.cc:1526] Could not get kernel mode driver version: (INVALID_ARGUMENT: Version does not match the format X.Y.Z)
+E0923 01:16:37.869569 3021102 cuda_executor.cc:1526] Could not get kernel mode driver version: (INVALID_ARGUMENT: Version does not match the format X.Y.Z)
+[32mStart prefilling replay buffer[0m
+[32mStart SAC training[0m
+[32m{'log_freq': 1000, 'save_freq': 1000000, 'eval_episode_freq': 10, 'hidden_size': 256, 'lr': 0.001, 'max_grad_norm': 0.0, 'gamma': 0.99, 'update_tau': 0.005, 'train_per_step': 8, 'episode_length': 1000, 'warmup_samples': 8192, 'max_replay_size': 4000000, 'batch_size': 512, 'total_env_steps': 5000000, 'init_temperature': 0.1, 'nstep': 3, 'bootstrap_on_truncation': True, 'rep_lr_scale': 1.5, 'vis_feq': 100000, 'n_vis_frames': 4, 'num_envs': 128, 'grad_steps': 50, 'transfer_freq': 10, 'transfer_steps': 8, 'reward_scaling': 1.0, 'num_eval_envs': 128, 'target_entropy': -2.0}[0m
+[32m[nstep] nstep=3 bootstrap_on_truncation=True (discount from the buffer already contains gamma^nstep)[0m
+--------------------------------------------------------
+|                        Train/Steps |        1.36e+05 |
+|                   Loss/Loss_critic |          0.0187 |
+|                    Loss/Loss_actor |          -0.715 |
+|                    Loss/Loss_alpha |         0.00671 |
+|      Loss/Loss_state_action_metric |         0.00311 |
+|             Loss/Loss_state_metric |         0.00241 |
+|                  Loss/Act_rep_loss |          0.0149 |
+|                          SAC/Alpha |         0.00162 |
+|                     SAC/LogPi_mean |           -2.18 |
+|                        SAC/Q1_mean |           0.712 |
+|                        SAC/Q2_mean |           0.719 |
+|                   Norm/actor_model |            30.7 |
+|                  Norm/critic_model |            40.4 |
+|     Norm/state_action_metric_model |            30.7 |
+|            Norm/state_metric_model |            30.7 |
+|         Metric/self_state_distance |         0.00103 |
+|        Metric/cross_state_distance |           0.906 |
+|  Metric/self_state_action_distance |        0.000999 |
+| Metric/cross_state_action_distance |             0.9 |
+|    Metric/avg_self_state_asymmetry |               0 |
+|   Metric/avg_cross_state_asymmetry |         0.00201 |
+|       Metric/avg_self_sa_asymmetry |               0 |
+|      Metric/avg_cross_sa_asymmetry |         0.00296 |
+|                        Eval/Return |            5.37 |
+--------------------------------------------------------
+--------------------------------------------------------
+|                        Train/Steps |        2.64e+05 |
+|                   Loss/Loss_critic |          0.0315 |
+|                    Loss/Loss_actor |          -0.254 |
+|                    Loss/Loss_alpha |        7.75e-05 |
+|      Loss/Loss_state_action_metric |         0.00253 |
+|             Loss/Loss_state_metric |           0.002 |
+|                  Loss/Act_rep_loss |         0.00266 |
+|                          SAC/Alpha |        0.000108 |
+|                     SAC/LogPi_mean |            1.46 |
+|                        SAC/Q1_mean |            0.25 |
+|                        SAC/Q2_mean |           0.256 |
+|                   Norm/actor_model |            42.2 |
+|                  Norm/critic_model |            56.8 |
+|     Norm/state_action_metric_model |            32.4 |
+|            Norm/state_metric_model |            32.4 |
+|         Metric/self_state_distance |        6.79e-05 |
+|        Metric/cross_state_distance |           0.917 |
+|  Metric/self_state_action_distance |         0.00116 |
+| Metric/cross_state_action_distance |           0.904 |
+|    Metric/avg_self_state_asymmetry |               0 |
+|   Metric/avg_cross_state_asymmetry |         0.00182 |
+|       Metric/avg_self_sa_asymmetry |               0 |
+|      Metric/avg_cross_sa_asymmetry |         0.00196 |
+|                        Eval/Return |             6.8 |
+--------------------------------------------------------
+--------------------------------------------------------
+|                        Train/Steps |        3.92e+05 |
+|                   Loss/Loss_critic |         0.00127 |
+|                    Loss/Loss_actor |         -0.0711 |
+|                    Loss/Loss_alpha |        1.28e-05 |
+|      Loss/Loss_state_action_metric |          0.0029 |
+|             Loss/Loss_state_metric |         0.00235 |
+|                  Loss/Act_rep_loss |         0.00136 |
+|                          SAC/Alpha |        9.39e-05 |
+|                     SAC/LogPi_mean |            1.77 |
+|                        SAC/Q1_mean |          0.0648 |
+|                        SAC/Q2_mean |          0.0631 |
+|                   Norm/actor_model |            51.1 |
+|                  Norm/critic_model |            65.9 |
+|     Norm/state_action_metric_model |            33.9 |
+|            Norm/state_metric_model |            34.4 |
+|         Metric/self_state_distance |          0.0051 |
+|        Metric/cross_state_distance |           0.918 |
+|  Metric/self_state_action_distance |        0.000816 |
+| Metric/cross_state_action_distance |           0.901 |
+|    Metric/avg_self_state_asymmetry |               0 |
+|   Metric/avg_cross_state_asymmetry |          0.0016 |
+|       Metric/avg_self_sa_asymmetry |               0 |
+|      Metric/avg_cross_sa_asymmetry |         0.00167 |
+|                        Eval/Return |             7.9 |
+--------------------------------------------------------
+--------------------------------------------------------
+|                        Train/Steps |         5.2e+05 |
+|                   Loss/Loss_critic |          0.0742 |
+|                    Loss/Loss_actor |          -0.165 |
+|                    Loss/Loss_alpha |       -2.82e-05 |
+|      Loss/Loss_state_action_metric |         0.00256 |
+|             Loss/Loss_state_metric |         0.00168 |
+|                  Loss/Act_rep_loss |         0.00866 |
+|                          SAC/Alpha |        7.33e-05 |
+|                     SAC/LogPi_mean |            2.39 |
+|                        SAC/Q1_mean |           0.167 |
+|                        SAC/Q2_mean |           0.175 |
+|                   Norm/actor_model |            57.5 |
+|                  Norm/critic_model |            75.6 |
+|     Norm/state_action_metric_model |            37.1 |
+|            Norm/state_metric_model |            37.4 |
+|         Metric/self_state_distance |        0.000469 |
+|        Metric/cross_state_distance |           0.925 |
+|  Metric/self_state_action_distance |        0.000729 |
+| Metric/cross_state_action_distance |           0.905 |
+|    Metric/avg_self_state_asymmetry |               0 |
+|   Metric/avg_cross_state_asymmetry |         0.00153 |
+|       Metric/avg_self_sa_asymmetry |               0 |
+|      Metric/avg_cross_sa_asymmetry |         0.00199 |
+|                        Eval/Return |             4.7 |
+--------------------------------------------------------
+--------------------------------------------------------
+|                        Train/Steps |        6.48e+05 |
+|                   Loss/Loss_critic |          0.0116 |
+|                    Loss/Loss_actor |          -0.147 |
+|                    Loss/Loss_alpha |         3.9e-06 |
+|      Loss/Loss_state_action_metric |         0.00291 |
+|             Loss/Loss_state_metric |         0.00225 |
+|                  Loss/Act_rep_loss |         0.00324 |
+|                          SAC/Alpha |           7e-05 |
+|                     SAC/LogPi_mean |            2.03 |
+|                        SAC/Q1_mean |           0.146 |
+|                        SAC/Q2_mean |           0.154 |
+|                   Norm/actor_model |            62.6 |
+|                  Norm/critic_model |            84.7 |
+|     Norm/state_action_metric_model |              41 |
+|            Norm/state_metric_model |            40.5 |
+|         Metric/self_state_distance |          0.0011 |
+|        Metric/cross_state_distance |           0.924 |
+|  Metric/self_state_action_distance |        0.000721 |
+| Metric/cross_state_action_distance |           0.908 |
+|    Metric/avg_self_state_asymmetry |               0 |
+|   Metric/avg_cross_state_asymmetry |         0.00208 |
+|       Metric/avg_self_sa_asymmetry |               0 |
+|      Metric/avg_cross_sa_asymmetry |         0.00256 |
+|                        Eval/Return |            6.76 |
+--------------------------------------------------------
+--------------------------------------------------------
+|                        Train/Steps |        7.76e+05 |
+|                   Loss/Loss_critic |         0.00387 |
+|                    Loss/Loss_actor |         -0.0774 |
+|                    Loss/Loss_alpha |        3.24e-05 |
+|      Loss/Loss_state_action_metric |         0.00377 |
+|             Loss/Loss_state_metric |         0.00307 |
+|                  Loss/Act_rep_loss |        0.000959 |
+|                          SAC/Alpha |        7.65e-05 |
+|                     SAC/LogPi_mean |            1.77 |
+|                        SAC/Q1_mean |          0.0802 |
+|                        SAC/Q2_mean |          0.0828 |
+|                   Norm/actor_model |            67.4 |
+|                  Norm/critic_model |            92.3 |
+|     Norm/state_action_metric_model |            45.5 |
+|            Norm/state_metric_model |            45.1 |
+|         Metric/self_state_distance |         0.00138 |
+|        Metric/cross_state_distance |           0.917 |
+|  Metric/self_state_action_distance |        0.000538 |
+| Metric/cross_state_action_distance |           0.901 |
+|    Metric/avg_self_state_asymmetry |               0 |
+|   Metric/avg_cross_state_asymmetry |         0.00157 |
+|       Metric/avg_self_sa_asymmetry |               0 |
+|      Metric/avg_cross_sa_asymmetry |         0.00195 |
+|                        Eval/Return |            7.14 |
+--------------------------------------------------------
+--------------------------------------------------------
+|                        Train/Steps |        9.04e+05 |
+|                   Loss/Loss_critic |        0.000464 |
+|                    Loss/Loss_actor |           0.019 |
+|                    Loss/Loss_alpha |        3.22e-05 |
+|      Loss/Loss_state_action_metric |         0.00247 |
+|             Loss/Loss_state_metric |         0.00191 |
+|                  Loss/Act_rep_loss |        0.000675 |
+|                          SAC/Alpha |        6.38e-05 |
+|                     SAC/LogPi_mean |            1.25 |
+|                        SAC/Q1_mean |         -0.0175 |
+|                        SAC/Q2_mean |         -0.0181 |
+|                   Norm/actor_model |            71.7 |
+|                  Norm/critic_model |            98.1 |
+|     Norm/state_action_metric_model |            49.9 |
+|            Norm/state_metric_model |            48.2 |
+|         Metric/self_state_distance |         0.00169 |
+|        Metric/cross_state_distance |           0.923 |
+|  Metric/self_state_action_distance |        0.000835 |
+| Metric/cross_state_action_distance |           0.905 |
+|    Metric/avg_self_state_asymmetry |               0 |
+|   Metric/avg_cross_state_asymmetry |         0.00162 |
+|       Metric/avg_self_sa_asymmetry |               0 |
+|      Metric/avg_cross_sa_asymmetry |         0.00175 |
+|                        Eval/Return |            41.2 |
+--------------------------------------------------------
+--------------------------------------------------------
+|                        Train/Steps |        1.03e+06 |
+|                   Loss/Loss_critic |          0.0219 |
+|                    Loss/Loss_actor |         -0.0858 |
+|                    Loss/Loss_alpha |        3.79e-05 |
+|      Loss/Loss_state_action_metric |         0.00247 |
+|             Loss/Loss_state_metric |         0.00186 |
+|                  Loss/Act_rep_loss |        0.000483 |
+|                          SAC/Alpha |        9.01e-05 |
+|                     SAC/LogPi_mean |             1.6 |
+|                        SAC/Q1_mean |          0.0785 |
+|                        SAC/Q2_mean |          0.0821 |
+|                   Norm/actor_model |            75.4 |
+|                  Norm/critic_model |             104 |
+|     Norm/state_action_metric_model |            54.1 |
+|            Norm/state_metric_model |            51.7 |
+|         Metric/self_state_distance |         0.00171 |
+|        Metric/cross_state_distance |           0.921 |
+|  Metric/self_state_action_distance |        0.000825 |
+| Metric/cross_state_action_distance |           0.905 |
+|    Metric/avg_self_state_asymmetry |               0 |
+|   Metric/avg_cross_state_asymmetry |         0.00155 |
+|       Metric/avg_self_sa_asymmetry |               0 |
+|      Metric/avg_cross_sa_asymmetry |         0.00161 |
+|                        Eval/Return |            27.7 |
+--------------------------------------------------------
+[32mSaving model …[0m
+[32mDone.[0m
+[32mSaving model …[0m
+[32mDone.[0m
+[32mSaving model …[0m
+[32mDone.[0m
+[32mSaving model …[0m
+[32mDone.[0m
+--------------------------------------------------------
+|                        Train/Steps |        1.16e+06 |
+|                   Loss/Loss_critic |          0.0861 |
+|                    Loss/Loss_actor |          -0.507 |
+|                    Loss/Loss_alpha |       -1.16e-05 |
+|      Loss/Loss_state_action_metric |         0.00255 |
+|             Loss/Loss_state_metric |         0.00191 |
+|                  Loss/Act_rep_loss |         0.00096 |
+|                          SAC/Alpha |        8.05e-05 |
+|                     SAC/LogPi_mean |            2.16 |
+|                        SAC/Q1_mean |           0.508 |
+|                        SAC/Q2_mean |           0.516 |
+|                   Norm/actor_model |            78.7 |
+|                  Norm/critic_model |             109 |
+|     Norm/state_action_metric_model |            58.1 |
+|            Norm/state_metric_model |            55.3 |
+|         Metric/self_state_distance |          0.0021 |
+|        Metric/cross_state_distance |           0.931 |
+|  Metric/self_state_action_distance |        0.000722 |
+| Metric/cross_state_action_distance |           0.909 |
+|    Metric/avg_self_state_asymmetry |               0 |
+|   Metric/avg_cross_state_asymmetry |         0.00233 |
+|       Metric/avg_self_sa_asymmetry |               0 |
+|      Metric/avg_cross_sa_asymmetry |         0.00153 |
+|                        Eval/Return |              13 |
+--------------------------------------------------------
+--------------------------------------------------------
+|                        Train/Steps |        1.29e+06 |
+|                   Loss/Loss_critic |          0.0346 |
+|                    Loss/Loss_actor |          -0.594 |
+|                    Loss/Loss_alpha |       -6.38e-05 |
+|      Loss/Loss_state_action_metric |         0.00404 |
+|             Loss/Loss_state_metric |         0.00351 |
+|                  Loss/Act_rep_loss |        0.000778 |
+|                          SAC/Alpha |        7.04e-05 |
+|                     SAC/LogPi_mean |            2.92 |
+|                        SAC/Q1_mean |           0.618 |
+|                        SAC/Q2_mean |           0.589 |
+|                   Norm/actor_model |            81.8 |
+|                  Norm/critic_model |             115 |
+|     Norm/state_action_metric_model |            62.1 |
+|            Norm/state_metric_model |            59.2 |
+|         Metric/self_state_distance |         0.00115 |
+|        Metric/cross_state_distance |           0.923 |
+|  Metric/self_state_action_distance |        0.000534 |
+| Metric/cross_state_action_distance |           0.904 |
+|    Metric/avg_self_state_asymmetry |               0 |
+|   Metric/avg_cross_state_asymmetry |          0.0022 |
+|       Metric/avg_self_sa_asymmetry |               0 |
+|      Metric/avg_cross_sa_asymmetry |         0.00197 |
+|                        Eval/Return |            35.2 |
+--------------------------------------------------------
+--------------------------------------------------------
+|                        Train/Steps |        1.42e+06 |
+|                   Loss/Loss_critic |         0.00574 |
+|                    Loss/Loss_actor |          -0.386 |
+|                    Loss/Loss_alpha |       -3.62e-05 |
+|      Loss/Loss_state_action_metric |          0.0029 |
+|             Loss/Loss_state_metric |         0.00237 |
+|                  Loss/Act_rep_loss |        0.000562 |
+|                          SAC/Alpha |        8.39e-05 |
+|                     SAC/LogPi_mean |            2.46 |
+|                        SAC/Q1_mean |           0.383 |
+|                        SAC/Q2_mean |           0.406 |
+|                   Norm/actor_model |            84.4 |
+|                  Norm/critic_model |             119 |
+|     Norm/state_action_metric_model |            65.9 |
+|            Norm/state_metric_model |            62.9 |
+|         Metric/self_state_distance |         0.00055 |
+|        Metric/cross_state_distance |           0.924 |
+|  Metric/self_state_action_distance |          0.0011 |
+| Metric/cross_state_action_distance |           0.903 |
+|    Metric/avg_self_state_asymmetry |               0 |
+|   Metric/avg_cross_state_asymmetry |         0.00177 |
+|       Metric/avg_self_sa_asymmetry |               0 |
+|      Metric/avg_cross_sa_asymmetry |          0.0015 |
+|                        Eval/Return |            43.3 |
+--------------------------------------------------------
+--------------------------------------------------------
+|                        Train/Steps |        1.54e+06 |
+|                   Loss/Loss_critic |         0.00314 |
+|                    Loss/Loss_actor |          -0.446 |
+|                    Loss/Loss_alpha |       -4.02e-05 |
+|      Loss/Loss_state_action_metric |         0.00245 |
+|             Loss/Loss_state_metric |         0.00195 |
+|                  Loss/Act_rep_loss |        0.000692 |
+|                          SAC/Alpha |        6.93e-05 |
+|                     SAC/LogPi_mean |             2.7 |
+|                        SAC/Q1_mean |            0.45 |
+|                        SAC/Q2_mean |           0.442 |
+|                   Norm/actor_model |            86.8 |
+|                  Norm/critic_model |             123 |
+|     Norm/state_action_metric_model |            69.3 |
+|            Norm/state_metric_model |            66.6 |
+|         Metric/self_state_distance |         0.00152 |
+|        Metric/cross_state_distance |            0.93 |
+|  Metric/self_state_action_distance |         0.00175 |
+| Metric/cross_state_action_distance |           0.909 |
+|    Metric/avg_self_state_asymmetry |               0 |
+|   Metric/avg_cross_state_asymmetry |         0.00216 |
+|       Metric/avg_self_sa_asymmetry |               0 |
+|      Metric/avg_cross_sa_asymmetry |         0.00168 |
+|                        Eval/Return |              49 |
+--------------------------------------------------------
+--------------------------------------------------------
+|                        Train/Steps |        1.67e+06 |
+|                   Loss/Loss_critic |          0.0831 |
+|                    Loss/Loss_actor |          -0.329 |
+|                    Loss/Loss_alpha |         3.4e-05 |
+|      Loss/Loss_state_action_metric |         0.00248 |
+|             Loss/Loss_state_metric |         0.00171 |
+|                  Loss/Act_rep_loss |        0.000867 |
+|                          SAC/Alpha |         7.8e-05 |
+|                     SAC/LogPi_mean |            1.63 |
+|                        SAC/Q1_mean |           0.339 |
+|                        SAC/Q2_mean |           0.327 |
+|                   Norm/actor_model |            89.4 |
+|                  Norm/critic_model |             128 |
+|     Norm/state_action_metric_model |            71.3 |
+|            Norm/state_metric_model |            69.3 |
+|         Metric/self_state_distance |         0.00178 |
+|        Metric/cross_state_distance |           0.927 |
+|  Metric/self_state_action_distance |        0.000513 |
+| Metric/cross_state_action_distance |           0.908 |
+|    Metric/avg_self_state_asymmetry |               0 |
+|   Metric/avg_cross_state_asymmetry |         0.00167 |
+|       Metric/avg_self_sa_asymmetry |               0 |
+|      Metric/avg_cross_sa_asymmetry |         0.00164 |
+|                        Eval/Return |            33.3 |
+--------------------------------------------------------
+--------------------------------------------------------
+|                        Train/Steps |         1.8e+06 |
+|                   Loss/Loss_critic |            0.18 |
+|                    Loss/Loss_actor |          -0.322 |
+|                    Loss/Loss_alpha |        3.88e-05 |
+|      Loss/Loss_state_action_metric |         0.00231 |
+|             Loss/Loss_state_metric |         0.00165 |
+|                  Loss/Act_rep_loss |        0.000381 |
+|                          SAC/Alpha |        6.84e-05 |
+|                     SAC/LogPi_mean |            1.36 |
+|                        SAC/Q1_mean |            0.31 |
+|                        SAC/Q2_mean |            0.34 |
+|                   Norm/actor_model |            91.8 |
+|                  Norm/critic_model |             132 |
+|     Norm/state_action_metric_model |            73.3 |
+|            Norm/state_metric_model |            71.1 |
+|         Metric/self_state_distance |        0.000567 |
+|        Metric/cross_state_distance |           0.925 |
+|  Metric/self_state_action_distance |        0.000736 |
+| Metric/cross_state_action_distance |           0.909 |
+|    Metric/avg_self_state_asymmetry |               0 |
+|   Metric/avg_cross_state_asymmetry |         0.00194 |
+|       Metric/avg_self_sa_asymmetry |               0 |
+|      Metric/avg_cross_sa_asymmetry |          0.0018 |
+|                        Eval/Return |            9.06 |
+--------------------------------------------------------
+--------------------------------------------------------
+|                        Train/Steps |        1.93e+06 |
+|                   Loss/Loss_critic |           0.015 |
+|                    Loss/Loss_actor |           -1.01 |
+|                    Loss/Loss_alpha |        5.12e-05 |
+|      Loss/Loss_state_action_metric |         0.00287 |
+|             Loss/Loss_state_metric |         0.00233 |
+|                  Loss/Act_rep_loss |         0.00105 |
+|                          SAC/Alpha |        8.56e-05 |
+|                     SAC/LogPi_mean |            1.42 |
+|                        SAC/Q1_mean |            1.01 |
+|                        SAC/Q2_mean |            1.01 |
+|                   Norm/actor_model |              94 |
+|                  Norm/critic_model |             136 |
+|     Norm/state_action_metric_model |            75.6 |
+|            Norm/state_metric_model |              74 |
+|         Metric/self_state_distance |         0.00208 |
+|        Metric/cross_state_distance |           0.924 |
+|  Metric/self_state_action_distance |          0.0013 |
+| Metric/cross_state_action_distance |           0.909 |
+|    Metric/avg_self_state_asymmetry |               0 |
+|   Metric/avg_cross_state_asymmetry |         0.00233 |
+|       Metric/avg_self_sa_asymmetry |               0 |
+|      Metric/avg_cross_sa_asymmetry |          0.0018 |
+|                        Eval/Return |            12.5 |
+--------------------------------------------------------
+--------------------------------------------------------
+|                        Train/Steps |        2.06e+06 |
+|                   Loss/Loss_critic |             0.1 |
+|                    Loss/Loss_actor |           -0.18 |
+|                    Loss/Loss_alpha |        3.42e-05 |
+|      Loss/Loss_state_action_metric |          0.0028 |
+|             Loss/Loss_state_metric |         0.00227 |
+|                  Loss/Act_rep_loss |          0.0012 |
+|                          SAC/Alpha |        0.000114 |
+|                     SAC/LogPi_mean |            1.75 |
+|                        SAC/Q1_mean |           0.199 |
+|                        SAC/Q2_mean |           0.183 |
+|                   Norm/actor_model |            96.2 |
+|                  Norm/critic_model |             140 |
+|     Norm/state_action_metric_model |            78.2 |
+|            Norm/state_metric_model |            76.4 |
+|         Metric/self_state_distance |        0.000655 |
+|        Metric/cross_state_distance |           0.921 |
+|  Metric/self_state_action_distance |        0.000654 |
+| Metric/cross_state_action_distance |           0.905 |
+|    Metric/avg_self_state_asymmetry |               0 |
+|   Metric/avg_cross_state_asymmetry |         0.00157 |
+|       Metric/avg_self_sa_asymmetry |               0 |
+|      Metric/avg_cross_sa_asymmetry |         0.00125 |
+|                        Eval/Return |            14.9 |
+--------------------------------------------------------
+[32mSaving model …[0m
+[32mDone.[0m
+[32mSaving model …[0m
+[32mDone.[0m
+[32mSaving model …[0m
+[32mDone.[0m
+[32mSaving model …[0m
+[32mDone.[0m
+--------------------------------------------------------
+|                        Train/Steps |        2.18e+06 |
+|                   Loss/Loss_critic |          0.0114 |
+|                    Loss/Loss_actor |          -0.631 |
+|                    Loss/Loss_alpha |       -3.23e-05 |
+|      Loss/Loss_state_action_metric |          0.0027 |
+|             Loss/Loss_state_metric |         0.00192 |
+|                  Loss/Act_rep_loss |         0.00295 |
+|                          SAC/Alpha |         9.2e-05 |
+|                     SAC/LogPi_mean |            2.32 |
+|                        SAC/Q1_mean |           0.644 |
+|                        SAC/Q2_mean |           0.632 |
+|                   Norm/actor_model |            98.2 |
+|                  Norm/critic_model |             143 |
+|     Norm/state_action_metric_model |            80.4 |
+|            Norm/state_metric_model |            78.8 |
+|         Metric/self_state_distance |        0.000161 |
+|        Metric/cross_state_distance |           0.925 |
+|  Metric/self_state_action_distance |        0.000428 |
+| Metric/cross_state_action_distance |           0.911 |
+|    Metric/avg_self_state_asymmetry |               0 |
+|   Metric/avg_cross_state_asymmetry |         0.00148 |
+|       Metric/avg_self_sa_asymmetry |               0 |
+|      Metric/avg_cross_sa_asymmetry |         0.00118 |
+|                        Eval/Return |            21.3 |
+--------------------------------------------------------
+--------------------------------------------------------
+|                        Train/Steps |        2.31e+06 |
+|                   Loss/Loss_critic |         0.00298 |
+|                    Loss/Loss_actor |          -0.875 |
+|                    Loss/Loss_alpha |        2.34e-05 |
+|      Loss/Loss_state_action_metric |         0.00359 |
+|             Loss/Loss_state_metric |         0.00282 |
+|                  Loss/Act_rep_loss |        0.000745 |
+|                          SAC/Alpha |        8.15e-05 |
+|                     SAC/LogPi_mean |            1.77 |
+|                        SAC/Q1_mean |           0.886 |
+|                        SAC/Q2_mean |           0.888 |
+|                   Norm/actor_model |             100 |
+|                  Norm/critic_model |             146 |
+|     Norm/state_action_metric_model |            82.3 |
+|            Norm/state_metric_model |            81.3 |
+|         Metric/self_state_distance |        0.000879 |
+|        Metric/cross_state_distance |           0.929 |
+|  Metric/self_state_action_distance |        0.000629 |
+| Metric/cross_state_action_distance |           0.904 |
+|    Metric/avg_self_state_asymmetry |               0 |
+|   Metric/avg_cross_state_asymmetry |         0.00157 |
+|       Metric/avg_self_sa_asymmetry |               0 |
+|      Metric/avg_cross_sa_asymmetry |         0.00139 |
+|                        Eval/Return |            42.7 |
+--------------------------------------------------------
+--------------------------------------------------------
+|                        Train/Steps |        2.44e+06 |
+|                   Loss/Loss_critic |          0.0208 |
+|                    Loss/Loss_actor |           -1.51 |
+|                    Loss/Loss_alpha |        3.96e-05 |
+|      Loss/Loss_state_action_metric |         0.00282 |
+|             Loss/Loss_state_metric |         0.00202 |
+|                  Loss/Act_rep_loss |        0.000345 |
+|                          SAC/Alpha |        8.67e-05 |
+|                     SAC/LogPi_mean |            1.85 |
+|                        SAC/Q1_mean |            1.51 |
+|                        SAC/Q2_mean |            1.51 |
+|                   Norm/actor_model |             102 |
+|                  Norm/critic_model |             149 |
+|     Norm/state_action_metric_model |            84.8 |
+|            Norm/state_metric_model |              84 |
+|         Metric/self_state_distance |         0.00171 |
+|        Metric/cross_state_distance |            0.93 |
+|  Metric/self_state_action_distance |         0.00373 |
+| Metric/cross_state_action_distance |           0.913 |
+|    Metric/avg_self_state_asymmetry |               0 |
+|   Metric/avg_cross_state_asymmetry |         0.00216 |
+|       Metric/avg_self_sa_asymmetry |               0 |
+|      Metric/avg_cross_sa_asymmetry |         0.00125 |
+|                        Eval/Return |            26.6 |
+--------------------------------------------------------
+--------------------------------------------------------
+|                        Train/Steps |        2.57e+06 |
+|                   Loss/Loss_critic |          0.0012 |
+|                    Loss/Loss_actor |          -0.561 |
+|                    Loss/Loss_alpha |        2.84e-06 |
+|      Loss/Loss_state_action_metric |         0.00336 |
+|             Loss/Loss_state_metric |         0.00304 |
+|                  Loss/Act_rep_loss |        0.000571 |
+|                          SAC/Alpha |        7.93e-05 |
+|                     SAC/LogPi_mean |            1.95 |
+|                        SAC/Q1_mean |           0.564 |
+|                        SAC/Q2_mean |           0.571 |
+|                   Norm/actor_model |             104 |
+|                  Norm/critic_model |             152 |
+|     Norm/state_action_metric_model |            86.3 |
+|            Norm/state_metric_model |            86.9 |
+|         Metric/self_state_distance |         0.00249 |
+|        Metric/cross_state_distance |           0.923 |
+|  Metric/self_state_action_distance |         0.00067 |
+| Metric/cross_state_action_distance |           0.905 |
+|    Metric/avg_self_state_asymmetry |               0 |
+|   Metric/avg_cross_state_asymmetry |         0.00126 |
+|       Metric/avg_self_sa_asymmetry |               0 |
+|      Metric/avg_cross_sa_asymmetry |          0.0011 |
+|                        Eval/Return |            19.6 |
+--------------------------------------------------------
+--------------------------------------------------------
+|                        Train/Steps |         2.7e+06 |
+|                   Loss/Loss_critic |          0.0574 |
+|                    Loss/Loss_actor |          -0.936 |
+|                    Loss/Loss_alpha |       -3.35e-05 |
+|      Loss/Loss_state_action_metric |         0.00216 |
+|             Loss/Loss_state_metric |         0.00159 |
+|                  Loss/Act_rep_loss |        0.000677 |
+|                          SAC/Alpha |        9.22e-05 |
+|                     SAC/LogPi_mean |             2.4 |
+|                        SAC/Q1_mean |           0.925 |
+|                        SAC/Q2_mean |           0.936 |
+|                   Norm/actor_model |             106 |
+|                  Norm/critic_model |             155 |
+|     Norm/state_action_metric_model |            88.6 |
+|            Norm/state_metric_model |            88.8 |
+|         Metric/self_state_distance |        0.000505 |
+|        Metric/cross_state_distance |           0.928 |
+|  Metric/self_state_action_distance |        0.000408 |
+| Metric/cross_state_action_distance |           0.912 |
+|    Metric/avg_self_state_asymmetry |               0 |
+|   Metric/avg_cross_state_asymmetry |         0.00139 |
+|       Metric/avg_self_sa_asymmetry |               0 |
+|      Metric/avg_cross_sa_asymmetry |         0.00128 |
+|                        Eval/Return |              54 |
+--------------------------------------------------------
+--------------------------------------------------------
+|                        Train/Steps |        2.82e+06 |
+|                   Loss/Loss_critic |          0.0662 |
+|                    Loss/Loss_actor |           -1.27 |
+|                    Loss/Loss_alpha |       -4.66e-05 |
+|      Loss/Loss_state_action_metric |         0.00219 |
+|             Loss/Loss_state_metric |         0.00174 |
+|                  Loss/Act_rep_loss |         0.00097 |
+|                          SAC/Alpha |         0.00013 |
+|                     SAC/LogPi_mean |            2.35 |
+|                        SAC/Q1_mean |            1.27 |
+|                        SAC/Q2_mean |            1.26 |
+|                   Norm/actor_model |             107 |
+|                  Norm/critic_model |             158 |
+|     Norm/state_action_metric_model |            91.1 |
+|            Norm/state_metric_model |              91 |
+|         Metric/self_state_distance |        0.000317 |
+|        Metric/cross_state_distance |           0.933 |
+|  Metric/self_state_action_distance |        0.000613 |
+| Metric/cross_state_action_distance |           0.916 |
+|    Metric/avg_self_state_asymmetry |               0 |
+|   Metric/avg_cross_state_asymmetry |         0.00163 |
+|       Metric/avg_self_sa_asymmetry |               0 |
+|      Metric/avg_cross_sa_asymmetry |         0.00137 |
+|                        Eval/Return |              19 |
+--------------------------------------------------------
+--------------------------------------------------------
+|                        Train/Steps |        2.95e+06 |
+|                   Loss/Loss_critic |          0.0421 |
+|                    Loss/Loss_actor |          -0.953 |
+|                    Loss/Loss_alpha |        3.12e-05 |
+|      Loss/Loss_state_action_metric |         0.00222 |
+|             Loss/Loss_state_metric |         0.00159 |
+|                  Loss/Act_rep_loss |         0.00129 |
+|                          SAC/Alpha |        7.64e-05 |
+|                     SAC/LogPi_mean |            1.63 |
+|                        SAC/Q1_mean |           0.953 |
+|                        SAC/Q2_mean |           0.961 |
+|                   Norm/actor_model |             109 |
+|                  Norm/critic_model |             161 |
+|     Norm/state_action_metric_model |            92.9 |
+|            Norm/state_metric_model |            93.3 |
+|         Metric/self_state_distance |        0.000565 |
+|        Metric/cross_state_distance |           0.932 |
+|  Metric/self_state_action_distance |        0.000423 |
+| Metric/cross_state_action_distance |           0.915 |
+|    Metric/avg_self_state_asymmetry |               0 |
+|   Metric/avg_cross_state_asymmetry |         0.00186 |
+|       Metric/avg_self_sa_asymmetry |               0 |
+|      Metric/avg_cross_sa_asymmetry |         0.00142 |
+|                        Eval/Return |            35.8 |
+--------------------------------------------------------
+--------------------------------------------------------
+|                        Train/Steps |        3.08e+06 |
+|                   Loss/Loss_critic |         0.00131 |
+|                    Loss/Loss_actor |           -2.16 |
+|                    Loss/Loss_alpha |        1.04e-05 |
+|      Loss/Loss_state_action_metric |         0.00288 |
+|             Loss/Loss_state_metric |         0.00206 |
+|                  Loss/Act_rep_loss |        0.000369 |
+|                          SAC/Alpha |        0.000111 |
+|                     SAC/LogPi_mean |            1.97 |
+|                        SAC/Q1_mean |            2.16 |
+|                        SAC/Q2_mean |            2.17 |
+|                   Norm/actor_model |             111 |
+|                  Norm/critic_model |             163 |
+|     Norm/state_action_metric_model |            95.5 |
+|            Norm/state_metric_model |            95.1 |
+|         Metric/self_state_distance |        0.000172 |
+|        Metric/cross_state_distance |            0.93 |
+|  Metric/self_state_action_distance |         0.00207 |
+| Metric/cross_state_action_distance |           0.916 |
+|    Metric/avg_self_state_asymmetry |               0 |
+|   Metric/avg_cross_state_asymmetry |         0.00133 |
+|       Metric/avg_self_sa_asymmetry |               0 |
+|      Metric/avg_cross_sa_asymmetry |         0.00134 |
+|                        Eval/Return |            49.5 |
+--------------------------------------------------------
+[32mSaving model …[0m
+[32mDone.[0m
+[32mSaving model …[0m
+[32mDone.[0m
+[32mSaving model …[0m
+[32mDone.[0m
+[32mSaving model …[0m
+[32mDone.[0m
+--------------------------------------------------------
+|                        Train/Steps |        3.21e+06 |
+|                   Loss/Loss_critic |         0.00072 |
+|                    Loss/Loss_actor |          -0.888 |
+|                    Loss/Loss_alpha |        1.61e-05 |
+|      Loss/Loss_state_action_metric |         0.00221 |
+|             Loss/Loss_state_metric |         0.00186 |
+|                  Loss/Act_rep_loss |        0.000539 |
+|                          SAC/Alpha |        6.71e-05 |
+|                     SAC/LogPi_mean |            1.55 |
+|                        SAC/Q1_mean |           0.895 |
+|                        SAC/Q2_mean |           0.887 |
+|                   Norm/actor_model |             112 |
+|                  Norm/critic_model |             166 |
+|     Norm/state_action_metric_model |            97.6 |
+|            Norm/state_metric_model |              97 |
+|         Metric/self_state_distance |        0.000502 |
+|        Metric/cross_state_distance |           0.925 |
+|  Metric/self_state_action_distance |        0.000398 |
+| Metric/cross_state_action_distance |           0.911 |
+|    Metric/avg_self_state_asymmetry |               0 |
+|   Metric/avg_cross_state_asymmetry |         0.00107 |
+|       Metric/avg_self_sa_asymmetry |               0 |
+|      Metric/avg_cross_sa_asymmetry |         0.00106 |
+|                        Eval/Return |            56.6 |
+--------------------------------------------------------
+--------------------------------------------------------
+|                        Train/Steps |        3.34e+06 |
+|                   Loss/Loss_critic |           0.171 |
+|                    Loss/Loss_actor |           -1.57 |
+|                    Loss/Loss_alpha |        0.000121 |
+|      Loss/Loss_state_action_metric |           0.003 |
+|             Loss/Loss_state_metric |         0.00244 |
+|                  Loss/Act_rep_loss |        0.000443 |
+|                          SAC/Alpha |        9.72e-05 |
+|                     SAC/LogPi_mean |           0.741 |
+|                        SAC/Q1_mean |            1.59 |
+|                        SAC/Q2_mean |            1.61 |
+|                   Norm/actor_model |             114 |
+|                  Norm/critic_model |             169 |
+|     Norm/state_action_metric_model |            99.6 |
+|            Norm/state_metric_model |            98.9 |
+|         Metric/self_state_distance |        0.000645 |
+|        Metric/cross_state_distance |           0.928 |
+|  Metric/self_state_action_distance |        0.000185 |
+| Metric/cross_state_action_distance |           0.911 |
+|    Metric/avg_self_state_asymmetry |               0 |
+|   Metric/avg_cross_state_asymmetry |         0.00102 |
+|       Metric/avg_self_sa_asymmetry |               0 |
+|      Metric/avg_cross_sa_asymmetry |         0.00113 |
+|                        Eval/Return |            27.2 |
+--------------------------------------------------------
+--------------------------------------------------------
+|                        Train/Steps |        3.46e+06 |
+|                   Loss/Loss_critic |         0.00578 |
+|                    Loss/Loss_actor |           -2.04 |
+|                    Loss/Loss_alpha |        4.67e-05 |
+|      Loss/Loss_state_action_metric |         0.00383 |
+|             Loss/Loss_state_metric |         0.00322 |
+|                  Loss/Act_rep_loss |        0.000782 |
+|                          SAC/Alpha |        7.96e-05 |
+|                     SAC/LogPi_mean |            1.39 |
+|                        SAC/Q1_mean |            2.04 |
+|                        SAC/Q2_mean |            2.05 |
+|                   Norm/actor_model |             116 |
+|                  Norm/critic_model |             172 |
+|     Norm/state_action_metric_model |             101 |
+|            Norm/state_metric_model |             100 |
+|         Metric/self_state_distance |        0.000702 |
+|        Metric/cross_state_distance |           0.925 |
+|  Metric/self_state_action_distance |         0.00421 |
+| Metric/cross_state_action_distance |            0.91 |
+|    Metric/avg_self_state_asymmetry |               0 |
+|   Metric/avg_cross_state_asymmetry |         0.00154 |
+|       Metric/avg_self_sa_asymmetry |               0 |
+|      Metric/avg_cross_sa_asymmetry |         0.00108 |
+|                        Eval/Return |            17.5 |
+--------------------------------------------------------
+--------------------------------------------------------
+|                        Train/Steps |        3.59e+06 |
+|                   Loss/Loss_critic |          0.0326 |
+|                    Loss/Loss_actor |           -2.81 |
+|                    Loss/Loss_alpha |       -6.17e-05 |
+|      Loss/Loss_state_action_metric |         0.00308 |
+|             Loss/Loss_state_metric |         0.00222 |
+|                  Loss/Act_rep_loss |        0.000884 |
+|                          SAC/Alpha |        8.63e-05 |
+|                     SAC/LogPi_mean |            2.44 |
+|                        SAC/Q1_mean |            2.84 |
+|                        SAC/Q2_mean |             2.8 |
+|                   Norm/actor_model |             117 |
+|                  Norm/critic_model |             174 |
+|     Norm/state_action_metric_model |             104 |
+|            Norm/state_metric_model |             102 |
+|         Metric/self_state_distance |         0.00129 |
+|        Metric/cross_state_distance |           0.935 |
+|  Metric/self_state_action_distance |        0.000906 |
+| Metric/cross_state_action_distance |           0.923 |
+|    Metric/avg_self_state_asymmetry |               0 |
+|   Metric/avg_cross_state_asymmetry |         0.00201 |
+|       Metric/avg_self_sa_asymmetry |               0 |
+|      Metric/avg_cross_sa_asymmetry |         0.00146 |
+|                        Eval/Return |            36.2 |
+--------------------------------------------------------
+--------------------------------------------------------
+|                        Train/Steps |        3.72e+06 |
+|                   Loss/Loss_critic |           0.252 |
+|                    Loss/Loss_actor |           -1.49 |
+|                    Loss/Loss_alpha |        1.44e-05 |
+|      Loss/Loss_state_action_metric |         0.00227 |
+|             Loss/Loss_state_metric |         0.00162 |
+|                  Loss/Act_rep_loss |        0.000568 |
+|                          SAC/Alpha |        9.57e-05 |
+|                     SAC/LogPi_mean |            1.86 |
+|                        SAC/Q1_mean |            1.51 |
+|                        SAC/Q2_mean |             1.5 |
+|                   Norm/actor_model |             119 |
+|                  Norm/critic_model |             177 |
+|     Norm/state_action_metric_model |             106 |
+|            Norm/state_metric_model |             104 |
+|         Metric/self_state_distance |        6.13e-05 |
+|        Metric/cross_state_distance |            0.93 |
+|  Metric/self_state_action_distance |        0.000823 |
+| Metric/cross_state_action_distance |           0.915 |
+|    Metric/avg_self_state_asymmetry |               0 |
+|   Metric/avg_cross_state_asymmetry |         0.00123 |
+|       Metric/avg_self_sa_asymmetry |               0 |
+|      Metric/avg_cross_sa_asymmetry |         0.00097 |
+|                        Eval/Return |            36.6 |
+--------------------------------------------------------
+--------------------------------------------------------
+|                        Train/Steps |        3.85e+06 |
+|                   Loss/Loss_critic |           0.514 |
+|                    Loss/Loss_actor |           -2.31 |
+|                    Loss/Loss_alpha |        2.83e-05 |
+|      Loss/Loss_state_action_metric |         0.00289 |
+|             Loss/Loss_state_metric |         0.00211 |
+|                  Loss/Act_rep_loss |         0.00262 |
+|                          SAC/Alpha |        8.66e-05 |
+|                     SAC/LogPi_mean |            1.69 |
+|                        SAC/Q1_mean |            2.26 |
+|                        SAC/Q2_mean |            2.26 |
+|                   Norm/actor_model |             120 |
+|                  Norm/critic_model |             179 |
+|     Norm/state_action_metric_model |             107 |
+|            Norm/state_metric_model |             105 |
+|         Metric/self_state_distance |        0.000293 |
+|        Metric/cross_state_distance |           0.933 |
+|  Metric/self_state_action_distance |        0.000882 |
+| Metric/cross_state_action_distance |           0.916 |
+|    Metric/avg_self_state_asymmetry |               0 |
+|   Metric/avg_cross_state_asymmetry |         0.00195 |
+|       Metric/avg_self_sa_asymmetry |               0 |
+|      Metric/avg_cross_sa_asymmetry |         0.00115 |
+|                        Eval/Return |            36.8 |
+--------------------------------------------------------
+--------------------------------------------------------
+|                        Train/Steps |        3.98e+06 |
+|                   Loss/Loss_critic |           0.117 |
+|                    Loss/Loss_actor |           -2.56 |
+|                    Loss/Loss_alpha |       -1.58e-05 |
+|      Loss/Loss_state_action_metric |          0.0024 |
+|             Loss/Loss_state_metric |         0.00169 |
+|                  Loss/Act_rep_loss |        0.000965 |
+|                          SAC/Alpha |           8e-05 |
+|                     SAC/LogPi_mean |            2.18 |
+|                        SAC/Q1_mean |            2.55 |
+|                        SAC/Q2_mean |            2.59 |
+|                   Norm/actor_model |             121 |
+|                  Norm/critic_model |             182 |
+|     Norm/state_action_metric_model |             109 |
+|            Norm/state_metric_model |             107 |
+|         Metric/self_state_distance |        0.000317 |
+|        Metric/cross_state_distance |           0.934 |
+|  Metric/self_state_action_distance |        0.000857 |
+| Metric/cross_state_action_distance |           0.919 |
+|    Metric/avg_self_state_asymmetry |               0 |
+|   Metric/avg_cross_state_asymmetry |         0.00179 |
+|       Metric/avg_self_sa_asymmetry |               0 |
+|      Metric/avg_cross_sa_asymmetry |         0.00163 |
+|                        Eval/Return |            34.1 |
+--------------------------------------------------------
+--------------------------------------------------------
+|                        Train/Steps |         4.1e+06 |
+|                   Loss/Loss_critic |          0.0345 |
+|                    Loss/Loss_actor |           -2.32 |
+|                    Loss/Loss_alpha |       -2.33e-05 |
+|      Loss/Loss_state_action_metric |         0.00321 |
+|             Loss/Loss_state_metric |         0.00207 |
+|                  Loss/Act_rep_loss |         0.00143 |
+|                          SAC/Alpha |        0.000105 |
+|                     SAC/LogPi_mean |            2.36 |
+|                        SAC/Q1_mean |            2.31 |
+|                        SAC/Q2_mean |            2.32 |
+|                   Norm/actor_model |             123 |
+|                  Norm/critic_model |             185 |
+|     Norm/state_action_metric_model |             110 |
+|            Norm/state_metric_model |             108 |
+|         Metric/self_state_distance |        6.76e-05 |
+|        Metric/cross_state_distance |           0.931 |
+|  Metric/self_state_action_distance |         0.00325 |
+| Metric/cross_state_action_distance |           0.917 |
+|    Metric/avg_self_state_asymmetry |               0 |
+|   Metric/avg_cross_state_asymmetry |         0.00161 |
+|       Metric/avg_self_sa_asymmetry |               0 |
+|      Metric/avg_cross_sa_asymmetry |         0.00122 |
+|                        Eval/Return |            26.4 |
+--------------------------------------------------------
+[32mSaving model …[0m
+[32mDone.[0m
+[32mSaving model …[0m
+[32mDone.[0m
+[32mSaving model …[0m
+[32mDone.[0m
+[32mSaving model …[0m
+[32mDone.[0m
+--------------------------------------------------------
+|                        Train/Steps |        4.23e+06 |
+|                   Loss/Loss_critic |           0.159 |
+|                    Loss/Loss_actor |           -1.86 |
+|                    Loss/Loss_alpha |        1.89e-06 |
+|      Loss/Loss_state_action_metric |         0.00308 |
+|             Loss/Loss_state_metric |         0.00243 |
+|                  Loss/Act_rep_loss |        0.000737 |
+|                          SAC/Alpha |        9.13e-05 |
+|                     SAC/LogPi_mean |            1.94 |
+|                        SAC/Q1_mean |            1.88 |
+|                        SAC/Q2_mean |            1.89 |
+|                   Norm/actor_model |             124 |
+|                  Norm/critic_model |             187 |
+|     Norm/state_action_metric_model |             112 |
+|            Norm/state_metric_model |             110 |
+|         Metric/self_state_distance |        0.000471 |
+|        Metric/cross_state_distance |           0.929 |
+|  Metric/self_state_action_distance |         0.00064 |
+| Metric/cross_state_action_distance |           0.914 |
+|    Metric/avg_self_state_asymmetry |               0 |
+|   Metric/avg_cross_state_asymmetry |         0.00175 |
+|       Metric/avg_self_sa_asymmetry |               0 |
+|      Metric/avg_cross_sa_asymmetry |         0.00125 |
+|                        Eval/Return |            49.5 |
+--------------------------------------------------------
+--------------------------------------------------------
+|                        Train/Steps |        4.36e+06 |
+|                   Loss/Loss_critic |          0.0617 |
+|                    Loss/Loss_actor |           -2.57 |
+|                    Loss/Loss_alpha |        7.31e-05 |
+|      Loss/Loss_state_action_metric |         0.00285 |
+|             Loss/Loss_state_metric |         0.00209 |
+|                  Loss/Act_rep_loss |        0.000736 |
+|                          SAC/Alpha |        0.000123 |
+|                     SAC/LogPi_mean |            1.37 |
+|                        SAC/Q1_mean |            2.57 |
+|                        SAC/Q2_mean |            2.58 |
+|                   Norm/actor_model |             125 |
+|                  Norm/critic_model |             189 |
+|     Norm/state_action_metric_model |             114 |
+|            Norm/state_metric_model |             112 |
+|         Metric/self_state_distance |        0.000376 |
+|        Metric/cross_state_distance |           0.932 |
+|  Metric/self_state_action_distance |        0.000374 |
+| Metric/cross_state_action_distance |           0.919 |
+|    Metric/avg_self_state_asymmetry |               0 |
+|   Metric/avg_cross_state_asymmetry |         0.00137 |
+|       Metric/avg_self_sa_asymmetry |               0 |
+|      Metric/avg_cross_sa_asymmetry |         0.00113 |
+|                        Eval/Return |            27.2 |
+--------------------------------------------------------
+--------------------------------------------------------
+|                        Train/Steps |        4.49e+06 |
+|                   Loss/Loss_critic |         0.00414 |
+|                    Loss/Loss_actor |           -3.14 |
+|                    Loss/Loss_alpha |        2.27e-05 |
+|      Loss/Loss_state_action_metric |         0.00237 |
+|             Loss/Loss_state_metric |         0.00174 |
+|                  Loss/Act_rep_loss |        0.000776 |
+|                          SAC/Alpha |        0.000142 |
+|                     SAC/LogPi_mean |            1.89 |
+|                        SAC/Q1_mean |            3.14 |
+|                        SAC/Q2_mean |            3.15 |
+|                   Norm/actor_model |             127 |
+|                  Norm/critic_model |             191 |
+|     Norm/state_action_metric_model |             116 |
+|            Norm/state_metric_model |             113 |
+|         Metric/self_state_distance |        0.000738 |
+|        Metric/cross_state_distance |           0.937 |
+|  Metric/self_state_action_distance |        0.000415 |
+| Metric/cross_state_action_distance |           0.923 |
+|    Metric/avg_self_state_asymmetry |               0 |
+|   Metric/avg_cross_state_asymmetry |         0.00121 |
+|       Metric/avg_self_sa_asymmetry |               0 |
+|      Metric/avg_cross_sa_asymmetry |         0.00097 |
+|                        Eval/Return |            57.6 |
+--------------------------------------------------------
+--------------------------------------------------------
+|                        Train/Steps |        4.62e+06 |
+|                   Loss/Loss_critic |          0.0758 |
+|                    Loss/Loss_actor |           -2.15 |
+|                    Loss/Loss_alpha |        2.35e-05 |
+|      Loss/Loss_state_action_metric |         0.00302 |
+|             Loss/Loss_state_metric |         0.00245 |
+|                  Loss/Act_rep_loss |        0.000788 |
+|                          SAC/Alpha |        0.000106 |
+|                     SAC/LogPi_mean |            1.84 |
+|                        SAC/Q1_mean |            2.16 |
+|                        SAC/Q2_mean |            2.15 |
+|                   Norm/actor_model |             128 |
+|                  Norm/critic_model |             194 |
+|     Norm/state_action_metric_model |             118 |
+|            Norm/state_metric_model |             115 |
+|         Metric/self_state_distance |        0.000347 |
+|        Metric/cross_state_distance |            0.93 |
+|  Metric/self_state_action_distance |        0.000618 |
+| Metric/cross_state_action_distance |           0.915 |
+|    Metric/avg_self_state_asymmetry |               0 |
+|   Metric/avg_cross_state_asymmetry |         0.00136 |
+|       Metric/avg_self_sa_asymmetry |               0 |
+|      Metric/avg_cross_sa_asymmetry |         0.00105 |
+|                        Eval/Return |            32.9 |
+--------------------------------------------------------
+--------------------------------------------------------
+|                        Train/Steps |        4.74e+06 |
+|                   Loss/Loss_critic |         0.00911 |
+|                    Loss/Loss_actor |           -4.22 |
+|                    Loss/Loss_alpha |       -1.32e-05 |
+|      Loss/Loss_state_action_metric |         0.00361 |
+|             Loss/Loss_state_metric |         0.00302 |
+|                  Loss/Act_rep_loss |        0.000541 |
+|                          SAC/Alpha |        0.000113 |
+|                     SAC/LogPi_mean |            1.97 |
+|                        SAC/Q1_mean |            4.23 |
+|                        SAC/Q2_mean |            4.23 |
+|                   Norm/actor_model |             129 |
+|                  Norm/critic_model |             197 |
+|     Norm/state_action_metric_model |             119 |
+|            Norm/state_metric_model |             117 |
+|         Metric/self_state_distance |         0.00051 |
+|        Metric/cross_state_distance |           0.937 |
+|  Metric/self_state_action_distance |         0.00071 |
+| Metric/cross_state_action_distance |           0.922 |
+|    Metric/avg_self_state_asymmetry |               0 |
+|   Metric/avg_cross_state_asymmetry |         0.00201 |
+|       Metric/avg_self_sa_asymmetry |               0 |
+|      Metric/avg_cross_sa_asymmetry |         0.00131 |
+|                        Eval/Return |              49 |
+--------------------------------------------------------
+--------------------------------------------------------
+|                        Train/Steps |        4.87e+06 |
+|                   Loss/Loss_critic |          0.0287 |
+|                    Loss/Loss_actor |           -1.32 |
+|                    Loss/Loss_alpha |        9.93e-05 |
+|      Loss/Loss_state_action_metric |         0.00264 |
+|             Loss/Loss_state_metric |         0.00202 |
+|                  Loss/Act_rep_loss |         0.00136 |
+|                          SAC/Alpha |         0.00014 |
+|                     SAC/LogPi_mean |            1.38 |
+|                        SAC/Q1_mean |            1.34 |
+|                        SAC/Q2_mean |            1.33 |
+|                   Norm/actor_model |             130 |
+|                  Norm/critic_model |             199 |
+|     Norm/state_action_metric_model |             121 |
+|            Norm/state_metric_model |             118 |
+|         Metric/self_state_distance |        0.000328 |
+|        Metric/cross_state_distance |           0.926 |
+|  Metric/self_state_action_distance |         0.00107 |
+| Metric/cross_state_action_distance |            0.91 |
+|    Metric/avg_self_state_asymmetry |               0 |
+|   Metric/avg_cross_state_asymmetry |         0.00106 |
+|       Metric/avg_self_sa_asymmetry |               0 |
+|      Metric/avg_cross_sa_asymmetry |        0.000937 |
+|                        Eval/Return |            48.6 |
+--------------------------------------------------------
+--------------------------------------------------------
+|                        Train/Steps |           5e+06 |
+|                   Loss/Loss_critic |          0.0545 |
+|                    Loss/Loss_actor |           -2.14 |
+|                    Loss/Loss_alpha |        0.000124 |
+|      Loss/Loss_state_action_metric |         0.00231 |
+|             Loss/Loss_state_metric |         0.00218 |
+|                  Loss/Act_rep_loss |        0.000351 |
+|                          SAC/Alpha |        0.000139 |
+|                     SAC/LogPi_mean |            1.19 |
+|                        SAC/Q1_mean |            2.13 |
+|                        SAC/Q2_mean |            2.12 |
+|                   Norm/actor_model |             131 |
+|                  Norm/critic_model |             202 |
+|     Norm/state_action_metric_model |             122 |
+|            Norm/state_metric_model |             120 |
+|         Metric/self_state_distance |          0.0119 |
+|        Metric/cross_state_distance |           0.935 |
+|  Metric/self_state_action_distance |         0.00074 |
+| Metric/cross_state_action_distance |           0.921 |
+|    Metric/avg_self_state_asymmetry |               0 |
+|   Metric/avg_cross_state_asymmetry |         0.00286 |
+|       Metric/avg_self_sa_asymmetry |               0 |
+|      Metric/avg_cross_sa_asymmetry |         0.00113 |
+|                        Eval/Return |            34.7 |
+--------------------------------------------------------
+[32mSaving model …[0m
+[32mDone.[0m
+[32mSaving model …[0m
+[32mDone.[0m

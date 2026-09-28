@@ -1,0 +1,2173 @@
+E0910 13:43:19.441287 1390743 cuda_executor.cc:1526] Could not get kernel mode driver version: (INVALID_ARGUMENT: Version does not match the format X.Y.Z)
+E0910 13:43:19.449850 1390627 cuda_executor.cc:1526] Could not get kernel mode driver version: (INVALID_ARGUMENT: Version does not match the format X.Y.Z)
+[32mStart prefilling replay buffer[0m
+[32mStart SAC training[0m
+[32m{'log_freq': 1000, 'save_freq': 1000000, 'eval_episode_freq': 10, 'hidden_size': 256, 'lr': 0.001, 'max_grad_norm': 0.0, 'gamma': 0.99, 'update_tau': 0.005, 'train_per_step': 8, 'episode_length': 1000, 'warmup_samples': 8192, 'max_replay_size': 4000000, 'batch_size': 512, 'total_env_steps': 5000000, 'init_temperature': 0.1, 'nstep': 1, 'bootstrap_on_truncation': True, 'rep_lr_scale': 1.5, 'vis_feq': 100000, 'n_vis_frames': 4, 'num_envs': 128, 'grad_steps': 50, 'transfer_freq': 10, 'transfer_steps': 8, 'reward_scaling': 1.0, 'num_eval_envs': 128, 'target_entropy': -10.5}[0m
+[32m[nstep] nstep=1 bootstrap_on_truncation=True (discount from the buffer already contains gamma^nstep)[0m
+-----------------------------------------------------------------
+|                                 Train/Steps |        1.36e+05 |
+|                            Loss/Loss_critic |         0.00219 |
+|                             Loss/Loss_actor |           -7.21 |
+|                             Loss/Loss_alpha |          0.0274 |
+|               Loss/Loss_state_action_metric |          0.0552 |
+|                      Loss/Loss_state_metric |          0.0373 |
+|             Loss/Loss_state_action_to_state |        0.000298 |
+|                           Loss/Act_rep_loss |          0.0201 |
+|                                   SAC/Alpha |         0.00174 |
+|                              SAC/LogPi_mean |           -5.16 |
+|                                 SAC/Q1_mean |            7.16 |
+|                                 SAC/Q2_mean |            7.15 |
+|                            Norm/actor_model |            28.6 |
+|                           Norm/critic_model |            50.7 |
+|              Norm/state_action_metric_model |            33.9 |
+|                     Norm/state_metric_model |              34 |
+|        Norm/state_action_state_metric_model |            34.1 |
+|                  Metric/self_state_distance |          0.0018 |
+|                 Metric/cross_state_distance |            1.09 |
+|           Metric/self_state_action_distance |         0.00301 |
+|          Metric/cross_state_action_distance |            1.11 |
+|             Metric/avg_self_state_asymmetry |               0 |
+|            Metric/avg_cross_state_asymmetry |         0.00611 |
+|                Metric/avg_self_sa_asymmetry |               0 |
+|               Metric/avg_cross_sa_asymmetry |         0.00823 |
+|  Metric/self_state_action_to_state_distance |        0.000999 |
+| Metric/cross_state_action_to_state_distance |             1.1 |
+|                   Metric/h_lambda_diff_self |         0.00226 |
+|                  Metric/h_lambda_diff_cross |           0.012 |
+|                                 Eval/Return |            20.3 |
+-----------------------------------------------------------------
+-----------------------------------------------------------------
+|                                 Train/Steps |        2.64e+05 |
+|                            Loss/Loss_critic |          0.0587 |
+|                             Loss/Loss_actor |           -8.04 |
+|                             Loss/Loss_alpha |         0.00215 |
+|               Loss/Loss_state_action_metric |          0.0825 |
+|                      Loss/Loss_state_metric |          0.0327 |
+|             Loss/Loss_state_action_to_state |        0.000406 |
+|                           Loss/Act_rep_loss |          0.0194 |
+|                                   SAC/Alpha |         0.00265 |
+|                              SAC/LogPi_mean |            9.96 |
+|                                 SAC/Q1_mean |             7.9 |
+|                                 SAC/Q2_mean |            7.89 |
+|                            Norm/actor_model |            40.7 |
+|                           Norm/critic_model |            65.7 |
+|              Norm/state_action_metric_model |            39.8 |
+|                     Norm/state_metric_model |            37.6 |
+|        Norm/state_action_state_metric_model |            38.6 |
+|                  Metric/self_state_distance |        0.000989 |
+|                 Metric/cross_state_distance |            1.07 |
+|           Metric/self_state_action_distance |        0.000642 |
+|          Metric/cross_state_action_distance |            1.08 |
+|             Metric/avg_self_state_asymmetry |               0 |
+|            Metric/avg_cross_state_asymmetry |         0.00523 |
+|                Metric/avg_self_sa_asymmetry |               0 |
+|               Metric/avg_cross_sa_asymmetry |          0.0107 |
+|  Metric/self_state_action_to_state_distance |        0.000516 |
+| Metric/cross_state_action_to_state_distance |            1.08 |
+|                   Metric/h_lambda_diff_self |        0.000755 |
+|                  Metric/h_lambda_diff_cross |          0.0108 |
+|                                 Eval/Return |            17.6 |
+-----------------------------------------------------------------
+-----------------------------------------------------------------
+|                                 Train/Steps |        3.92e+05 |
+|                            Loss/Loss_critic |          0.0226 |
+|                             Loss/Loss_actor |           -10.7 |
+|                             Loss/Loss_alpha |        -0.00333 |
+|               Loss/Loss_state_action_metric |          0.0396 |
+|                      Loss/Loss_state_metric |          0.0272 |
+|             Loss/Loss_state_action_to_state |        0.000225 |
+|                           Loss/Act_rep_loss |           0.012 |
+|                                   SAC/Alpha |         0.00295 |
+|                              SAC/LogPi_mean |            11.4 |
+|                                 SAC/Q1_mean |            10.5 |
+|                                 SAC/Q2_mean |            10.5 |
+|                            Norm/actor_model |            46.9 |
+|                           Norm/critic_model |            76.9 |
+|              Norm/state_action_metric_model |            46.2 |
+|                     Norm/state_metric_model |            42.6 |
+|        Norm/state_action_state_metric_model |            43.8 |
+|                  Metric/self_state_distance |        0.000567 |
+|                 Metric/cross_state_distance |            1.05 |
+|           Metric/self_state_action_distance |         0.00153 |
+|          Metric/cross_state_action_distance |            1.07 |
+|             Metric/avg_self_state_asymmetry |               0 |
+|            Metric/avg_cross_state_asymmetry |         0.00466 |
+|                Metric/avg_self_sa_asymmetry |               0 |
+|               Metric/avg_cross_sa_asymmetry |         0.00785 |
+|  Metric/self_state_action_to_state_distance |        0.000342 |
+| Metric/cross_state_action_to_state_distance |            1.07 |
+|                   Metric/h_lambda_diff_self |         0.00127 |
+|                  Metric/h_lambda_diff_cross |         0.00943 |
+|                                 Eval/Return |              18 |
+-----------------------------------------------------------------
+-----------------------------------------------------------------
+|                                 Train/Steps |         5.2e+05 |
+|                            Loss/Loss_critic |          0.0919 |
+|                             Loss/Loss_actor |           -12.9 |
+|                             Loss/Loss_alpha |        5.49e-05 |
+|               Loss/Loss_state_action_metric |          0.0183 |
+|                      Loss/Loss_state_metric |          0.0126 |
+|             Loss/Loss_state_action_to_state |        0.000217 |
+|                           Loss/Act_rep_loss |          0.0158 |
+|                                   SAC/Alpha |         0.00331 |
+|                              SAC/LogPi_mean |            10.6 |
+|                                 SAC/Q1_mean |            12.6 |
+|                                 SAC/Q2_mean |            12.6 |
+|                            Norm/actor_model |            51.5 |
+|                           Norm/critic_model |            88.3 |
+|              Norm/state_action_metric_model |            51.7 |
+|                     Norm/state_metric_model |            47.4 |
+|        Norm/state_action_state_metric_model |            48.6 |
+|                  Metric/self_state_distance |         0.00133 |
+|                 Metric/cross_state_distance |            1.02 |
+|           Metric/self_state_action_distance |         0.00184 |
+|          Metric/cross_state_action_distance |            1.03 |
+|             Metric/avg_self_state_asymmetry |               0 |
+|            Metric/avg_cross_state_asymmetry |         0.00396 |
+|                Metric/avg_self_sa_asymmetry |               0 |
+|               Metric/avg_cross_sa_asymmetry |         0.00673 |
+|  Metric/self_state_action_to_state_distance |         0.00108 |
+| Metric/cross_state_action_to_state_distance |            1.02 |
+|                   Metric/h_lambda_diff_self |         0.00195 |
+|                  Metric/h_lambda_diff_cross |         0.00804 |
+|                                 Eval/Return |            26.5 |
+-----------------------------------------------------------------
+-----------------------------------------------------------------
+|                                 Train/Steps |        6.48e+05 |
+|                            Loss/Loss_critic |           0.221 |
+|                             Loss/Loss_actor |           -21.2 |
+|                             Loss/Loss_alpha |         0.00662 |
+|               Loss/Loss_state_action_metric |          0.0983 |
+|                      Loss/Loss_state_metric |          0.0667 |
+|             Loss/Loss_state_action_to_state |        0.000409 |
+|                           Loss/Act_rep_loss |          0.0153 |
+|                                   SAC/Alpha |         0.00611 |
+|                              SAC/LogPi_mean |            9.96 |
+|                                 SAC/Q1_mean |            20.8 |
+|                                 SAC/Q2_mean |            20.9 |
+|                            Norm/actor_model |            56.1 |
+|                           Norm/critic_model |            99.2 |
+|              Norm/state_action_metric_model |            56.7 |
+|                     Norm/state_metric_model |            51.2 |
+|        Norm/state_action_state_metric_model |            52.9 |
+|                  Metric/self_state_distance |        0.000408 |
+|                 Metric/cross_state_distance |            1.13 |
+|           Metric/self_state_action_distance |        0.000871 |
+|          Metric/cross_state_action_distance |            1.17 |
+|             Metric/avg_self_state_asymmetry |               0 |
+|            Metric/avg_cross_state_asymmetry |         0.00503 |
+|                Metric/avg_self_sa_asymmetry |               0 |
+|               Metric/avg_cross_sa_asymmetry |          0.0123 |
+|  Metric/self_state_action_to_state_distance |        0.000545 |
+| Metric/cross_state_action_to_state_distance |            1.17 |
+|                   Metric/h_lambda_diff_self |        0.000903 |
+|                  Metric/h_lambda_diff_cross |          0.0123 |
+|                                 Eval/Return |            39.2 |
+-----------------------------------------------------------------
+-----------------------------------------------------------------
+|                                 Train/Steps |        7.76e+05 |
+|                            Loss/Loss_critic |           0.318 |
+|                             Loss/Loss_actor |           -27.3 |
+|                             Loss/Loss_alpha |         0.00332 |
+|               Loss/Loss_state_action_metric |           0.145 |
+|                      Loss/Loss_state_metric |          0.0995 |
+|             Loss/Loss_state_action_to_state |        0.000298 |
+|                           Loss/Act_rep_loss |          0.0133 |
+|                                   SAC/Alpha |           0.007 |
+|                              SAC/LogPi_mean |            10.2 |
+|                                 SAC/Q1_mean |              27 |
+|                                 SAC/Q2_mean |              27 |
+|                            Norm/actor_model |            60.7 |
+|                           Norm/critic_model |             109 |
+|              Norm/state_action_metric_model |            61.1 |
+|                     Norm/state_metric_model |            54.3 |
+|        Norm/state_action_state_metric_model |            56.3 |
+|                  Metric/self_state_distance |        0.000588 |
+|                 Metric/cross_state_distance |            1.19 |
+|           Metric/self_state_action_distance |         0.00119 |
+|          Metric/cross_state_action_distance |            1.24 |
+|             Metric/avg_self_state_asymmetry |               0 |
+|            Metric/avg_cross_state_asymmetry |         0.00548 |
+|                Metric/avg_self_sa_asymmetry |               0 |
+|               Metric/avg_cross_sa_asymmetry |          0.0105 |
+|  Metric/self_state_action_to_state_distance |        0.000223 |
+| Metric/cross_state_action_to_state_distance |            1.24 |
+|                   Metric/h_lambda_diff_self |         0.00107 |
+|                  Metric/h_lambda_diff_cross |          0.0112 |
+|                                 Eval/Return |             235 |
+-----------------------------------------------------------------
+-----------------------------------------------------------------
+|                                 Train/Steps |        9.04e+05 |
+|                            Loss/Loss_critic |           0.384 |
+|                             Loss/Loss_actor |           -29.4 |
+|                             Loss/Loss_alpha |         -0.0042 |
+|               Loss/Loss_state_action_metric |           0.211 |
+|                      Loss/Loss_state_metric |           0.141 |
+|             Loss/Loss_state_action_to_state |        0.000531 |
+|                           Loss/Act_rep_loss |          0.0101 |
+|                                   SAC/Alpha |         0.00706 |
+|                              SAC/LogPi_mean |              11 |
+|                                 SAC/Q1_mean |            29.2 |
+|                                 SAC/Q2_mean |            29.1 |
+|                            Norm/actor_model |            64.5 |
+|                           Norm/critic_model |             116 |
+|              Norm/state_action_metric_model |            64.7 |
+|                     Norm/state_metric_model |            56.8 |
+|        Norm/state_action_state_metric_model |              59 |
+|                  Metric/self_state_distance |        0.000488 |
+|                 Metric/cross_state_distance |            1.32 |
+|           Metric/self_state_action_distance |         0.00159 |
+|          Metric/cross_state_action_distance |            1.42 |
+|             Metric/avg_self_state_asymmetry |               0 |
+|            Metric/avg_cross_state_asymmetry |         0.00782 |
+|                Metric/avg_self_sa_asymmetry |               0 |
+|               Metric/avg_cross_sa_asymmetry |          0.0129 |
+|  Metric/self_state_action_to_state_distance |        0.000472 |
+| Metric/cross_state_action_to_state_distance |            1.42 |
+|                   Metric/h_lambda_diff_self |         0.00144 |
+|                  Metric/h_lambda_diff_cross |          0.0151 |
+|                                 Eval/Return |             196 |
+-----------------------------------------------------------------
+-----------------------------------------------------------------
+|                                 Train/Steps |        1.03e+06 |
+|                            Loss/Loss_critic |           0.285 |
+|                             Loss/Loss_actor |           -30.5 |
+|                             Loss/Loss_alpha |        -0.00386 |
+|               Loss/Loss_state_action_metric |           0.227 |
+|                      Loss/Loss_state_metric |           0.152 |
+|             Loss/Loss_state_action_to_state |        0.000692 |
+|                           Loss/Act_rep_loss |         0.00865 |
+|                                   SAC/Alpha |         0.00624 |
+|                              SAC/LogPi_mean |            11.1 |
+|                                 SAC/Q1_mean |            30.3 |
+|                                 SAC/Q2_mean |            30.2 |
+|                            Norm/actor_model |            68.3 |
+|                           Norm/critic_model |             123 |
+|              Norm/state_action_metric_model |            68.2 |
+|                     Norm/state_metric_model |            59.1 |
+|        Norm/state_action_state_metric_model |            61.7 |
+|                  Metric/self_state_distance |        0.000497 |
+|                 Metric/cross_state_distance |            1.35 |
+|           Metric/self_state_action_distance |         0.00066 |
+|          Metric/cross_state_action_distance |            1.44 |
+|             Metric/avg_self_state_asymmetry |               0 |
+|            Metric/avg_cross_state_asymmetry |         0.00842 |
+|                Metric/avg_self_sa_asymmetry |               0 |
+|               Metric/avg_cross_sa_asymmetry |          0.0153 |
+|  Metric/self_state_action_to_state_distance |        0.000465 |
+| Metric/cross_state_action_to_state_distance |            1.45 |
+|                   Metric/h_lambda_diff_self |        0.000648 |
+|                  Metric/h_lambda_diff_cross |           0.021 |
+|                                 Eval/Return |             509 |
+-----------------------------------------------------------------
+[32mSaving model …[0m
+[32mDone.[0m
+[32mSaving model …[0m
+[32mDone.[0m
+-----------------------------------------------------------------
+|                                 Train/Steps |        1.16e+06 |
+|                            Loss/Loss_critic |             nan |
+|                             Loss/Loss_actor |             nan |
+|                             Loss/Loss_alpha |             nan |
+|               Loss/Loss_state_action_metric |             nan |
+|                      Loss/Loss_state_metric |             nan |
+|             Loss/Loss_state_action_to_state |             nan |
+|                           Loss/Act_rep_loss |             nan |
+|                                   SAC/Alpha |             nan |
+|                              SAC/LogPi_mean |             nan |
+|                                 SAC/Q1_mean |             nan |
+|                                 SAC/Q2_mean |             nan |
+|                            Norm/actor_model |             nan |
+|                           Norm/critic_model |             nan |
+|              Norm/state_action_metric_model |             nan |
+|                     Norm/state_metric_model |             nan |
+|        Norm/state_action_state_metric_model |             nan |
+|                  Metric/self_state_distance |             nan |
+|                 Metric/cross_state_distance |             nan |
+|           Metric/self_state_action_distance |             nan |
+|          Metric/cross_state_action_distance |             nan |
+|             Metric/avg_self_state_asymmetry |             nan |
+|            Metric/avg_cross_state_asymmetry |             nan |
+|                Metric/avg_self_sa_asymmetry |             nan |
+|               Metric/avg_cross_sa_asymmetry |             nan |
+|  Metric/self_state_action_to_state_distance |             nan |
+| Metric/cross_state_action_to_state_distance |             nan |
+|                   Metric/h_lambda_diff_self |             nan |
+|                  Metric/h_lambda_diff_cross |             nan |
+|                                 Eval/Return |             nan |
+-----------------------------------------------------------------
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+-----------------------------------------------------------------
+|                                 Train/Steps |        1.29e+06 |
+|                            Loss/Loss_critic |             nan |
+|                             Loss/Loss_actor |             nan |
+|                             Loss/Loss_alpha |             nan |
+|               Loss/Loss_state_action_metric |             nan |
+|                      Loss/Loss_state_metric |             nan |
+|             Loss/Loss_state_action_to_state |             nan |
+|                           Loss/Act_rep_loss |             nan |
+|                                   SAC/Alpha |             nan |
+|                              SAC/LogPi_mean |             nan |
+|                                 SAC/Q1_mean |             nan |
+|                                 SAC/Q2_mean |             nan |
+|                            Norm/actor_model |             nan |
+|                           Norm/critic_model |             nan |
+|              Norm/state_action_metric_model |             nan |
+|                     Norm/state_metric_model |             nan |
+|        Norm/state_action_state_metric_model |             nan |
+|                  Metric/self_state_distance |             nan |
+|                 Metric/cross_state_distance |             nan |
+|           Metric/self_state_action_distance |             nan |
+|          Metric/cross_state_action_distance |             nan |
+|             Metric/avg_self_state_asymmetry |             nan |
+|            Metric/avg_cross_state_asymmetry |             nan |
+|                Metric/avg_self_sa_asymmetry |             nan |
+|               Metric/avg_cross_sa_asymmetry |             nan |
+|  Metric/self_state_action_to_state_distance |             nan |
+| Metric/cross_state_action_to_state_distance |             nan |
+|                   Metric/h_lambda_diff_self |             nan |
+|                  Metric/h_lambda_diff_cross |             nan |
+|                                 Eval/Return |             nan |
+-----------------------------------------------------------------
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+-----------------------------------------------------------------
+|                                 Train/Steps |        1.42e+06 |
+|                            Loss/Loss_critic |             nan |
+|                             Loss/Loss_actor |             nan |
+|                             Loss/Loss_alpha |             nan |
+|               Loss/Loss_state_action_metric |             nan |
+|                      Loss/Loss_state_metric |             nan |
+|             Loss/Loss_state_action_to_state |             nan |
+|                           Loss/Act_rep_loss |             nan |
+|                                   SAC/Alpha |             nan |
+|                              SAC/LogPi_mean |             nan |
+|                                 SAC/Q1_mean |             nan |
+|                                 SAC/Q2_mean |             nan |
+|                            Norm/actor_model |             nan |
+|                           Norm/critic_model |             nan |
+|              Norm/state_action_metric_model |             nan |
+|                     Norm/state_metric_model |             nan |
+|        Norm/state_action_state_metric_model |             nan |
+|                  Metric/self_state_distance |             nan |
+|                 Metric/cross_state_distance |             nan |
+|           Metric/self_state_action_distance |             nan |
+|          Metric/cross_state_action_distance |             nan |
+|             Metric/avg_self_state_asymmetry |             nan |
+|            Metric/avg_cross_state_asymmetry |             nan |
+|                Metric/avg_self_sa_asymmetry |             nan |
+|               Metric/avg_cross_sa_asymmetry |             nan |
+|  Metric/self_state_action_to_state_distance |             nan |
+| Metric/cross_state_action_to_state_distance |             nan |
+|                   Metric/h_lambda_diff_self |             nan |
+|                  Metric/h_lambda_diff_cross |             nan |
+|                                 Eval/Return |             nan |
+-----------------------------------------------------------------
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+-----------------------------------------------------------------
+|                                 Train/Steps |        1.54e+06 |
+|                            Loss/Loss_critic |             nan |
+|                             Loss/Loss_actor |             nan |
+|                             Loss/Loss_alpha |             nan |
+|               Loss/Loss_state_action_metric |             nan |
+|                      Loss/Loss_state_metric |             nan |
+|             Loss/Loss_state_action_to_state |             nan |
+|                           Loss/Act_rep_loss |             nan |
+|                                   SAC/Alpha |             nan |
+|                              SAC/LogPi_mean |             nan |
+|                                 SAC/Q1_mean |             nan |
+|                                 SAC/Q2_mean |             nan |
+|                            Norm/actor_model |             nan |
+|                           Norm/critic_model |             nan |
+|              Norm/state_action_metric_model |             nan |
+|                     Norm/state_metric_model |             nan |
+|        Norm/state_action_state_metric_model |             nan |
+|                  Metric/self_state_distance |             nan |
+|                 Metric/cross_state_distance |             nan |
+|           Metric/self_state_action_distance |             nan |
+|          Metric/cross_state_action_distance |             nan |
+|             Metric/avg_self_state_asymmetry |             nan |
+|            Metric/avg_cross_state_asymmetry |             nan |
+|                Metric/avg_self_sa_asymmetry |             nan |
+|               Metric/avg_cross_sa_asymmetry |             nan |
+|  Metric/self_state_action_to_state_distance |             nan |
+| Metric/cross_state_action_to_state_distance |             nan |
+|                   Metric/h_lambda_diff_self |             nan |
+|                  Metric/h_lambda_diff_cross |             nan |
+|                                 Eval/Return |             nan |
+-----------------------------------------------------------------
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+-----------------------------------------------------------------
+|                                 Train/Steps |        1.67e+06 |
+|                            Loss/Loss_critic |             nan |
+|                             Loss/Loss_actor |             nan |
+|                             Loss/Loss_alpha |             nan |
+|               Loss/Loss_state_action_metric |             nan |
+|                      Loss/Loss_state_metric |             nan |
+|             Loss/Loss_state_action_to_state |             nan |
+|                           Loss/Act_rep_loss |             nan |
+|                                   SAC/Alpha |             nan |
+|                              SAC/LogPi_mean |             nan |
+|                                 SAC/Q1_mean |             nan |
+|                                 SAC/Q2_mean |             nan |
+|                            Norm/actor_model |             nan |
+|                           Norm/critic_model |             nan |
+|              Norm/state_action_metric_model |             nan |
+|                     Norm/state_metric_model |             nan |
+|        Norm/state_action_state_metric_model |             nan |
+|                  Metric/self_state_distance |             nan |
+|                 Metric/cross_state_distance |             nan |
+|           Metric/self_state_action_distance |             nan |
+|          Metric/cross_state_action_distance |             nan |
+|             Metric/avg_self_state_asymmetry |             nan |
+|            Metric/avg_cross_state_asymmetry |             nan |
+|                Metric/avg_self_sa_asymmetry |             nan |
+|               Metric/avg_cross_sa_asymmetry |             nan |
+|  Metric/self_state_action_to_state_distance |             nan |
+| Metric/cross_state_action_to_state_distance |             nan |
+|                   Metric/h_lambda_diff_self |             nan |
+|                  Metric/h_lambda_diff_cross |             nan |
+|                                 Eval/Return |             nan |
+-----------------------------------------------------------------
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+-----------------------------------------------------------------
+|                                 Train/Steps |         1.8e+06 |
+|                            Loss/Loss_critic |             nan |
+|                             Loss/Loss_actor |             nan |
+|                             Loss/Loss_alpha |             nan |
+|               Loss/Loss_state_action_metric |             nan |
+|                      Loss/Loss_state_metric |             nan |
+|             Loss/Loss_state_action_to_state |             nan |
+|                           Loss/Act_rep_loss |             nan |
+|                                   SAC/Alpha |             nan |
+|                              SAC/LogPi_mean |             nan |
+|                                 SAC/Q1_mean |             nan |
+|                                 SAC/Q2_mean |             nan |
+|                            Norm/actor_model |             nan |
+|                           Norm/critic_model |             nan |
+|              Norm/state_action_metric_model |             nan |
+|                     Norm/state_metric_model |             nan |
+|        Norm/state_action_state_metric_model |             nan |
+|                  Metric/self_state_distance |             nan |
+|                 Metric/cross_state_distance |             nan |
+|           Metric/self_state_action_distance |             nan |
+|          Metric/cross_state_action_distance |             nan |
+|             Metric/avg_self_state_asymmetry |             nan |
+|            Metric/avg_cross_state_asymmetry |             nan |
+|                Metric/avg_self_sa_asymmetry |             nan |
+|               Metric/avg_cross_sa_asymmetry |             nan |
+|  Metric/self_state_action_to_state_distance |             nan |
+| Metric/cross_state_action_to_state_distance |             nan |
+|                   Metric/h_lambda_diff_self |             nan |
+|                  Metric/h_lambda_diff_cross |             nan |
+|                                 Eval/Return |             nan |
+-----------------------------------------------------------------
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+-----------------------------------------------------------------
+|                                 Train/Steps |        1.93e+06 |
+|                            Loss/Loss_critic |             nan |
+|                             Loss/Loss_actor |             nan |
+|                             Loss/Loss_alpha |             nan |
+|               Loss/Loss_state_action_metric |             nan |
+|                      Loss/Loss_state_metric |             nan |
+|             Loss/Loss_state_action_to_state |             nan |
+|                           Loss/Act_rep_loss |             nan |
+|                                   SAC/Alpha |             nan |
+|                              SAC/LogPi_mean |             nan |
+|                                 SAC/Q1_mean |             nan |
+|                                 SAC/Q2_mean |             nan |
+|                            Norm/actor_model |             nan |
+|                           Norm/critic_model |             nan |
+|              Norm/state_action_metric_model |             nan |
+|                     Norm/state_metric_model |             nan |
+|        Norm/state_action_state_metric_model |             nan |
+|                  Metric/self_state_distance |             nan |
+|                 Metric/cross_state_distance |             nan |
+|           Metric/self_state_action_distance |             nan |
+|          Metric/cross_state_action_distance |             nan |
+|             Metric/avg_self_state_asymmetry |             nan |
+|            Metric/avg_cross_state_asymmetry |             nan |
+|                Metric/avg_self_sa_asymmetry |             nan |
+|               Metric/avg_cross_sa_asymmetry |             nan |
+|  Metric/self_state_action_to_state_distance |             nan |
+| Metric/cross_state_action_to_state_distance |             nan |
+|                   Metric/h_lambda_diff_self |             nan |
+|                  Metric/h_lambda_diff_cross |             nan |
+|                                 Eval/Return |             nan |
+-----------------------------------------------------------------
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+-----------------------------------------------------------------
+|                                 Train/Steps |        2.06e+06 |
+|                            Loss/Loss_critic |             nan |
+|                             Loss/Loss_actor |             nan |
+|                             Loss/Loss_alpha |             nan |
+|               Loss/Loss_state_action_metric |             nan |
+|                      Loss/Loss_state_metric |             nan |
+|             Loss/Loss_state_action_to_state |             nan |
+|                           Loss/Act_rep_loss |             nan |
+|                                   SAC/Alpha |             nan |
+|                              SAC/LogPi_mean |             nan |
+|                                 SAC/Q1_mean |             nan |
+|                                 SAC/Q2_mean |             nan |
+|                            Norm/actor_model |             nan |
+|                           Norm/critic_model |             nan |
+|              Norm/state_action_metric_model |             nan |
+|                     Norm/state_metric_model |             nan |
+|        Norm/state_action_state_metric_model |             nan |
+|                  Metric/self_state_distance |             nan |
+|                 Metric/cross_state_distance |             nan |
+|           Metric/self_state_action_distance |             nan |
+|          Metric/cross_state_action_distance |             nan |
+|             Metric/avg_self_state_asymmetry |             nan |
+|            Metric/avg_cross_state_asymmetry |             nan |
+|                Metric/avg_self_sa_asymmetry |             nan |
+|               Metric/avg_cross_sa_asymmetry |             nan |
+|  Metric/self_state_action_to_state_distance |             nan |
+| Metric/cross_state_action_to_state_distance |             nan |
+|                   Metric/h_lambda_diff_self |             nan |
+|                  Metric/h_lambda_diff_cross |             nan |
+|                                 Eval/Return |             nan |
+-----------------------------------------------------------------
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+[32mSaving model …[0m
+[32mDone.[0m
+[32mSaving model …[0m
+[32mDone.[0m
+-----------------------------------------------------------------
+|                                 Train/Steps |        2.18e+06 |
+|                            Loss/Loss_critic |             nan |
+|                             Loss/Loss_actor |             nan |
+|                             Loss/Loss_alpha |             nan |
+|               Loss/Loss_state_action_metric |             nan |
+|                      Loss/Loss_state_metric |             nan |
+|             Loss/Loss_state_action_to_state |             nan |
+|                           Loss/Act_rep_loss |             nan |
+|                                   SAC/Alpha |             nan |
+|                              SAC/LogPi_mean |             nan |
+|                                 SAC/Q1_mean |             nan |
+|                                 SAC/Q2_mean |             nan |
+|                            Norm/actor_model |             nan |
+|                           Norm/critic_model |             nan |
+|              Norm/state_action_metric_model |             nan |
+|                     Norm/state_metric_model |             nan |
+|        Norm/state_action_state_metric_model |             nan |
+|                  Metric/self_state_distance |             nan |
+|                 Metric/cross_state_distance |             nan |
+|           Metric/self_state_action_distance |             nan |
+|          Metric/cross_state_action_distance |             nan |
+|             Metric/avg_self_state_asymmetry |             nan |
+|            Metric/avg_cross_state_asymmetry |             nan |
+|                Metric/avg_self_sa_asymmetry |             nan |
+|               Metric/avg_cross_sa_asymmetry |             nan |
+|  Metric/self_state_action_to_state_distance |             nan |
+| Metric/cross_state_action_to_state_distance |             nan |
+|                   Metric/h_lambda_diff_self |             nan |
+|                  Metric/h_lambda_diff_cross |             nan |
+|                                 Eval/Return |             nan |
+-----------------------------------------------------------------
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+-----------------------------------------------------------------
+|                                 Train/Steps |        2.31e+06 |
+|                            Loss/Loss_critic |             nan |
+|                             Loss/Loss_actor |             nan |
+|                             Loss/Loss_alpha |             nan |
+|               Loss/Loss_state_action_metric |             nan |
+|                      Loss/Loss_state_metric |             nan |
+|             Loss/Loss_state_action_to_state |             nan |
+|                           Loss/Act_rep_loss |             nan |
+|                                   SAC/Alpha |             nan |
+|                              SAC/LogPi_mean |             nan |
+|                                 SAC/Q1_mean |             nan |
+|                                 SAC/Q2_mean |             nan |
+|                            Norm/actor_model |             nan |
+|                           Norm/critic_model |             nan |
+|              Norm/state_action_metric_model |             nan |
+|                     Norm/state_metric_model |             nan |
+|        Norm/state_action_state_metric_model |             nan |
+|                  Metric/self_state_distance |             nan |
+|                 Metric/cross_state_distance |             nan |
+|           Metric/self_state_action_distance |             nan |
+|          Metric/cross_state_action_distance |             nan |
+|             Metric/avg_self_state_asymmetry |             nan |
+|            Metric/avg_cross_state_asymmetry |             nan |
+|                Metric/avg_self_sa_asymmetry |             nan |
+|               Metric/avg_cross_sa_asymmetry |             nan |
+|  Metric/self_state_action_to_state_distance |             nan |
+| Metric/cross_state_action_to_state_distance |             nan |
+|                   Metric/h_lambda_diff_self |             nan |
+|                  Metric/h_lambda_diff_cross |             nan |
+|                                 Eval/Return |             nan |
+-----------------------------------------------------------------
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+-----------------------------------------------------------------
+|                                 Train/Steps |        2.44e+06 |
+|                            Loss/Loss_critic |             nan |
+|                             Loss/Loss_actor |             nan |
+|                             Loss/Loss_alpha |             nan |
+|               Loss/Loss_state_action_metric |             nan |
+|                      Loss/Loss_state_metric |             nan |
+|             Loss/Loss_state_action_to_state |             nan |
+|                           Loss/Act_rep_loss |             nan |
+|                                   SAC/Alpha |             nan |
+|                              SAC/LogPi_mean |             nan |
+|                                 SAC/Q1_mean |             nan |
+|                                 SAC/Q2_mean |             nan |
+|                            Norm/actor_model |             nan |
+|                           Norm/critic_model |             nan |
+|              Norm/state_action_metric_model |             nan |
+|                     Norm/state_metric_model |             nan |
+|        Norm/state_action_state_metric_model |             nan |
+|                  Metric/self_state_distance |             nan |
+|                 Metric/cross_state_distance |             nan |
+|           Metric/self_state_action_distance |             nan |
+|          Metric/cross_state_action_distance |             nan |
+|             Metric/avg_self_state_asymmetry |             nan |
+|            Metric/avg_cross_state_asymmetry |             nan |
+|                Metric/avg_self_sa_asymmetry |             nan |
+|               Metric/avg_cross_sa_asymmetry |             nan |
+|  Metric/self_state_action_to_state_distance |             nan |
+| Metric/cross_state_action_to_state_distance |             nan |
+|                   Metric/h_lambda_diff_self |             nan |
+|                  Metric/h_lambda_diff_cross |             nan |
+|                                 Eval/Return |             nan |
+-----------------------------------------------------------------
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+-----------------------------------------------------------------
+|                                 Train/Steps |        2.57e+06 |
+|                            Loss/Loss_critic |             nan |
+|                             Loss/Loss_actor |             nan |
+|                             Loss/Loss_alpha |             nan |
+|               Loss/Loss_state_action_metric |             nan |
+|                      Loss/Loss_state_metric |             nan |
+|             Loss/Loss_state_action_to_state |             nan |
+|                           Loss/Act_rep_loss |             nan |
+|                                   SAC/Alpha |             nan |
+|                              SAC/LogPi_mean |             nan |
+|                                 SAC/Q1_mean |             nan |
+|                                 SAC/Q2_mean |             nan |
+|                            Norm/actor_model |             nan |
+|                           Norm/critic_model |             nan |
+|              Norm/state_action_metric_model |             nan |
+|                     Norm/state_metric_model |             nan |
+|        Norm/state_action_state_metric_model |             nan |
+|                  Metric/self_state_distance |             nan |
+|                 Metric/cross_state_distance |             nan |
+|           Metric/self_state_action_distance |             nan |
+|          Metric/cross_state_action_distance |             nan |
+|             Metric/avg_self_state_asymmetry |             nan |
+|            Metric/avg_cross_state_asymmetry |             nan |
+|                Metric/avg_self_sa_asymmetry |             nan |
+|               Metric/avg_cross_sa_asymmetry |             nan |
+|  Metric/self_state_action_to_state_distance |             nan |
+| Metric/cross_state_action_to_state_distance |             nan |
+|                   Metric/h_lambda_diff_self |             nan |
+|                  Metric/h_lambda_diff_cross |             nan |
+|                                 Eval/Return |             nan |
+-----------------------------------------------------------------
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+-----------------------------------------------------------------
+|                                 Train/Steps |         2.7e+06 |
+|                            Loss/Loss_critic |             nan |
+|                             Loss/Loss_actor |             nan |
+|                             Loss/Loss_alpha |             nan |
+|               Loss/Loss_state_action_metric |             nan |
+|                      Loss/Loss_state_metric |             nan |
+|             Loss/Loss_state_action_to_state |             nan |
+|                           Loss/Act_rep_loss |             nan |
+|                                   SAC/Alpha |             nan |
+|                              SAC/LogPi_mean |             nan |
+|                                 SAC/Q1_mean |             nan |
+|                                 SAC/Q2_mean |             nan |
+|                            Norm/actor_model |             nan |
+|                           Norm/critic_model |             nan |
+|              Norm/state_action_metric_model |             nan |
+|                     Norm/state_metric_model |             nan |
+|        Norm/state_action_state_metric_model |             nan |
+|                  Metric/self_state_distance |             nan |
+|                 Metric/cross_state_distance |             nan |
+|           Metric/self_state_action_distance |             nan |
+|          Metric/cross_state_action_distance |             nan |
+|             Metric/avg_self_state_asymmetry |             nan |
+|            Metric/avg_cross_state_asymmetry |             nan |
+|                Metric/avg_self_sa_asymmetry |             nan |
+|               Metric/avg_cross_sa_asymmetry |             nan |
+|  Metric/self_state_action_to_state_distance |             nan |
+| Metric/cross_state_action_to_state_distance |             nan |
+|                   Metric/h_lambda_diff_self |             nan |
+|                  Metric/h_lambda_diff_cross |             nan |
+|                                 Eval/Return |             nan |
+-----------------------------------------------------------------
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+-----------------------------------------------------------------
+|                                 Train/Steps |        2.82e+06 |
+|                            Loss/Loss_critic |             nan |
+|                             Loss/Loss_actor |             nan |
+|                             Loss/Loss_alpha |             nan |
+|               Loss/Loss_state_action_metric |             nan |
+|                      Loss/Loss_state_metric |             nan |
+|             Loss/Loss_state_action_to_state |             nan |
+|                           Loss/Act_rep_loss |             nan |
+|                                   SAC/Alpha |             nan |
+|                              SAC/LogPi_mean |             nan |
+|                                 SAC/Q1_mean |             nan |
+|                                 SAC/Q2_mean |             nan |
+|                            Norm/actor_model |             nan |
+|                           Norm/critic_model |             nan |
+|              Norm/state_action_metric_model |             nan |
+|                     Norm/state_metric_model |             nan |
+|        Norm/state_action_state_metric_model |             nan |
+|                  Metric/self_state_distance |             nan |
+|                 Metric/cross_state_distance |             nan |
+|           Metric/self_state_action_distance |             nan |
+|          Metric/cross_state_action_distance |             nan |
+|             Metric/avg_self_state_asymmetry |             nan |
+|            Metric/avg_cross_state_asymmetry |             nan |
+|                Metric/avg_self_sa_asymmetry |             nan |
+|               Metric/avg_cross_sa_asymmetry |             nan |
+|  Metric/self_state_action_to_state_distance |             nan |
+| Metric/cross_state_action_to_state_distance |             nan |
+|                   Metric/h_lambda_diff_self |             nan |
+|                  Metric/h_lambda_diff_cross |             nan |
+|                                 Eval/Return |             nan |
+-----------------------------------------------------------------
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+-----------------------------------------------------------------
+|                                 Train/Steps |        2.95e+06 |
+|                            Loss/Loss_critic |             nan |
+|                             Loss/Loss_actor |             nan |
+|                             Loss/Loss_alpha |             nan |
+|               Loss/Loss_state_action_metric |             nan |
+|                      Loss/Loss_state_metric |             nan |
+|             Loss/Loss_state_action_to_state |             nan |
+|                           Loss/Act_rep_loss |             nan |
+|                                   SAC/Alpha |             nan |
+|                              SAC/LogPi_mean |             nan |
+|                                 SAC/Q1_mean |             nan |
+|                                 SAC/Q2_mean |             nan |
+|                            Norm/actor_model |             nan |
+|                           Norm/critic_model |             nan |
+|              Norm/state_action_metric_model |             nan |
+|                     Norm/state_metric_model |             nan |
+|        Norm/state_action_state_metric_model |             nan |
+|                  Metric/self_state_distance |             nan |
+|                 Metric/cross_state_distance |             nan |
+|           Metric/self_state_action_distance |             nan |
+|          Metric/cross_state_action_distance |             nan |
+|             Metric/avg_self_state_asymmetry |             nan |
+|            Metric/avg_cross_state_asymmetry |             nan |
+|                Metric/avg_self_sa_asymmetry |             nan |
+|               Metric/avg_cross_sa_asymmetry |             nan |
+|  Metric/self_state_action_to_state_distance |             nan |
+| Metric/cross_state_action_to_state_distance |             nan |
+|                   Metric/h_lambda_diff_self |             nan |
+|                  Metric/h_lambda_diff_cross |             nan |
+|                                 Eval/Return |             nan |
+-----------------------------------------------------------------
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+-----------------------------------------------------------------
+|                                 Train/Steps |        3.08e+06 |
+|                            Loss/Loss_critic |             nan |
+|                             Loss/Loss_actor |             nan |
+|                             Loss/Loss_alpha |             nan |
+|               Loss/Loss_state_action_metric |             nan |
+|                      Loss/Loss_state_metric |             nan |
+|             Loss/Loss_state_action_to_state |             nan |
+|                           Loss/Act_rep_loss |             nan |
+|                                   SAC/Alpha |             nan |
+|                              SAC/LogPi_mean |             nan |
+|                                 SAC/Q1_mean |             nan |
+|                                 SAC/Q2_mean |             nan |
+|                            Norm/actor_model |             nan |
+|                           Norm/critic_model |             nan |
+|              Norm/state_action_metric_model |             nan |
+|                     Norm/state_metric_model |             nan |
+|        Norm/state_action_state_metric_model |             nan |
+|                  Metric/self_state_distance |             nan |
+|                 Metric/cross_state_distance |             nan |
+|           Metric/self_state_action_distance |             nan |
+|          Metric/cross_state_action_distance |             nan |
+|             Metric/avg_self_state_asymmetry |             nan |
+|            Metric/avg_cross_state_asymmetry |             nan |
+|                Metric/avg_self_sa_asymmetry |             nan |
+|               Metric/avg_cross_sa_asymmetry |             nan |
+|  Metric/self_state_action_to_state_distance |             nan |
+| Metric/cross_state_action_to_state_distance |             nan |
+|                   Metric/h_lambda_diff_self |             nan |
+|                  Metric/h_lambda_diff_cross |             nan |
+|                                 Eval/Return |             nan |
+-----------------------------------------------------------------
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+[32mSaving model …[0m
+[32mDone.[0m
+[32mSaving model …[0m
+[32mDone.[0m
+-----------------------------------------------------------------
+|                                 Train/Steps |        3.21e+06 |
+|                            Loss/Loss_critic |             nan |
+|                             Loss/Loss_actor |             nan |
+|                             Loss/Loss_alpha |             nan |
+|               Loss/Loss_state_action_metric |             nan |
+|                      Loss/Loss_state_metric |             nan |
+|             Loss/Loss_state_action_to_state |             nan |
+|                           Loss/Act_rep_loss |             nan |
+|                                   SAC/Alpha |             nan |
+|                              SAC/LogPi_mean |             nan |
+|                                 SAC/Q1_mean |             nan |
+|                                 SAC/Q2_mean |             nan |
+|                            Norm/actor_model |             nan |
+|                           Norm/critic_model |             nan |
+|              Norm/state_action_metric_model |             nan |
+|                     Norm/state_metric_model |             nan |
+|        Norm/state_action_state_metric_model |             nan |
+|                  Metric/self_state_distance |             nan |
+|                 Metric/cross_state_distance |             nan |
+|           Metric/self_state_action_distance |             nan |
+|          Metric/cross_state_action_distance |             nan |
+|             Metric/avg_self_state_asymmetry |             nan |
+|            Metric/avg_cross_state_asymmetry |             nan |
+|                Metric/avg_self_sa_asymmetry |             nan |
+|               Metric/avg_cross_sa_asymmetry |             nan |
+|  Metric/self_state_action_to_state_distance |             nan |
+| Metric/cross_state_action_to_state_distance |             nan |
+|                   Metric/h_lambda_diff_self |             nan |
+|                  Metric/h_lambda_diff_cross |             nan |
+|                                 Eval/Return |             nan |
+-----------------------------------------------------------------
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+-----------------------------------------------------------------
+|                                 Train/Steps |        3.34e+06 |
+|                            Loss/Loss_critic |             nan |
+|                             Loss/Loss_actor |             nan |
+|                             Loss/Loss_alpha |             nan |
+|               Loss/Loss_state_action_metric |             nan |
+|                      Loss/Loss_state_metric |             nan |
+|             Loss/Loss_state_action_to_state |             nan |
+|                           Loss/Act_rep_loss |             nan |
+|                                   SAC/Alpha |             nan |
+|                              SAC/LogPi_mean |             nan |
+|                                 SAC/Q1_mean |             nan |
+|                                 SAC/Q2_mean |             nan |
+|                            Norm/actor_model |             nan |
+|                           Norm/critic_model |             nan |
+|              Norm/state_action_metric_model |             nan |
+|                     Norm/state_metric_model |             nan |
+|        Norm/state_action_state_metric_model |             nan |
+|                  Metric/self_state_distance |             nan |
+|                 Metric/cross_state_distance |             nan |
+|           Metric/self_state_action_distance |             nan |
+|          Metric/cross_state_action_distance |             nan |
+|             Metric/avg_self_state_asymmetry |             nan |
+|            Metric/avg_cross_state_asymmetry |             nan |
+|                Metric/avg_self_sa_asymmetry |             nan |
+|               Metric/avg_cross_sa_asymmetry |             nan |
+|  Metric/self_state_action_to_state_distance |             nan |
+| Metric/cross_state_action_to_state_distance |             nan |
+|                   Metric/h_lambda_diff_self |             nan |
+|                  Metric/h_lambda_diff_cross |             nan |
+|                                 Eval/Return |             nan |
+-----------------------------------------------------------------
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+-----------------------------------------------------------------
+|                                 Train/Steps |        3.46e+06 |
+|                            Loss/Loss_critic |             nan |
+|                             Loss/Loss_actor |             nan |
+|                             Loss/Loss_alpha |             nan |
+|               Loss/Loss_state_action_metric |             nan |
+|                      Loss/Loss_state_metric |             nan |
+|             Loss/Loss_state_action_to_state |             nan |
+|                           Loss/Act_rep_loss |             nan |
+|                                   SAC/Alpha |             nan |
+|                              SAC/LogPi_mean |             nan |
+|                                 SAC/Q1_mean |             nan |
+|                                 SAC/Q2_mean |             nan |
+|                            Norm/actor_model |             nan |
+|                           Norm/critic_model |             nan |
+|              Norm/state_action_metric_model |             nan |
+|                     Norm/state_metric_model |             nan |
+|        Norm/state_action_state_metric_model |             nan |
+|                  Metric/self_state_distance |             nan |
+|                 Metric/cross_state_distance |             nan |
+|           Metric/self_state_action_distance |             nan |
+|          Metric/cross_state_action_distance |             nan |
+|             Metric/avg_self_state_asymmetry |             nan |
+|            Metric/avg_cross_state_asymmetry |             nan |
+|                Metric/avg_self_sa_asymmetry |             nan |
+|               Metric/avg_cross_sa_asymmetry |             nan |
+|  Metric/self_state_action_to_state_distance |             nan |
+| Metric/cross_state_action_to_state_distance |             nan |
+|                   Metric/h_lambda_diff_self |             nan |
+|                  Metric/h_lambda_diff_cross |             nan |
+|                                 Eval/Return |             nan |
+-----------------------------------------------------------------
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+-----------------------------------------------------------------
+|                                 Train/Steps |        3.59e+06 |
+|                            Loss/Loss_critic |             nan |
+|                             Loss/Loss_actor |             nan |
+|                             Loss/Loss_alpha |             nan |
+|               Loss/Loss_state_action_metric |             nan |
+|                      Loss/Loss_state_metric |             nan |
+|             Loss/Loss_state_action_to_state |             nan |
+|                           Loss/Act_rep_loss |             nan |
+|                                   SAC/Alpha |             nan |
+|                              SAC/LogPi_mean |             nan |
+|                                 SAC/Q1_mean |             nan |
+|                                 SAC/Q2_mean |             nan |
+|                            Norm/actor_model |             nan |
+|                           Norm/critic_model |             nan |
+|              Norm/state_action_metric_model |             nan |
+|                     Norm/state_metric_model |             nan |
+|        Norm/state_action_state_metric_model |             nan |
+|                  Metric/self_state_distance |             nan |
+|                 Metric/cross_state_distance |             nan |
+|           Metric/self_state_action_distance |             nan |
+|          Metric/cross_state_action_distance |             nan |
+|             Metric/avg_self_state_asymmetry |             nan |
+|            Metric/avg_cross_state_asymmetry |             nan |
+|                Metric/avg_self_sa_asymmetry |             nan |
+|               Metric/avg_cross_sa_asymmetry |             nan |
+|  Metric/self_state_action_to_state_distance |             nan |
+| Metric/cross_state_action_to_state_distance |             nan |
+|                   Metric/h_lambda_diff_self |             nan |
+|                  Metric/h_lambda_diff_cross |             nan |
+|                                 Eval/Return |             nan |
+-----------------------------------------------------------------
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+-----------------------------------------------------------------
+|                                 Train/Steps |        3.72e+06 |
+|                            Loss/Loss_critic |             nan |
+|                             Loss/Loss_actor |             nan |
+|                             Loss/Loss_alpha |             nan |
+|               Loss/Loss_state_action_metric |             nan |
+|                      Loss/Loss_state_metric |             nan |
+|             Loss/Loss_state_action_to_state |             nan |
+|                           Loss/Act_rep_loss |             nan |
+|                                   SAC/Alpha |             nan |
+|                              SAC/LogPi_mean |             nan |
+|                                 SAC/Q1_mean |             nan |
+|                                 SAC/Q2_mean |             nan |
+|                            Norm/actor_model |             nan |
+|                           Norm/critic_model |             nan |
+|              Norm/state_action_metric_model |             nan |
+|                     Norm/state_metric_model |             nan |
+|        Norm/state_action_state_metric_model |             nan |
+|                  Metric/self_state_distance |             nan |
+|                 Metric/cross_state_distance |             nan |
+|           Metric/self_state_action_distance |             nan |
+|          Metric/cross_state_action_distance |             nan |
+|             Metric/avg_self_state_asymmetry |             nan |
+|            Metric/avg_cross_state_asymmetry |             nan |
+|                Metric/avg_self_sa_asymmetry |             nan |
+|               Metric/avg_cross_sa_asymmetry |             nan |
+|  Metric/self_state_action_to_state_distance |             nan |
+| Metric/cross_state_action_to_state_distance |             nan |
+|                   Metric/h_lambda_diff_self |             nan |
+|                  Metric/h_lambda_diff_cross |             nan |
+|                                 Eval/Return |             nan |
+-----------------------------------------------------------------
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+-----------------------------------------------------------------
+|                                 Train/Steps |        3.85e+06 |
+|                            Loss/Loss_critic |             nan |
+|                             Loss/Loss_actor |             nan |
+|                             Loss/Loss_alpha |             nan |
+|               Loss/Loss_state_action_metric |             nan |
+|                      Loss/Loss_state_metric |             nan |
+|             Loss/Loss_state_action_to_state |             nan |
+|                           Loss/Act_rep_loss |             nan |
+|                                   SAC/Alpha |             nan |
+|                              SAC/LogPi_mean |             nan |
+|                                 SAC/Q1_mean |             nan |
+|                                 SAC/Q2_mean |             nan |
+|                            Norm/actor_model |             nan |
+|                           Norm/critic_model |             nan |
+|              Norm/state_action_metric_model |             nan |
+|                     Norm/state_metric_model |             nan |
+|        Norm/state_action_state_metric_model |             nan |
+|                  Metric/self_state_distance |             nan |
+|                 Metric/cross_state_distance |             nan |
+|           Metric/self_state_action_distance |             nan |
+|          Metric/cross_state_action_distance |             nan |
+|             Metric/avg_self_state_asymmetry |             nan |
+|            Metric/avg_cross_state_asymmetry |             nan |
+|                Metric/avg_self_sa_asymmetry |             nan |
+|               Metric/avg_cross_sa_asymmetry |             nan |
+|  Metric/self_state_action_to_state_distance |             nan |
+| Metric/cross_state_action_to_state_distance |             nan |
+|                   Metric/h_lambda_diff_self |             nan |
+|                  Metric/h_lambda_diff_cross |             nan |
+|                                 Eval/Return |             nan |
+-----------------------------------------------------------------
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+-----------------------------------------------------------------
+|                                 Train/Steps |        3.98e+06 |
+|                            Loss/Loss_critic |             nan |
+|                             Loss/Loss_actor |             nan |
+|                             Loss/Loss_alpha |             nan |
+|               Loss/Loss_state_action_metric |             nan |
+|                      Loss/Loss_state_metric |             nan |
+|             Loss/Loss_state_action_to_state |             nan |
+|                           Loss/Act_rep_loss |             nan |
+|                                   SAC/Alpha |             nan |
+|                              SAC/LogPi_mean |             nan |
+|                                 SAC/Q1_mean |             nan |
+|                                 SAC/Q2_mean |             nan |
+|                            Norm/actor_model |             nan |
+|                           Norm/critic_model |             nan |
+|              Norm/state_action_metric_model |             nan |
+|                     Norm/state_metric_model |             nan |
+|        Norm/state_action_state_metric_model |             nan |
+|                  Metric/self_state_distance |             nan |
+|                 Metric/cross_state_distance |             nan |
+|           Metric/self_state_action_distance |             nan |
+|          Metric/cross_state_action_distance |             nan |
+|             Metric/avg_self_state_asymmetry |             nan |
+|            Metric/avg_cross_state_asymmetry |             nan |
+|                Metric/avg_self_sa_asymmetry |             nan |
+|               Metric/avg_cross_sa_asymmetry |             nan |
+|  Metric/self_state_action_to_state_distance |             nan |
+| Metric/cross_state_action_to_state_distance |             nan |
+|                   Metric/h_lambda_diff_self |             nan |
+|                  Metric/h_lambda_diff_cross |             nan |
+|                                 Eval/Return |             nan |
+-----------------------------------------------------------------
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+-----------------------------------------------------------------
+|                                 Train/Steps |         4.1e+06 |
+|                            Loss/Loss_critic |             nan |
+|                             Loss/Loss_actor |             nan |
+|                             Loss/Loss_alpha |             nan |
+|               Loss/Loss_state_action_metric |             nan |
+|                      Loss/Loss_state_metric |             nan |
+|             Loss/Loss_state_action_to_state |             nan |
+|                           Loss/Act_rep_loss |             nan |
+|                                   SAC/Alpha |             nan |
+|                              SAC/LogPi_mean |             nan |
+|                                 SAC/Q1_mean |             nan |
+|                                 SAC/Q2_mean |             nan |
+|                            Norm/actor_model |             nan |
+|                           Norm/critic_model |             nan |
+|              Norm/state_action_metric_model |             nan |
+|                     Norm/state_metric_model |             nan |
+|        Norm/state_action_state_metric_model |             nan |
+|                  Metric/self_state_distance |             nan |
+|                 Metric/cross_state_distance |             nan |
+|           Metric/self_state_action_distance |             nan |
+|          Metric/cross_state_action_distance |             nan |
+|             Metric/avg_self_state_asymmetry |             nan |
+|            Metric/avg_cross_state_asymmetry |             nan |
+|                Metric/avg_self_sa_asymmetry |             nan |
+|               Metric/avg_cross_sa_asymmetry |             nan |
+|  Metric/self_state_action_to_state_distance |             nan |
+| Metric/cross_state_action_to_state_distance |             nan |
+|                   Metric/h_lambda_diff_self |             nan |
+|                  Metric/h_lambda_diff_cross |             nan |
+|                                 Eval/Return |             nan |
+-----------------------------------------------------------------
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+[32mSaving model …[0m
+[32mDone.[0m
+[32mSaving model …[0m
+[32mDone.[0m
+-----------------------------------------------------------------
+|                                 Train/Steps |        4.23e+06 |
+|                            Loss/Loss_critic |             nan |
+|                             Loss/Loss_actor |             nan |
+|                             Loss/Loss_alpha |             nan |
+|               Loss/Loss_state_action_metric |             nan |
+|                      Loss/Loss_state_metric |             nan |
+|             Loss/Loss_state_action_to_state |             nan |
+|                           Loss/Act_rep_loss |             nan |
+|                                   SAC/Alpha |             nan |
+|                              SAC/LogPi_mean |             nan |
+|                                 SAC/Q1_mean |             nan |
+|                                 SAC/Q2_mean |             nan |
+|                            Norm/actor_model |             nan |
+|                           Norm/critic_model |             nan |
+|              Norm/state_action_metric_model |             nan |
+|                     Norm/state_metric_model |             nan |
+|        Norm/state_action_state_metric_model |             nan |
+|                  Metric/self_state_distance |             nan |
+|                 Metric/cross_state_distance |             nan |
+|           Metric/self_state_action_distance |             nan |
+|          Metric/cross_state_action_distance |             nan |
+|             Metric/avg_self_state_asymmetry |             nan |
+|            Metric/avg_cross_state_asymmetry |             nan |
+|                Metric/avg_self_sa_asymmetry |             nan |
+|               Metric/avg_cross_sa_asymmetry |             nan |
+|  Metric/self_state_action_to_state_distance |             nan |
+| Metric/cross_state_action_to_state_distance |             nan |
+|                   Metric/h_lambda_diff_self |             nan |
+|                  Metric/h_lambda_diff_cross |             nan |
+|                                 Eval/Return |             nan |
+-----------------------------------------------------------------
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+-----------------------------------------------------------------
+|                                 Train/Steps |        4.36e+06 |
+|                            Loss/Loss_critic |             nan |
+|                             Loss/Loss_actor |             nan |
+|                             Loss/Loss_alpha |             nan |
+|               Loss/Loss_state_action_metric |             nan |
+|                      Loss/Loss_state_metric |             nan |
+|             Loss/Loss_state_action_to_state |             nan |
+|                           Loss/Act_rep_loss |             nan |
+|                                   SAC/Alpha |             nan |
+|                              SAC/LogPi_mean |             nan |
+|                                 SAC/Q1_mean |             nan |
+|                                 SAC/Q2_mean |             nan |
+|                            Norm/actor_model |             nan |
+|                           Norm/critic_model |             nan |
+|              Norm/state_action_metric_model |             nan |
+|                     Norm/state_metric_model |             nan |
+|        Norm/state_action_state_metric_model |             nan |
+|                  Metric/self_state_distance |             nan |
+|                 Metric/cross_state_distance |             nan |
+|           Metric/self_state_action_distance |             nan |
+|          Metric/cross_state_action_distance |             nan |
+|             Metric/avg_self_state_asymmetry |             nan |
+|            Metric/avg_cross_state_asymmetry |             nan |
+|                Metric/avg_self_sa_asymmetry |             nan |
+|               Metric/avg_cross_sa_asymmetry |             nan |
+|  Metric/self_state_action_to_state_distance |             nan |
+| Metric/cross_state_action_to_state_distance |             nan |
+|                   Metric/h_lambda_diff_self |             nan |
+|                  Metric/h_lambda_diff_cross |             nan |
+|                                 Eval/Return |             nan |
+-----------------------------------------------------------------
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+-----------------------------------------------------------------
+|                                 Train/Steps |        4.49e+06 |
+|                            Loss/Loss_critic |             nan |
+|                             Loss/Loss_actor |             nan |
+|                             Loss/Loss_alpha |             nan |
+|               Loss/Loss_state_action_metric |             nan |
+|                      Loss/Loss_state_metric |             nan |
+|             Loss/Loss_state_action_to_state |             nan |
+|                           Loss/Act_rep_loss |             nan |
+|                                   SAC/Alpha |             nan |
+|                              SAC/LogPi_mean |             nan |
+|                                 SAC/Q1_mean |             nan |
+|                                 SAC/Q2_mean |             nan |
+|                            Norm/actor_model |             nan |
+|                           Norm/critic_model |             nan |
+|              Norm/state_action_metric_model |             nan |
+|                     Norm/state_metric_model |             nan |
+|        Norm/state_action_state_metric_model |             nan |
+|                  Metric/self_state_distance |             nan |
+|                 Metric/cross_state_distance |             nan |
+|           Metric/self_state_action_distance |             nan |
+|          Metric/cross_state_action_distance |             nan |
+|             Metric/avg_self_state_asymmetry |             nan |
+|            Metric/avg_cross_state_asymmetry |             nan |
+|                Metric/avg_self_sa_asymmetry |             nan |
+|               Metric/avg_cross_sa_asymmetry |             nan |
+|  Metric/self_state_action_to_state_distance |             nan |
+| Metric/cross_state_action_to_state_distance |             nan |
+|                   Metric/h_lambda_diff_self |             nan |
+|                  Metric/h_lambda_diff_cross |             nan |
+|                                 Eval/Return |             nan |
+-----------------------------------------------------------------
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+-----------------------------------------------------------------
+|                                 Train/Steps |        4.62e+06 |
+|                            Loss/Loss_critic |             nan |
+|                             Loss/Loss_actor |             nan |
+|                             Loss/Loss_alpha |             nan |
+|               Loss/Loss_state_action_metric |             nan |
+|                      Loss/Loss_state_metric |             nan |
+|             Loss/Loss_state_action_to_state |             nan |
+|                           Loss/Act_rep_loss |             nan |
+|                                   SAC/Alpha |             nan |
+|                              SAC/LogPi_mean |             nan |
+|                                 SAC/Q1_mean |             nan |
+|                                 SAC/Q2_mean |             nan |
+|                            Norm/actor_model |             nan |
+|                           Norm/critic_model |             nan |
+|              Norm/state_action_metric_model |             nan |
+|                     Norm/state_metric_model |             nan |
+|        Norm/state_action_state_metric_model |             nan |
+|                  Metric/self_state_distance |             nan |
+|                 Metric/cross_state_distance |             nan |
+|           Metric/self_state_action_distance |             nan |
+|          Metric/cross_state_action_distance |             nan |
+|             Metric/avg_self_state_asymmetry |             nan |
+|            Metric/avg_cross_state_asymmetry |             nan |
+|                Metric/avg_self_sa_asymmetry |             nan |
+|               Metric/avg_cross_sa_asymmetry |             nan |
+|  Metric/self_state_action_to_state_distance |             nan |
+| Metric/cross_state_action_to_state_distance |             nan |
+|                   Metric/h_lambda_diff_self |             nan |
+|                  Metric/h_lambda_diff_cross |             nan |
+|                                 Eval/Return |             nan |
+-----------------------------------------------------------------
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+-----------------------------------------------------------------
+|                                 Train/Steps |        4.74e+06 |
+|                            Loss/Loss_critic |             nan |
+|                             Loss/Loss_actor |             nan |
+|                             Loss/Loss_alpha |             nan |
+|               Loss/Loss_state_action_metric |             nan |
+|                      Loss/Loss_state_metric |             nan |
+|             Loss/Loss_state_action_to_state |             nan |
+|                           Loss/Act_rep_loss |             nan |
+|                                   SAC/Alpha |             nan |
+|                              SAC/LogPi_mean |             nan |
+|                                 SAC/Q1_mean |             nan |
+|                                 SAC/Q2_mean |             nan |
+|                            Norm/actor_model |             nan |
+|                           Norm/critic_model |             nan |
+|              Norm/state_action_metric_model |             nan |
+|                     Norm/state_metric_model |             nan |
+|        Norm/state_action_state_metric_model |             nan |
+|                  Metric/self_state_distance |             nan |
+|                 Metric/cross_state_distance |             nan |
+|           Metric/self_state_action_distance |             nan |
+|          Metric/cross_state_action_distance |             nan |
+|             Metric/avg_self_state_asymmetry |             nan |
+|            Metric/avg_cross_state_asymmetry |             nan |
+|                Metric/avg_self_sa_asymmetry |             nan |
+|               Metric/avg_cross_sa_asymmetry |             nan |
+|  Metric/self_state_action_to_state_distance |             nan |
+| Metric/cross_state_action_to_state_distance |             nan |
+|                   Metric/h_lambda_diff_self |             nan |
+|                  Metric/h_lambda_diff_cross |             nan |
+|                                 Eval/Return |             nan |
+-----------------------------------------------------------------
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+-----------------------------------------------------------------
+|                                 Train/Steps |        4.87e+06 |
+|                            Loss/Loss_critic |             nan |
+|                             Loss/Loss_actor |             nan |
+|                             Loss/Loss_alpha |             nan |
+|               Loss/Loss_state_action_metric |             nan |
+|                      Loss/Loss_state_metric |             nan |
+|             Loss/Loss_state_action_to_state |             nan |
+|                           Loss/Act_rep_loss |             nan |
+|                                   SAC/Alpha |             nan |
+|                              SAC/LogPi_mean |             nan |
+|                                 SAC/Q1_mean |             nan |
+|                                 SAC/Q2_mean |             nan |
+|                            Norm/actor_model |             nan |
+|                           Norm/critic_model |             nan |
+|              Norm/state_action_metric_model |             nan |
+|                     Norm/state_metric_model |             nan |
+|        Norm/state_action_state_metric_model |             nan |
+|                  Metric/self_state_distance |             nan |
+|                 Metric/cross_state_distance |             nan |
+|           Metric/self_state_action_distance |             nan |
+|          Metric/cross_state_action_distance |             nan |
+|             Metric/avg_self_state_asymmetry |             nan |
+|            Metric/avg_cross_state_asymmetry |             nan |
+|                Metric/avg_self_sa_asymmetry |             nan |
+|               Metric/avg_cross_sa_asymmetry |             nan |
+|  Metric/self_state_action_to_state_distance |             nan |
+| Metric/cross_state_action_to_state_distance |             nan |
+|                   Metric/h_lambda_diff_self |             nan |
+|                  Metric/h_lambda_diff_cross |             nan |
+|                                 Eval/Return |             nan |
+-----------------------------------------------------------------
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+-----------------------------------------------------------------
+|                                 Train/Steps |           5e+06 |
+|                            Loss/Loss_critic |             nan |
+|                             Loss/Loss_actor |             nan |
+|                             Loss/Loss_alpha |             nan |
+|               Loss/Loss_state_action_metric |             nan |
+|                      Loss/Loss_state_metric |             nan |
+|             Loss/Loss_state_action_to_state |             nan |
+|                           Loss/Act_rep_loss |             nan |
+|                                   SAC/Alpha |             nan |
+|                              SAC/LogPi_mean |             nan |
+|                                 SAC/Q1_mean |             nan |
+|                                 SAC/Q2_mean |             nan |
+|                            Norm/actor_model |             nan |
+|                           Norm/critic_model |             nan |
+|              Norm/state_action_metric_model |             nan |
+|                     Norm/state_metric_model |             nan |
+|        Norm/state_action_state_metric_model |             nan |
+|                  Metric/self_state_distance |             nan |
+|                 Metric/cross_state_distance |             nan |
+|           Metric/self_state_action_distance |             nan |
+|          Metric/cross_state_action_distance |             nan |
+|             Metric/avg_self_state_asymmetry |             nan |
+|            Metric/avg_cross_state_asymmetry |             nan |
+|                Metric/avg_self_sa_asymmetry |             nan |
+|               Metric/avg_cross_sa_asymmetry |             nan |
+|  Metric/self_state_action_to_state_distance |             nan |
+| Metric/cross_state_action_to_state_distance |             nan |
+|                   Metric/h_lambda_diff_self |             nan |
+|                  Metric/h_lambda_diff_cross |             nan |
+|                                 Eval/Return |             nan |
+-----------------------------------------------------------------
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+[32mSaving model …[0m
+[32mDone.[0m
+[32mSaving model …[0m
+[32mDone.[0m

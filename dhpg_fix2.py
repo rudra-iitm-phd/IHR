@@ -1327,7 +1327,9 @@ def main(args, cfg_env=None):
     # ── per-task algorithm override from the author's cfgs/task/*.yaml ────
     # The walker domain uses nstep=1. (The author also sets batch_size=512
     # there, but batch size is regime, so it stays on the harness.)
-    if args.task.lower().startswith("walker"):
+    if args.task.lower().startswith("walker") or args.task.lower().startswith(
+        "humanoid"
+    ):
         config["nstep"] = 1
 
     num_envs = config["num_envs"]

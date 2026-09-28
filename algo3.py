@@ -28,8 +28,7 @@ from utils.algo_metric import (
     EnsembleStateMetric,
     MinStateActiontoStateMetric,
 )
-# from utils.algo_models import EnsembleCritic, SACGaussianActor, Scalar, get_tree_norm
-from utils.models import EnsembleCritic, SACGaussianActor, Scalar, get_tree_norm
+from utils.algo_models import EnsembleCritic, SACGaussianActor, Scalar, get_tree_norm
 
 # [NSTEP] same helpers as sac_single.py / dhpg.py, so all three scripts share
 # one source of truth for how returns are computed.
@@ -43,6 +42,8 @@ from utils.buffer import (
     nstep_template_from_dims,  # NEW
 )
 from utils.logger import EpochLogger
+
+# from utils.models import EnsembleCritic, SACGaussianActor, Scalar, get_tree_norm
 from utils.parameterized_models import (
     AgentAux,
     MetricAux,
@@ -65,7 +66,7 @@ default_cfg = {
     "train_per_step": 1,
     "episode_length": 1000,
     "warmup_samples": int(5e3),
-    "max_replay_size": int(1e5),    
+    "max_replay_size": int(1e5),
     "batch_size": int(256),
     "total_env_steps": int(1e6),
     "init_temperature": 0.1,
@@ -250,8 +251,6 @@ def sac_train_step(
             min_state_action_to_state_metric(jnp.concatenate([x, b], axis=-1), s),
         )
 
-        
-
         h_sax_repeat, h_xbs_repeat = (
             jnp.repeat(h_sax, n_act_samples, axis=0),
             jnp.repeat(h_xbs, n_act_samples, axis=0),
@@ -394,8 +393,6 @@ def sac_train_step(
         )
 
         return loss
-
-    
 
     g_loss, g_grads = nnx.value_and_grad(state_metric_loss_fn)(
         state.models.state_metric
@@ -959,13 +956,15 @@ def main(args, cfg_env=None):
             "transfer_steps": args.transfer_steps,
             "reward_scaling": args.reward_scaling,
             "num_eval_envs": args.num_eval_envs,
-            "rep_lr_scale":args.rep_lr_scale
+            "rep_lr_scale": args.rep_lr_scale,
         }
     )
 
     # [NSTEP] per-task override, same as sac_single.py / dhpg.py: the walker
     # domain uses nstep=1. Must run BEFORE config_data is frozen.
-    if args.task.lower().startswith("walker"):
+    if args.task.lower().startswith("walker") or args.task.lower().startswith(
+        "humanoid"
+    ):
         config["nstep"] = 1
     # if args.task.lower() == "cartpoleswingupsparse":
     #     config["rep_lr_scale"] = 1.0
@@ -1365,7 +1364,7 @@ if __name__ == "__main__":
     subfolder = "seed-" + str(args.seed).zfill(3)
     relpath = "-".join([subfolder, relpath])
     algo = os.path.basename(__file__).split(".")[0]
-    # algo = f"{algo}_{args.rep_lr_scale}" 
+    # algo = f"{algo}_{args.rep_lr_scale}"
     args.log_dir = os.path.join(args.log_dir, args.task, algo, relpath)
 
     if not args.write_terminal:

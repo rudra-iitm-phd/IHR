@@ -1,0 +1,100 @@
+{
+  "meta": {
+    "task": "BallInCup",
+    "N": 4000,
+    "actor": "/home/rudra/Documents/rep_lr/logs_fresh/BallInCup/algo3_loss_change/seed-000-2026-09-18-19-25-00/nn_model_save/actor_model_5000192.pt",
+    "critic": "/home/rudra/Documents/rep_lr/logs_fresh/BallInCup/algo3_loss_change/seed-000-2026-09-18-19-25-00/nn_model_save/critic_model_5000192.pt",
+    "state_metric": "/home/rudra/Documents/rep_lr/logs_fresh/BallInCup/algo3_loss_change/seed-000-2026-09-18-19-25-00/nn_model_save/state_metric_model_4104192.pt",
+    "sa_metric": "/home/rudra/Documents/rep_lr/logs_fresh/BallInCup/algo3_loss_change/seed-000-2026-09-18-19-25-00/nn_model_save/state_action_metric_model_4104192.pt",
+    "normalizer": "/home/rudra/Documents/rep_lr/logs_fresh/BallInCup/algo3_loss_change/seed-000-2026-09-18-19-25-00/nn_model_save/obs_normalizer_model_4104192.pt",
+    "metric_normalizer": "/home/rudra/Documents/rep_lr/logs_fresh/BallInCup/algo3_loss_change/seed-000-2026-09-18-19-25-00/nn_model_save/obs_normalizer_model_4104192.pt",
+    "reward_scaling": 1.0,
+    "rollout_mean_return": 966.0,
+    "symmetrize": "max",
+    "embed": "mds",
+    "q_mode": "mean",
+    "q_units": "reward",
+    "smooth_k": 0
+  },
+  "Q": {
+    "min": 73.55618286132812,
+    "median": 99.82064056396484,
+    "max": 99.98613739013672
+  },
+  "state": {
+    "self_distance_median": 2.061153470123145e-09,
+    "offdiag_median": 0.9925358295440674,
+    "offdiag_p05": 0.8884467482566833,
+    "offdiag_p95": 3.600142478942871,
+    "relative_asymmetry": 0.02839788608253002,
+    "triangle_violation_rate": 0.011172373766686013,
+    "spearman_D_dq": 0.3498271659534863,
+    "stress": 0.26771993551412554
+  },
+  "state_action": {
+    "self_distance_median": 7.006317900959402e-05,
+    "offdiag_median": 1.0311875343322754,
+    "offdiag_p05": 0.8330033421516418,
+    "offdiag_p95": 5.270135402679443,
+    "relative_asymmetry": 0.04516098275780678,
+    "triangle_violation_rate": 0.009386711498721586,
+    "spearman_D_dq": 0.37643356297320474,
+    "stress": 0.21248480125608776
+  },
+  "anchors": [
+    {
+      "index": 1831,
+      "Q": 99.82064056396484,
+      "spearman_dsa_dq": 0.17150219470621245
+    }
+  ],
+  "args": {
+    "seed": 0,
+    "device": "gpu",
+    "device_id": 0,
+    "run_dir": null,
+    "metric_run_dir": null,
+    "step": null,
+    "metric_step": null,
+    "actor_prefix": "actor",
+    "critic_prefix": "critic",
+    "state_metric_prefix": "state_metric",
+    "sa_metric_prefix": "sa_metric",
+    "normalizer_prefix": "obs_normalizer",
+    "actor_path": "/home/rudra/Documents/rep_lr/logs_fresh/BallInCup/algo3_loss_change/seed-000-2026-09-18-19-25-00/nn_model_save/actor_model_5000192.pt",
+    "critic_path": "/home/rudra/Documents/rep_lr/logs_fresh/BallInCup/algo3_loss_change/seed-000-2026-09-18-19-25-00/nn_model_save/critic_model_5000192.pt",
+    "state_metric_path": "/home/rudra/Documents/rep_lr/logs_fresh/BallInCup/algo3_loss_change/seed-000-2026-09-18-19-25-00/nn_model_save/state_metric_model_4104192.pt",
+    "sa_metric_path": "/home/rudra/Documents/rep_lr/logs_fresh/BallInCup/algo3_loss_change/seed-000-2026-09-18-19-25-00/nn_model_save/state_action_metric_model_4104192.pt",
+    "normalizer_path": "/home/rudra/Documents/rep_lr/logs_fresh/BallInCup/algo3_loss_change/seed-000-2026-09-18-19-25-00/nn_model_save/obs_normalizer_model_4104192.pt",
+    "metric_normalizer_path": "/home/rudra/Documents/rep_lr/logs_fresh/BallInCup/algo3_loss_change/seed-000-2026-09-18-19-25-00/nn_model_save/obs_normalizer_model_4104192.pt",
+    "task": "BallInCup",
+    "hidden_size": null,
+    "metric_hidden_size": null,
+    "episode_length": null,
+    "reward_scaling": null,
+    "num_envs": 16,
+    "horizon": null,
+    "num_states": 4000,
+    "stochastic": false,
+    "norm_passes": 2,
+    "q_mode": "mean",
+    "q_samples": 16,
+    "q_units": "reward",
+    "metric_input": "normalized",
+    "symmetrize": "max",
+    "embed": "mds",
+    "anchor_quantiles": [
+      0.5
+    ],
+    "anchor_index": null,
+    "levels": 20,
+    "color_scale": "hybrid",
+    "mask_k": 8,
+    "mask_factor": 3.0,
+    "smooth_k": 0,
+    "dq_overlay": true,
+    "block": 32,
+    "out_dir": "metric_viz",
+    "inspect": false
+  }
+}

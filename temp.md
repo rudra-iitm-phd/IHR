@@ -30,3 +30,5 @@ Your presentation should contain:
    and what's your minimum viable outcome if the main hypothesis doesn't pan out?
 
 8. **Timeline** — Week-by-week plan from proposal to final submission, with milestones.
+
+

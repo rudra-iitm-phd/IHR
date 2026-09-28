@@ -1,0 +1,1313 @@
+E0909 07:10:51.016418 1267112 cuda_executor.cc:1526] Could not get kernel mode driver version: (INVALID_ARGUMENT: Version does not match the format X.Y.Z)
+E0909 07:10:51.025012 1267000 cuda_executor.cc:1526] Could not get kernel mode driver version: (INVALID_ARGUMENT: Version does not match the format X.Y.Z)
+[32m[harness] num_envs=128 total_env_steps=5000000 batch=512 train_per_step=8 UTD=0.0625 seed=8192 transitions log_every=128000 transitions normalize_obs=True[0m
+[32m[algorithm] lr=0.001 tau=0.005 nstep=1 update_every=2 stddev=linear(1.0,0.1,500000) origin=8192 bootstrap_on_truncation=True matching_dims=True[0m
+[32mStart prefilling replay buffer[0m
+[32mStart DHPG training[0m
+------------------------------------------------
+|                Train/Steps |        1.36e+05 |
+|           Loss/Loss_critic |             nan |
+|  Loss/Loss_abstract_critic |             nan |
+| Loss/Loss_lax_bisimulation |             nan |
+|       Loss/Loss_transition |             nan |
+|           Loss/Loss_reward |             nan |
+|            Loss/Loss_actor |             nan |
+|         DHPG/Q_actual_mean |             nan |
+|       DHPG/Q_abstract_mean |             nan |
+|     DHPG/Value_equivalence |             nan |
+|           Norm/actor_model |             nan |
+|          Norm/critic_model |             nan |
+| Norm/abstract_critic_model |             nan |
+|   Norm/state_encoder_model |             nan |
+|  Norm/action_encoder_model |             nan |
+|                Eval/Return |             nan |
+------------------------------------------------
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+------------------------------------------------
+|                Train/Steps |        2.64e+05 |
+|           Loss/Loss_critic |             nan |
+|  Loss/Loss_abstract_critic |             nan |
+| Loss/Loss_lax_bisimulation |             nan |
+|       Loss/Loss_transition |             nan |
+|           Loss/Loss_reward |             nan |
+|            Loss/Loss_actor |             nan |
+|         DHPG/Q_actual_mean |             nan |
+|       DHPG/Q_abstract_mean |             nan |
+|     DHPG/Value_equivalence |             nan |
+|           Norm/actor_model |             nan |
+|          Norm/critic_model |             nan |
+| Norm/abstract_critic_model |             nan |
+|   Norm/state_encoder_model |             nan |
+|  Norm/action_encoder_model |             nan |
+|                Eval/Return |             nan |
+------------------------------------------------
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+------------------------------------------------
+|                Train/Steps |        3.92e+05 |
+|           Loss/Loss_critic |             nan |
+|  Loss/Loss_abstract_critic |             nan |
+| Loss/Loss_lax_bisimulation |             nan |
+|       Loss/Loss_transition |             nan |
+|           Loss/Loss_reward |             nan |
+|            Loss/Loss_actor |             nan |
+|         DHPG/Q_actual_mean |             nan |
+|       DHPG/Q_abstract_mean |             nan |
+|     DHPG/Value_equivalence |             nan |
+|           Norm/actor_model |             nan |
+|          Norm/critic_model |             nan |
+| Norm/abstract_critic_model |             nan |
+|   Norm/state_encoder_model |             nan |
+|  Norm/action_encoder_model |             nan |
+|                Eval/Return |             nan |
+------------------------------------------------
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+------------------------------------------------
+|                Train/Steps |         5.2e+05 |
+|           Loss/Loss_critic |             nan |
+|  Loss/Loss_abstract_critic |             nan |
+| Loss/Loss_lax_bisimulation |             nan |
+|       Loss/Loss_transition |             nan |
+|           Loss/Loss_reward |             nan |
+|            Loss/Loss_actor |             nan |
+|         DHPG/Q_actual_mean |             nan |
+|       DHPG/Q_abstract_mean |             nan |
+|     DHPG/Value_equivalence |             nan |
+|           Norm/actor_model |             nan |
+|          Norm/critic_model |             nan |
+| Norm/abstract_critic_model |             nan |
+|   Norm/state_encoder_model |             nan |
+|  Norm/action_encoder_model |             nan |
+|                Eval/Return |             nan |
+------------------------------------------------
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+------------------------------------------------
+|                Train/Steps |        6.48e+05 |
+|           Loss/Loss_critic |             nan |
+|  Loss/Loss_abstract_critic |             nan |
+| Loss/Loss_lax_bisimulation |             nan |
+|       Loss/Loss_transition |             nan |
+|           Loss/Loss_reward |             nan |
+|            Loss/Loss_actor |             nan |
+|         DHPG/Q_actual_mean |             nan |
+|       DHPG/Q_abstract_mean |             nan |
+|     DHPG/Value_equivalence |             nan |
+|           Norm/actor_model |             nan |
+|          Norm/critic_model |             nan |
+| Norm/abstract_critic_model |             nan |
+|   Norm/state_encoder_model |             nan |
+|  Norm/action_encoder_model |             nan |
+|                Eval/Return |             nan |
+------------------------------------------------
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+------------------------------------------------
+|                Train/Steps |        7.76e+05 |
+|           Loss/Loss_critic |             nan |
+|  Loss/Loss_abstract_critic |             nan |
+| Loss/Loss_lax_bisimulation |             nan |
+|       Loss/Loss_transition |             nan |
+|           Loss/Loss_reward |             nan |
+|            Loss/Loss_actor |             nan |
+|         DHPG/Q_actual_mean |             nan |
+|       DHPG/Q_abstract_mean |             nan |
+|     DHPG/Value_equivalence |             nan |
+|           Norm/actor_model |             nan |
+|          Norm/critic_model |             nan |
+| Norm/abstract_critic_model |             nan |
+|   Norm/state_encoder_model |             nan |
+|  Norm/action_encoder_model |             nan |
+|                Eval/Return |             nan |
+------------------------------------------------
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+------------------------------------------------
+|                Train/Steps |        9.04e+05 |
+|           Loss/Loss_critic |             nan |
+|  Loss/Loss_abstract_critic |             nan |
+| Loss/Loss_lax_bisimulation |             nan |
+|       Loss/Loss_transition |             nan |
+|           Loss/Loss_reward |             nan |
+|            Loss/Loss_actor |             nan |
+|         DHPG/Q_actual_mean |             nan |
+|       DHPG/Q_abstract_mean |             nan |
+|     DHPG/Value_equivalence |             nan |
+|           Norm/actor_model |             nan |
+|          Norm/critic_model |             nan |
+| Norm/abstract_critic_model |             nan |
+|   Norm/state_encoder_model |             nan |
+|  Norm/action_encoder_model |             nan |
+|                Eval/Return |             nan |
+------------------------------------------------
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+------------------------------------------------
+|                Train/Steps |        1.03e+06 |
+|           Loss/Loss_critic |             nan |
+|  Loss/Loss_abstract_critic |             nan |
+| Loss/Loss_lax_bisimulation |             nan |
+|       Loss/Loss_transition |             nan |
+|           Loss/Loss_reward |             nan |
+|            Loss/Loss_actor |             nan |
+|         DHPG/Q_actual_mean |             nan |
+|       DHPG/Q_abstract_mean |             nan |
+|     DHPG/Value_equivalence |             nan |
+|           Norm/actor_model |             nan |
+|          Norm/critic_model |             nan |
+| Norm/abstract_critic_model |             nan |
+|   Norm/state_encoder_model |             nan |
+|  Norm/action_encoder_model |             nan |
+|                Eval/Return |             nan |
+------------------------------------------------
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+[32mSaving model …[0m
+[32mDone.[0m
+[32mSaving model …[0m
+[32mDone.[0m
+------------------------------------------------
+|                Train/Steps |        1.16e+06 |
+|           Loss/Loss_critic |             nan |
+|  Loss/Loss_abstract_critic |             nan |
+| Loss/Loss_lax_bisimulation |             nan |
+|       Loss/Loss_transition |             nan |
+|           Loss/Loss_reward |             nan |
+|            Loss/Loss_actor |             nan |
+|         DHPG/Q_actual_mean |             nan |
+|       DHPG/Q_abstract_mean |             nan |
+|     DHPG/Value_equivalence |             nan |
+|           Norm/actor_model |             nan |
+|          Norm/critic_model |             nan |
+| Norm/abstract_critic_model |             nan |
+|   Norm/state_encoder_model |             nan |
+|  Norm/action_encoder_model |             nan |
+|                Eval/Return |             nan |
+------------------------------------------------
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+------------------------------------------------
+|                Train/Steps |        1.29e+06 |
+|           Loss/Loss_critic |             nan |
+|  Loss/Loss_abstract_critic |             nan |
+| Loss/Loss_lax_bisimulation |             nan |
+|       Loss/Loss_transition |             nan |
+|           Loss/Loss_reward |             nan |
+|            Loss/Loss_actor |             nan |
+|         DHPG/Q_actual_mean |             nan |
+|       DHPG/Q_abstract_mean |             nan |
+|     DHPG/Value_equivalence |             nan |
+|           Norm/actor_model |             nan |
+|          Norm/critic_model |             nan |
+| Norm/abstract_critic_model |             nan |
+|   Norm/state_encoder_model |             nan |
+|  Norm/action_encoder_model |             nan |
+|                Eval/Return |             nan |
+------------------------------------------------
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+------------------------------------------------
+|                Train/Steps |        1.42e+06 |
+|           Loss/Loss_critic |             nan |
+|  Loss/Loss_abstract_critic |             nan |
+| Loss/Loss_lax_bisimulation |             nan |
+|       Loss/Loss_transition |             nan |
+|           Loss/Loss_reward |             nan |
+|            Loss/Loss_actor |             nan |
+|         DHPG/Q_actual_mean |             nan |
+|       DHPG/Q_abstract_mean |             nan |
+|     DHPG/Value_equivalence |             nan |
+|           Norm/actor_model |             nan |
+|          Norm/critic_model |             nan |
+| Norm/abstract_critic_model |             nan |
+|   Norm/state_encoder_model |             nan |
+|  Norm/action_encoder_model |             nan |
+|                Eval/Return |             nan |
+------------------------------------------------
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+------------------------------------------------
+|                Train/Steps |        1.54e+06 |
+|           Loss/Loss_critic |             nan |
+|  Loss/Loss_abstract_critic |             nan |
+| Loss/Loss_lax_bisimulation |             nan |
+|       Loss/Loss_transition |             nan |
+|           Loss/Loss_reward |             nan |
+|            Loss/Loss_actor |             nan |
+|         DHPG/Q_actual_mean |             nan |
+|       DHPG/Q_abstract_mean |             nan |
+|     DHPG/Value_equivalence |             nan |
+|           Norm/actor_model |             nan |
+|          Norm/critic_model |             nan |
+| Norm/abstract_critic_model |             nan |
+|   Norm/state_encoder_model |             nan |
+|  Norm/action_encoder_model |             nan |
+|                Eval/Return |             nan |
+------------------------------------------------
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+------------------------------------------------
+|                Train/Steps |        1.67e+06 |
+|           Loss/Loss_critic |             nan |
+|  Loss/Loss_abstract_critic |             nan |
+| Loss/Loss_lax_bisimulation |             nan |
+|       Loss/Loss_transition |             nan |
+|           Loss/Loss_reward |             nan |
+|            Loss/Loss_actor |             nan |
+|         DHPG/Q_actual_mean |             nan |
+|       DHPG/Q_abstract_mean |             nan |
+|     DHPG/Value_equivalence |             nan |
+|           Norm/actor_model |             nan |
+|          Norm/critic_model |             nan |
+| Norm/abstract_critic_model |             nan |
+|   Norm/state_encoder_model |             nan |
+|  Norm/action_encoder_model |             nan |
+|                Eval/Return |             nan |
+------------------------------------------------
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+------------------------------------------------
+|                Train/Steps |         1.8e+06 |
+|           Loss/Loss_critic |             nan |
+|  Loss/Loss_abstract_critic |             nan |
+| Loss/Loss_lax_bisimulation |             nan |
+|       Loss/Loss_transition |             nan |
+|           Loss/Loss_reward |             nan |
+|            Loss/Loss_actor |             nan |
+|         DHPG/Q_actual_mean |             nan |
+|       DHPG/Q_abstract_mean |             nan |
+|     DHPG/Value_equivalence |             nan |
+|           Norm/actor_model |             nan |
+|          Norm/critic_model |             nan |
+| Norm/abstract_critic_model |             nan |
+|   Norm/state_encoder_model |             nan |
+|  Norm/action_encoder_model |             nan |
+|                Eval/Return |             nan |
+------------------------------------------------
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+------------------------------------------------
+|                Train/Steps |        1.93e+06 |
+|           Loss/Loss_critic |             nan |
+|  Loss/Loss_abstract_critic |             nan |
+| Loss/Loss_lax_bisimulation |             nan |
+|       Loss/Loss_transition |             nan |
+|           Loss/Loss_reward |             nan |
+|            Loss/Loss_actor |             nan |
+|         DHPG/Q_actual_mean |             nan |
+|       DHPG/Q_abstract_mean |             nan |
+|     DHPG/Value_equivalence |             nan |
+|           Norm/actor_model |             nan |
+|          Norm/critic_model |             nan |
+| Norm/abstract_critic_model |             nan |
+|   Norm/state_encoder_model |             nan |
+|  Norm/action_encoder_model |             nan |
+|                Eval/Return |             nan |
+------------------------------------------------
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+------------------------------------------------
+|                Train/Steps |        2.06e+06 |
+|           Loss/Loss_critic |             nan |
+|  Loss/Loss_abstract_critic |             nan |
+| Loss/Loss_lax_bisimulation |             nan |
+|       Loss/Loss_transition |             nan |
+|           Loss/Loss_reward |             nan |
+|            Loss/Loss_actor |             nan |
+|         DHPG/Q_actual_mean |             nan |
+|       DHPG/Q_abstract_mean |             nan |
+|     DHPG/Value_equivalence |             nan |
+|           Norm/actor_model |             nan |
+|          Norm/critic_model |             nan |
+| Norm/abstract_critic_model |             nan |
+|   Norm/state_encoder_model |             nan |
+|  Norm/action_encoder_model |             nan |
+|                Eval/Return |             nan |
+------------------------------------------------
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+[32mSaving model …[0m
+[32mDone.[0m
+[32mSaving model …[0m
+[32mDone.[0m
+------------------------------------------------
+|                Train/Steps |        2.18e+06 |
+|           Loss/Loss_critic |             nan |
+|  Loss/Loss_abstract_critic |             nan |
+| Loss/Loss_lax_bisimulation |             nan |
+|       Loss/Loss_transition |             nan |
+|           Loss/Loss_reward |             nan |
+|            Loss/Loss_actor |             nan |
+|         DHPG/Q_actual_mean |             nan |
+|       DHPG/Q_abstract_mean |             nan |
+|     DHPG/Value_equivalence |             nan |
+|           Norm/actor_model |             nan |
+|          Norm/critic_model |             nan |
+| Norm/abstract_critic_model |             nan |
+|   Norm/state_encoder_model |             nan |
+|  Norm/action_encoder_model |             nan |
+|                Eval/Return |             nan |
+------------------------------------------------
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+------------------------------------------------
+|                Train/Steps |        2.31e+06 |
+|           Loss/Loss_critic |             nan |
+|  Loss/Loss_abstract_critic |             nan |
+| Loss/Loss_lax_bisimulation |             nan |
+|       Loss/Loss_transition |             nan |
+|           Loss/Loss_reward |             nan |
+|            Loss/Loss_actor |             nan |
+|         DHPG/Q_actual_mean |             nan |
+|       DHPG/Q_abstract_mean |             nan |
+|     DHPG/Value_equivalence |             nan |
+|           Norm/actor_model |             nan |
+|          Norm/critic_model |             nan |
+| Norm/abstract_critic_model |             nan |
+|   Norm/state_encoder_model |             nan |
+|  Norm/action_encoder_model |             nan |
+|                Eval/Return |             nan |
+------------------------------------------------
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+------------------------------------------------
+|                Train/Steps |        2.44e+06 |
+|           Loss/Loss_critic |             nan |
+|  Loss/Loss_abstract_critic |             nan |
+| Loss/Loss_lax_bisimulation |             nan |
+|       Loss/Loss_transition |             nan |
+|           Loss/Loss_reward |             nan |
+|            Loss/Loss_actor |             nan |
+|         DHPG/Q_actual_mean |             nan |
+|       DHPG/Q_abstract_mean |             nan |
+|     DHPG/Value_equivalence |             nan |
+|           Norm/actor_model |             nan |
+|          Norm/critic_model |             nan |
+| Norm/abstract_critic_model |             nan |
+|   Norm/state_encoder_model |             nan |
+|  Norm/action_encoder_model |             nan |
+|                Eval/Return |             nan |
+------------------------------------------------
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+------------------------------------------------
+|                Train/Steps |        2.57e+06 |
+|           Loss/Loss_critic |             nan |
+|  Loss/Loss_abstract_critic |             nan |
+| Loss/Loss_lax_bisimulation |             nan |
+|       Loss/Loss_transition |             nan |
+|           Loss/Loss_reward |             nan |
+|            Loss/Loss_actor |             nan |
+|         DHPG/Q_actual_mean |             nan |
+|       DHPG/Q_abstract_mean |             nan |
+|     DHPG/Value_equivalence |             nan |
+|           Norm/actor_model |             nan |
+|          Norm/critic_model |             nan |
+| Norm/abstract_critic_model |             nan |
+|   Norm/state_encoder_model |             nan |
+|  Norm/action_encoder_model |             nan |
+|                Eval/Return |             nan |
+------------------------------------------------
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+------------------------------------------------
+|                Train/Steps |         2.7e+06 |
+|           Loss/Loss_critic |             nan |
+|  Loss/Loss_abstract_critic |             nan |
+| Loss/Loss_lax_bisimulation |             nan |
+|       Loss/Loss_transition |             nan |
+|           Loss/Loss_reward |             nan |
+|            Loss/Loss_actor |             nan |
+|         DHPG/Q_actual_mean |             nan |
+|       DHPG/Q_abstract_mean |             nan |
+|     DHPG/Value_equivalence |             nan |
+|           Norm/actor_model |             nan |
+|          Norm/critic_model |             nan |
+| Norm/abstract_critic_model |             nan |
+|   Norm/state_encoder_model |             nan |
+|  Norm/action_encoder_model |             nan |
+|                Eval/Return |             nan |
+------------------------------------------------
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+------------------------------------------------
+|                Train/Steps |        2.82e+06 |
+|           Loss/Loss_critic |             nan |
+|  Loss/Loss_abstract_critic |             nan |
+| Loss/Loss_lax_bisimulation |             nan |
+|       Loss/Loss_transition |             nan |
+|           Loss/Loss_reward |             nan |
+|            Loss/Loss_actor |             nan |
+|         DHPG/Q_actual_mean |             nan |
+|       DHPG/Q_abstract_mean |             nan |
+|     DHPG/Value_equivalence |             nan |
+|           Norm/actor_model |             nan |
+|          Norm/critic_model |             nan |
+| Norm/abstract_critic_model |             nan |
+|   Norm/state_encoder_model |             nan |
+|  Norm/action_encoder_model |             nan |
+|                Eval/Return |             nan |
+------------------------------------------------
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+------------------------------------------------
+|                Train/Steps |        2.95e+06 |
+|           Loss/Loss_critic |             nan |
+|  Loss/Loss_abstract_critic |             nan |
+| Loss/Loss_lax_bisimulation |             nan |
+|       Loss/Loss_transition |             nan |
+|           Loss/Loss_reward |             nan |
+|            Loss/Loss_actor |             nan |
+|         DHPG/Q_actual_mean |             nan |
+|       DHPG/Q_abstract_mean |             nan |
+|     DHPG/Value_equivalence |             nan |
+|           Norm/actor_model |             nan |
+|          Norm/critic_model |             nan |
+| Norm/abstract_critic_model |             nan |
+|   Norm/state_encoder_model |             nan |
+|  Norm/action_encoder_model |             nan |
+|                Eval/Return |             nan |
+------------------------------------------------
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+------------------------------------------------
+|                Train/Steps |        3.08e+06 |
+|           Loss/Loss_critic |             nan |
+|  Loss/Loss_abstract_critic |             nan |
+| Loss/Loss_lax_bisimulation |             nan |
+|       Loss/Loss_transition |             nan |
+|           Loss/Loss_reward |             nan |
+|            Loss/Loss_actor |             nan |
+|         DHPG/Q_actual_mean |             nan |
+|       DHPG/Q_abstract_mean |             nan |
+|     DHPG/Value_equivalence |             nan |
+|           Norm/actor_model |             nan |
+|          Norm/critic_model |             nan |
+| Norm/abstract_critic_model |             nan |
+|   Norm/state_encoder_model |             nan |
+|  Norm/action_encoder_model |             nan |
+|                Eval/Return |             nan |
+------------------------------------------------
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+[32mSaving model …[0m
+[32mDone.[0m
+[32mSaving model …[0m
+[32mDone.[0m
+------------------------------------------------
+|                Train/Steps |        3.21e+06 |
+|           Loss/Loss_critic |             nan |
+|  Loss/Loss_abstract_critic |             nan |
+| Loss/Loss_lax_bisimulation |             nan |
+|       Loss/Loss_transition |             nan |
+|           Loss/Loss_reward |             nan |
+|            Loss/Loss_actor |             nan |
+|         DHPG/Q_actual_mean |             nan |
+|       DHPG/Q_abstract_mean |             nan |
+|     DHPG/Value_equivalence |             nan |
+|           Norm/actor_model |             nan |
+|          Norm/critic_model |             nan |
+| Norm/abstract_critic_model |             nan |
+|   Norm/state_encoder_model |             nan |
+|  Norm/action_encoder_model |             nan |
+|                Eval/Return |             nan |
+------------------------------------------------
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+------------------------------------------------
+|                Train/Steps |        3.34e+06 |
+|           Loss/Loss_critic |             nan |
+|  Loss/Loss_abstract_critic |             nan |
+| Loss/Loss_lax_bisimulation |             nan |
+|       Loss/Loss_transition |             nan |
+|           Loss/Loss_reward |             nan |
+|            Loss/Loss_actor |             nan |
+|         DHPG/Q_actual_mean |             nan |
+|       DHPG/Q_abstract_mean |             nan |
+|     DHPG/Value_equivalence |             nan |
+|           Norm/actor_model |             nan |
+|          Norm/critic_model |             nan |
+| Norm/abstract_critic_model |             nan |
+|   Norm/state_encoder_model |             nan |
+|  Norm/action_encoder_model |             nan |
+|                Eval/Return |             nan |
+------------------------------------------------
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+------------------------------------------------
+|                Train/Steps |        3.46e+06 |
+|           Loss/Loss_critic |             nan |
+|  Loss/Loss_abstract_critic |             nan |
+| Loss/Loss_lax_bisimulation |             nan |
+|       Loss/Loss_transition |             nan |
+|           Loss/Loss_reward |             nan |
+|            Loss/Loss_actor |             nan |
+|         DHPG/Q_actual_mean |             nan |
+|       DHPG/Q_abstract_mean |             nan |
+|     DHPG/Value_equivalence |             nan |
+|           Norm/actor_model |             nan |
+|          Norm/critic_model |             nan |
+| Norm/abstract_critic_model |             nan |
+|   Norm/state_encoder_model |             nan |
+|  Norm/action_encoder_model |             nan |
+|                Eval/Return |             nan |
+------------------------------------------------
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+------------------------------------------------
+|                Train/Steps |        3.59e+06 |
+|           Loss/Loss_critic |             nan |
+|  Loss/Loss_abstract_critic |             nan |
+| Loss/Loss_lax_bisimulation |             nan |
+|       Loss/Loss_transition |             nan |
+|           Loss/Loss_reward |             nan |
+|            Loss/Loss_actor |             nan |
+|         DHPG/Q_actual_mean |             nan |
+|       DHPG/Q_abstract_mean |             nan |
+|     DHPG/Value_equivalence |             nan |
+|           Norm/actor_model |             nan |
+|          Norm/critic_model |             nan |
+| Norm/abstract_critic_model |             nan |
+|   Norm/state_encoder_model |             nan |
+|  Norm/action_encoder_model |             nan |
+|                Eval/Return |             nan |
+------------------------------------------------
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+------------------------------------------------
+|                Train/Steps |        3.72e+06 |
+|           Loss/Loss_critic |             nan |
+|  Loss/Loss_abstract_critic |             nan |
+| Loss/Loss_lax_bisimulation |             nan |
+|       Loss/Loss_transition |             nan |
+|           Loss/Loss_reward |             nan |
+|            Loss/Loss_actor |             nan |
+|         DHPG/Q_actual_mean |             nan |
+|       DHPG/Q_abstract_mean |             nan |
+|     DHPG/Value_equivalence |             nan |
+|           Norm/actor_model |             nan |
+|          Norm/critic_model |             nan |
+| Norm/abstract_critic_model |             nan |
+|   Norm/state_encoder_model |             nan |
+|  Norm/action_encoder_model |             nan |
+|                Eval/Return |             nan |
+------------------------------------------------
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+------------------------------------------------
+|                Train/Steps |        3.85e+06 |
+|           Loss/Loss_critic |             nan |
+|  Loss/Loss_abstract_critic |             nan |
+| Loss/Loss_lax_bisimulation |             nan |
+|       Loss/Loss_transition |             nan |
+|           Loss/Loss_reward |             nan |
+|            Loss/Loss_actor |             nan |
+|         DHPG/Q_actual_mean |             nan |
+|       DHPG/Q_abstract_mean |             nan |
+|     DHPG/Value_equivalence |             nan |
+|           Norm/actor_model |             nan |
+|          Norm/critic_model |             nan |
+| Norm/abstract_critic_model |             nan |
+|   Norm/state_encoder_model |             nan |
+|  Norm/action_encoder_model |             nan |
+|                Eval/Return |             nan |
+------------------------------------------------
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+------------------------------------------------
+|                Train/Steps |        3.98e+06 |
+|           Loss/Loss_critic |             nan |
+|  Loss/Loss_abstract_critic |             nan |
+| Loss/Loss_lax_bisimulation |             nan |
+|       Loss/Loss_transition |             nan |
+|           Loss/Loss_reward |             nan |
+|            Loss/Loss_actor |             nan |
+|         DHPG/Q_actual_mean |             nan |
+|       DHPG/Q_abstract_mean |             nan |
+|     DHPG/Value_equivalence |             nan |
+|           Norm/actor_model |             nan |
+|          Norm/critic_model |             nan |
+| Norm/abstract_critic_model |             nan |
+|   Norm/state_encoder_model |             nan |
+|  Norm/action_encoder_model |             nan |
+|                Eval/Return |             nan |
+------------------------------------------------
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+------------------------------------------------
+|                Train/Steps |         4.1e+06 |
+|           Loss/Loss_critic |             nan |
+|  Loss/Loss_abstract_critic |             nan |
+| Loss/Loss_lax_bisimulation |             nan |
+|       Loss/Loss_transition |             nan |
+|           Loss/Loss_reward |             nan |
+|            Loss/Loss_actor |             nan |
+|         DHPG/Q_actual_mean |             nan |
+|       DHPG/Q_abstract_mean |             nan |
+|     DHPG/Value_equivalence |             nan |
+|           Norm/actor_model |             nan |
+|          Norm/critic_model |             nan |
+| Norm/abstract_critic_model |             nan |
+|   Norm/state_encoder_model |             nan |
+|  Norm/action_encoder_model |             nan |
+|                Eval/Return |             nan |
+------------------------------------------------
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+[32mSaving model …[0m
+[32mDone.[0m
+[32mSaving model …[0m
+[32mDone.[0m
+------------------------------------------------
+|                Train/Steps |        4.23e+06 |
+|           Loss/Loss_critic |             nan |
+|  Loss/Loss_abstract_critic |             nan |
+| Loss/Loss_lax_bisimulation |             nan |
+|       Loss/Loss_transition |             nan |
+|           Loss/Loss_reward |             nan |
+|            Loss/Loss_actor |             nan |
+|         DHPG/Q_actual_mean |             nan |
+|       DHPG/Q_abstract_mean |             nan |
+|     DHPG/Value_equivalence |             nan |
+|           Norm/actor_model |             nan |
+|          Norm/critic_model |             nan |
+| Norm/abstract_critic_model |             nan |
+|   Norm/state_encoder_model |             nan |
+|  Norm/action_encoder_model |             nan |
+|                Eval/Return |             nan |
+------------------------------------------------
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+------------------------------------------------
+|                Train/Steps |        4.36e+06 |
+|           Loss/Loss_critic |             nan |
+|  Loss/Loss_abstract_critic |             nan |
+| Loss/Loss_lax_bisimulation |             nan |
+|       Loss/Loss_transition |             nan |
+|           Loss/Loss_reward |             nan |
+|            Loss/Loss_actor |             nan |
+|         DHPG/Q_actual_mean |             nan |
+|       DHPG/Q_abstract_mean |             nan |
+|     DHPG/Value_equivalence |             nan |
+|           Norm/actor_model |             nan |
+|          Norm/critic_model |             nan |
+| Norm/abstract_critic_model |             nan |
+|   Norm/state_encoder_model |             nan |
+|  Norm/action_encoder_model |             nan |
+|                Eval/Return |             nan |
+------------------------------------------------
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+------------------------------------------------
+|                Train/Steps |        4.49e+06 |
+|           Loss/Loss_critic |             nan |
+|  Loss/Loss_abstract_critic |             nan |
+| Loss/Loss_lax_bisimulation |             nan |
+|       Loss/Loss_transition |             nan |
+|           Loss/Loss_reward |             nan |
+|            Loss/Loss_actor |             nan |
+|         DHPG/Q_actual_mean |             nan |
+|       DHPG/Q_abstract_mean |             nan |
+|     DHPG/Value_equivalence |             nan |
+|           Norm/actor_model |             nan |
+|          Norm/critic_model |             nan |
+| Norm/abstract_critic_model |             nan |
+|   Norm/state_encoder_model |             nan |
+|  Norm/action_encoder_model |             nan |
+|                Eval/Return |             nan |
+------------------------------------------------
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+------------------------------------------------
+|                Train/Steps |        4.62e+06 |
+|           Loss/Loss_critic |             nan |
+|  Loss/Loss_abstract_critic |             nan |
+| Loss/Loss_lax_bisimulation |             nan |
+|       Loss/Loss_transition |             nan |
+|           Loss/Loss_reward |             nan |
+|            Loss/Loss_actor |             nan |
+|         DHPG/Q_actual_mean |             nan |
+|       DHPG/Q_abstract_mean |             nan |
+|     DHPG/Value_equivalence |             nan |
+|           Norm/actor_model |             nan |
+|          Norm/critic_model |             nan |
+| Norm/abstract_critic_model |             nan |
+|   Norm/state_encoder_model |             nan |
+|  Norm/action_encoder_model |             nan |
+|                Eval/Return |             nan |
+------------------------------------------------
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+------------------------------------------------
+|                Train/Steps |        4.74e+06 |
+|           Loss/Loss_critic |             nan |
+|  Loss/Loss_abstract_critic |             nan |
+| Loss/Loss_lax_bisimulation |             nan |
+|       Loss/Loss_transition |             nan |
+|           Loss/Loss_reward |             nan |
+|            Loss/Loss_actor |             nan |
+|         DHPG/Q_actual_mean |             nan |
+|       DHPG/Q_abstract_mean |             nan |
+|     DHPG/Value_equivalence |             nan |
+|           Norm/actor_model |             nan |
+|          Norm/critic_model |             nan |
+| Norm/abstract_critic_model |             nan |
+|   Norm/state_encoder_model |             nan |
+|  Norm/action_encoder_model |             nan |
+|                Eval/Return |             nan |
+------------------------------------------------
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+------------------------------------------------
+|                Train/Steps |        4.87e+06 |
+|           Loss/Loss_critic |             nan |
+|  Loss/Loss_abstract_critic |             nan |
+| Loss/Loss_lax_bisimulation |             nan |
+|       Loss/Loss_transition |             nan |
+|           Loss/Loss_reward |             nan |
+|            Loss/Loss_actor |             nan |
+|         DHPG/Q_actual_mean |             nan |
+|       DHPG/Q_abstract_mean |             nan |
+|     DHPG/Value_equivalence |             nan |
+|           Norm/actor_model |             nan |
+|          Norm/critic_model |             nan |
+| Norm/abstract_critic_model |             nan |
+|   Norm/state_encoder_model |             nan |
+|  Norm/action_encoder_model |             nan |
+|                Eval/Return |             nan |
+------------------------------------------------
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+------------------------------------------------
+|                Train/Steps |           5e+06 |
+|           Loss/Loss_critic |             nan |
+|  Loss/Loss_abstract_critic |             nan |
+| Loss/Loss_lax_bisimulation |             nan |
+|       Loss/Loss_transition |             nan |
+|           Loss/Loss_reward |             nan |
+|            Loss/Loss_actor |             nan |
+|         DHPG/Q_actual_mean |             nan |
+|       DHPG/Q_abstract_mean |             nan |
+|     DHPG/Value_equivalence |             nan |
+|           Norm/actor_model |             nan |
+|          Norm/critic_model |             nan |
+| Norm/abstract_critic_model |             nan |
+|   Norm/state_encoder_model |             nan |
+|  Norm/action_encoder_model |             nan |
+|                Eval/Return |             nan |
+------------------------------------------------
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+WARNING:tensorboardX.x2num:NaN or Inf found in input tensor.
+[32mSaving model …[0m
+[32mDone.[0m
+[32mSaving model …[0m
+[32mDone.[0m
