@@ -139,22 +139,26 @@ def sac_train_step(
         critic_loss_fn, has_aux=True
     )(state.models.critic, state.models.target_critic)
 
-    B = obs.shape[0]
-    key, shift_key, key_actor = jax.random.split(key, 3)
+    s, a, r, s_next = obs, act, reward[:, None], next_obs
+    batch = jnp.concatenate([s, a, r, s_next], axis=-1)
+    key, perm_key = jax.random.split(key)
+    batch = jax.random.permutation(perm_key, batch)
+    batch = batch[:, -1]
 
-    # Derangement: perm[i] != i, so every pair is two different transitions
-    shift = jax.random.randint(shift_key, (), 1, B)
-    perm = jnp.roll(jnp.arange(B), shift)
+    obs_dim, act_dim = obs.shape[-1], act.shape[-1]
+    # B X 1 X (obs_dim, act_dim, None, obs_dim)
+    x, b, y, x_next = (
+        batch[:, :obs_dim],
+        batch[:, obs_dim : obs_dim + act_dim],
+        batch[:, obs_dim + act_dim],
+        batch[:, obs_dim + act_dim + 1 :],
+    )
 
-    s, a, r, s_next = obs, act, reward, next_obs
-    x, b, y, x_next = s[perm], a[perm], r[perm], s_next[perm]
+    r = r[:, -1]  ## shaping reward from (B, 1, 1) --> (B, 1)
 
-    # If you want the extra singleton axis from your original code:
-    # x, b, x_next = x[:, None, :], b[:, None, :], x_next[:, None, :]
-    # y = y[:, None]
-
+    x, b, y, x_next = x[:, None, :], b[:, None, :], y[:, None], x_next[:, None, :]
     g_sx_next, g_xs_next = state.models.target_state_metric(s_next, x_next)
-    g_sx, g_xs = state.models.target_state_metric(obs, x)
+    g_sx, g_xs = state.models.target_state_metric(s, x)
     d_s = jax.lax.stop_gradient(jnp.maximum(g_sx, g_xs)).squeeze(-1)
     w = jnp.exp(-d_s / config.rep_temperature)
 
@@ -171,7 +175,7 @@ def sac_train_step(
         )
         d = jnp.maximum(d1, d2).squeeze(-1)
         weights = jax.lax.stop_gradient(jnp.exp(-d_s + d_s.min()))
-        rep_loss = weights * d
+        rep_loss = jnp.sum(weights * d)
 
         loss = sac_loss + config.rep_lr_scale * rep_loss
         return loss, (jnp.mean(log_pi), sac_loss, rep_loss)
@@ -1313,7 +1317,7 @@ if __name__ == "__main__":
     subfolder = "seed-" + str(args.seed).zfill(3)
     relpath = "-".join([subfolder, relpath])
     algo = os.path.basename(__file__).split(".")[0]
-    algo = f"{algo}_sym"
+    algo = f"{algo}_rand_perm"
     args.log_dir = os.path.join(args.log_dir, args.task, algo, relpath)
 
     if not args.write_terminal:
