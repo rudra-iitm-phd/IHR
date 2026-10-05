@@ -168,7 +168,11 @@ def sac_train_step(
         mu_s_f = jax.lax.stop_gradient(mu_s)
 
         g_sx, g_xs = state.models.state_metric(s, x)
-        u = jax.lax.stop_gradient(jnp.clip(jnp.maximum(g_sx, g_xs), 0.0, 1.0))
+        # u = jax.lax.stop_gradient(jnp.clip(jnp.maximum(g_sx, g_xs), 0.0, 1.0))
+        """ For the state action and state metric inequality, we don't need to clip the state values
+            we only need to ensure that d(s, x) >= max ( inf_b delta(d)(sa, xb), inf_a delta(d)(sa, xb))
+        """
+        u = jax.lax.stop_gradient(jnp.maximum(g_sx, g_xs)).squeeze(-1)
 
         df1, df2 = state.models.state_action_metric(
             jnp.concatenate([s, mu_s_f], axis=-1),
@@ -181,7 +185,10 @@ def sac_train_step(
             jnp.concatenate([x, mu_x_f], axis=-1),
         )
         e = jnp.maximum(ef1, ef2)
-        rep_loss = jnp.mean((1.0 - u) * d) + jnp.mean((1.0 - u) * e)
+
+        d_sa = jnp.maximum(d, e).squeeze(-1)
+        rep_loss = jnp.mean(jax.nn.relu(d_sa - u))
+        # rep_loss = jnp.mean((1.0 - u) * d) + jnp.mean((1.0 - u) * e)
 
         loss = sac_loss + config.rep_lr_scale * rep_loss
         return loss, (jnp.mean(log_pi), sac_loss, rep_loss)
@@ -1378,7 +1385,7 @@ if __name__ == "__main__":
     subfolder = "seed-" + str(args.seed).zfill(3)
     relpath = "-".join([subfolder, relpath])
     algo = os.path.basename(__file__).split(".")[0]
-    # algo = f"{algo}_{args.rep_lr_scale}"
+    algo = f"{algo}_inequality_satisfaction"
     args.log_dir = os.path.join(args.log_dir, args.task, algo, relpath)
 
     if not args.write_terminal:
