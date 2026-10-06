@@ -7,7 +7,7 @@ export XLA_FLAGS="--xla_gpu_autotune_level=0 --xla_gpu_deterministic_ops=true"
 export JAX_DEFAULT_MATMUL_PRECISION=highest
 
 algos=(algo3_loss_change)
-tasks=(BallInCup)
+tasks=(AcrobotSwingup AcrobotSwingupSparse BallInCup CartpoleBalanceSparse CartpoleSwingup CartpoleSwingupSparse CheetahRun )
 seeds=(0)
 
 mkdir -p run_logs
