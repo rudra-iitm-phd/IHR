@@ -180,11 +180,11 @@ def sac_train_step(
         )
         f = jnp.maximum(f1, f2).squeeze(-1)
 
-        constraint1 = jax.nn.relu(jax.lax.stop_gradient(d) - e) + jax.nn.relu(e - u)
+        constraint1 = jax.nn.relu(jax.lax.stop_gradient(d) - e)
 
-        constraint2 = jax.nn.relu(jax.lax.stop_gradient(d) - f) + jax.nn.relu(f - u)
+        constraint2 = jax.nn.relu(jax.lax.stop_gradient(d) - f)
 
-        rep_loss = jax.nn.relu(1.0 - u) * d + constraint1 + constraint2
+        rep_loss = jnp.sum(jax.nn.relu(1.0 - u) * d + constraint1 + constraint2)
 
         loss = sac_loss + config.rep_lr_scale * rep_loss
         return loss, (jnp.mean(log_pi), sac_loss, rep_loss)
@@ -1381,7 +1381,7 @@ if __name__ == "__main__":
     subfolder = "seed-" + str(args.seed).zfill(3)
     relpath = "-".join([subfolder, relpath])
     algo = os.path.basename(__file__).split(".")[0]
-    # algo = f"{algo}_{args.rep_lr_scale}"
+    algo = f"{algo}_fix1"
     args.log_dir = os.path.join(args.log_dir, args.task, algo, relpath)
 
     if not args.write_terminal:
