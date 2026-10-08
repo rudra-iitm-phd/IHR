@@ -6,7 +6,7 @@ export CUDA_VISIBLE_DEVICES=0
 export XLA_FLAGS="--xla_gpu_autotune_level=0 --xla_gpu_deterministic_ops=true"
 export JAX_DEFAULT_MATMUL_PRECISION=highest
 
-algos=(algo3_rank_samples)
+algos=(algo_contrast_constrain)
 tasks=(AcrobotSwingup AcrobotSwingupSparse BallInCup CartpoleBalanceSparse CartpoleSwingup CartpoleSwingupSparse CheetahRun FingerSpin FingerTurnEasy FingerTurnHard FishSwim HopperHop HopperStand ReacherEasy ReacherHard WalkerRun WalkerStand WalkerWalk)
 seeds=(0 1 2)
 
