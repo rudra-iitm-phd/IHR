@@ -341,9 +341,14 @@ def sac_train_step(
         )
         d_sb_xb = jax.lax.stop_gradient(jnp.maximum(d_sb_xb1, d_sb_xb2))
 
-        upperbound_loss = jnp.mean(jax.nn.relu(h_sax - d_sa_xa)) + jnp.mean(
+        upperbound_loss1 = jnp.mean(jax.nn.relu(h_sax - d_sa_xa)) + jnp.mean(
             jax.nn.relu(h_xbs - d_sb_xb)
         )
+        upperbound_loss2 = jnp.mean(jax.nn.relu(h_sax - u)) + jnp.mean(
+            jax.nn.relu(h_xbs - u)
+        )
+
+        upperbound_loss = jnp.mean(upperbound_loss1 + upperbound_loss2)
 
         loss = (
             jnp.mean(p1)
@@ -1424,7 +1429,7 @@ if __name__ == "__main__":
     subfolder = "seed-" + str(args.seed).zfill(3)
     relpath = "-".join([subfolder, relpath])
     algo = os.path.basename(__file__).split(".")[0]
-    algo = f"{algo}_iter4"
+    algo = f"{algo}_iter5"
     args.log_dir = os.path.join(args.log_dir, args.task, algo, relpath)
 
     if not args.write_terminal:
