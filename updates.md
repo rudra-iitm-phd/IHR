@@ -6,3 +6,4 @@
 - Policy vaidation steps added
     - In particular we want to validate whether policy is using the information of the metric space to actually take actions.
     - Log the state pairs with high similarity and check if the actions taken by the policy in the corresponding states are similar as well
+- check the results from the logs `algo_cons_iter4`
