@@ -138,6 +138,7 @@ def sac_train_step(
     key, perm_key = jax.random.split(key)
     batch = jax.random.permutation(perm_key, batch)
     batch = batch[:, -1]
+    # anchor_s = jnp.broadcast_to(s[0], obs.shape)
 
     obs_dim, act_dim = obs.shape[-1], act.shape[-1]
     # B X 1 X (obs_dim, act_dim, None, obs_dim)
@@ -187,7 +188,10 @@ def sac_train_step(
         )
         e = jnp.maximum(e1, e2).squeeze(-1)
 
-        rep_loss = jnp.mean(jax.nn.relu(1.0 - u) * ((d - h_sax) + (e - h_xbs)) ** 2)
+        rep_loss = jnp.mean(
+            jax.nn.relu(1.0 - u) * ((d - h_sax) + (e - h_xbs))
+            + u * (jax.nn.relu(1.0 - d) + jax.nn.relu(1.0 - e))
+        )
 
         loss = sac_loss + config.rep_lr_scale * rep_loss
         return loss, (jnp.mean(log_pi), sac_loss, rep_loss)
@@ -228,7 +232,11 @@ def sac_train_step(
         upper_bound_loss = jnp.mean(
             jax.nn.relu(jnp.maximum(lambda_sa_xb, lambda_xb_sa) - 1) ** 2
         )
-        loss_total = loss1 + loss2 + 0.2 * self_loss + 0.1 * upper_bound_loss
+        # diversity_loss = jnp.var(jnp.maximum(lambda_sa_xb, lambda_xb_sa))
+        loss_total = (
+            loss1 + loss2 + 0.2 * self_loss + 0.1 * upper_bound_loss
+            # - 0.05 * diversity_loss
+        )
 
         return loss_total
 
@@ -324,7 +332,26 @@ def sac_train_step(
         equivalence_loss = jnp.mean(
             (jax.nn.relu(1 - u) ** 2) * ((h_sax + h_xbs).squeeze(-1)) ** 2
         )
-        loss = jnp.mean(p1) + jnp.mean(p2) + 0.2 * self_loss + 0.2 * equivalence_loss
+        d_sa_xa1, d_sa_xa2 = state.models.target_state_action_metric(
+            jnp.concatenate([s, a], axis=-1), jnp.concatenate([x, a], axis=-1)
+        )
+        d_sa_xa = jax.lax.stop_gradient(jnp.maximum(d_sa_xa1, d_sa_xa2))
+        d_sb_xb1, d_sb_xb2 = state.models.target_state_action_metric(
+            jnp.concatenate([s, b], axis=-1), jnp.concatenate([x, b], axis=-1)
+        )
+        d_sb_xb = jax.lax.stop_gradient(jnp.maximum(d_sb_xb1, d_sb_xb2))
+
+        upperbound_loss = jnp.mean(jax.nn.relu(h_sax - d_sa_xa)) + jnp.mean(
+            jax.nn.relu(h_xbs - d_sb_xb)
+        )
+
+        loss = (
+            jnp.mean(p1)
+            + jnp.mean(p2)
+            + 0.2 * self_loss
+            + 0.2 * equivalence_loss
+            + 0.1 * upperbound_loss
+        )
         return loss
 
     h_loss, h_grads = nnx.value_and_grad(min_state_action_to_state_metric_loss_fn)(
@@ -371,11 +398,21 @@ def sac_train_step(
         # loss = jnp.mean(p1) + jnp.mean(p2) + jnp.mean(p1_aug) + jnp.mean(p2_aug)
         g_ss1, g_ss2 = state_metric(s, s)
         upper_bound_loss = jnp.mean(jax.nn.relu(jnp.maximum(g_sx, g_xs) - 1) ** 2)
+        # """
+        # Diversity loss to ensure that the metric space doesn't collapse
+        # """
+        # diversity_loss = jnp.var(jnp.maximum(g_sx, g_xs).squeeze(-1))
+        # g_sA, g_As = state.models.target_state_metric(s, anchor_s)
+        # uA = jnp.maximum(g_sA, g_As).squeeze(-1)
+        # probs = uA / jnp.sum(uA)
+        # diversity_loss = -jnp.sum(probs * jnp.log(probs))
+
         loss = (
             jnp.mean(p1)
             + jnp.mean(p2)
             + 0.1 * upper_bound_loss
             + 0.2 * jnp.mean(jnp.maximum(g_ss1, g_ss2) ** 2)
+            # - 0.05 * diversity_loss
         )
 
         return loss
@@ -450,6 +487,24 @@ def sac_train_step(
         jnp.abs(lambda_cross - cross_state_action_to_state_distance)
     )
 
+    """
+    policy validation steps
+
+    """
+    d_sx = jnp.maximum(g_sx, g_xs).squeeze(-1)
+    min_state_distances, min_indices = jax.lax.top_k(-d_sx, 30)
+    max_state_distances, max_indices = jax.lax.top_k(d_sx, 30)
+
+    pi_s, pi_x = state.models.actor.mean_action(s), state.models.actor.mean_action(x)
+    d_spi_xpi, d_xpi_spi = state.models.state_action_metric(
+        jnp.concatenate([s, pi_s], axis=-1), jnp.concatenate([x, pi_x], axis=-1)
+    )
+    d_sa = jnp.maximum(d_spi_xpi, d_xpi_spi).squeeze(-1)
+    min_state_action_distances, max_state_action_distances = (
+        d_sa[min_indices],
+        d_sa[max_indices],
+    )
+
     agent_aux = AgentAux(
         critic_loss=critic_loss,
         actor_loss=actor_loss,
@@ -481,6 +536,10 @@ def sac_train_step(
         h_lambda_diff_self=h_lambda_self,
         h_lambda_diff_cross=h_lambda_cross,
         act_rep_loss=act_rep_loss,
+        min_state_distances=jnp.mean(-min_state_distances),
+        max_state_distances=jnp.mean(max_state_distances),
+        min_state_action_distances=jnp.mean(min_state_action_distances),
+        max_state_action_distances=jnp.mean(max_state_action_distances),
     )
 
     return (agent_aux, metric_aux)
@@ -1307,6 +1366,21 @@ def main(args, cfg_env=None):
         logger.log_tabular(
             "Metric/h_lambda_diff_cross", metric_aux.h_lambda_diff_cross.item()
         )
+        """ Policy Validation steps"""
+        logger.log_tabular(
+            "Metric/min_state_distances", metric_aux.min_state_distances.item()
+        )
+        logger.log_tabular(
+            "Metric/max_state_distances", metric_aux.max_state_distances.item()
+        )
+        logger.log_tabular(
+            "Metric/min_state_action_distances",
+            metric_aux.min_state_action_distances.item(),
+        )
+        logger.log_tabular(
+            "Metric/max_state_action_distances",
+            metric_aux.max_state_action_distances.item(),
+        )
 
         prng_key, eval_key = jax.random.split(prng_key)
         eval_return, eval_std = evaluate(
@@ -1350,7 +1424,7 @@ if __name__ == "__main__":
     subfolder = "seed-" + str(args.seed).zfill(3)
     relpath = "-".join([subfolder, relpath])
     algo = os.path.basename(__file__).split(".")[0]
-    algo = f"{algo}_iter2"
+    algo = f"{algo}_iter3_var"
     args.log_dir = os.path.join(args.log_dir, args.task, algo, relpath)
 
     if not args.write_terminal:
