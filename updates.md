@@ -1,8 +1,11 @@
 ## Current Changes
 
 
-- Upperbound integrated for the `min_state_action_to_state_distance`. Formalized as the following $$\min_h \mathbb{E}_{(s, a), x \sim B}\bigg[\text{ReLU}\bigg(h(d)((s, a), x) -  \Delta(d)((s, a), (x, a))\bigg)\bigg]$$ and as well as 
-$$\min_h \mathbb{E}_{(s, a), x \sim B}\bigg[\text{ReLU}\bigg(h(d)((s, a), x) -  d(s, x)\bigg)\bigg]$$
+- integrating a constraint to penalize for violating traingle inequality
+    - applied for `state_distance_metric` and 
+    - `state_action_distance metric`
 
-- check the results from the logs `algo_cons_iter5`
+Generic form :
+ - sample a batch $(z, c, r^c_z, z')\sim B$
+ - constraint : $\text{ReLU}\bigg( d(sa, xb) - \underbrace{(d^-(sa, zc) + d^-( zc, xb))}_{\text{target metric}} \bigg)$
 

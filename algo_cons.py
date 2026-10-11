@@ -156,6 +156,33 @@ def sac_train_step(
     g_sx, g_xs = state.models.target_state_metric(s, x)
     u = jnp.maximum(g_sx, g_xs)
 
+    """ Integrating traingle inequality """
+    s, a, r, s_next = obs, act, reward[:, None], next_obs
+    batch2 = jnp.concatenate([s, a, r, s_next], axis=-1)
+    key, perm_key2 = jax.random.split(key)
+    batch2 = jax.random.permutation(perm_key2, batch2)
+    batch2 = batch2[:, -1]
+
+    z, c, r_zc, z_next = (
+        batch2[:, :obs_dim],
+        batch2[:, obs_dim : obs_dim + act_dim],
+        batch2[:, obs_dim + act_dim],
+        batch2[:, obs_dim + act_dim + 1 :],
+    )
+
+    r = r[:, -1]
+
+    z, c, r_zc, z_next = z[:, None, :], c[:, None, :], r_zc[:, None], z_next[:, None, :]
+
+    def compute_triangle_inequality_upperbound(model, pair1, pair2, pair3):
+        d1_asym1, d1_asym2 = model(pair1, pair2)
+        d1 = jnp.maximum(d1_asym1, d1_asym2)
+
+        d2_asym1, d2_asym2 = model(pair2, pair3)
+        d2 = jnp.maximum(d2_asym1, d2_asym2)
+
+        return d1 + d2
+
     def actor_loss_fn(actor):
         pi, log_pi = actor(obs, key_actor)
         q1, q2 = state.models.critic(jnp.concatenate([obs, pi], axis=-1))
@@ -230,12 +257,29 @@ def sac_train_step(
 
         self_loss = jnp.mean(jnp.maximum(lambda_sa_sa1, lambda_sa_sa2) ** 2)
         upper_bound_loss = jnp.mean(
-            jax.nn.relu(jnp.maximum(lambda_sa_xb, lambda_xb_sa) - 1) ** 2
+            jax.nn.relu(jnp.maximum(lambda_sa_xb, lambda_xb_sa) - 1)
         )
         # diversity_loss = jnp.var(jnp.maximum(lambda_sa_xb, lambda_xb_sa))
+        triangle_ineq_upperbound = jax.lax.stop_gradient(
+            compute_triangle_inequality_upperbound(
+                state.models.target_state_action_metric,
+                jnp.concatenate([s, a], axis=-1),
+                jnp.concatenate([z, c], axis=-1),
+                jnp.concatenate([x, b], axis=-1),
+            )
+        )
+        t_loss = jnp.mean(
+            jax.nn.relu(
+                jnp.maximum(lambda_sa_xb, lambda_xb_sa) - triangle_ineq_upperbound
+            )
+        )
         loss_total = (
-            loss1 + loss2 + 0.2 * self_loss + 0.1 * upper_bound_loss
+            loss1
+            + loss2
+            + 0.2 * self_loss
+            + 0.1 * upper_bound_loss
             # - 0.05 * diversity_loss
+            + 0.1 * t_loss
         )
 
         return loss_total
@@ -402,7 +446,7 @@ def sac_train_step(
 
         # loss = jnp.mean(p1) + jnp.mean(p2) + jnp.mean(p1_aug) + jnp.mean(p2_aug)
         g_ss1, g_ss2 = state_metric(s, s)
-        upper_bound_loss = jnp.mean(jax.nn.relu(jnp.maximum(g_sx, g_xs) - 1) ** 2)
+        upper_bound_loss = jnp.mean(jax.nn.relu(jnp.maximum(g_sx, g_xs) - 1))
         # """
         # Diversity loss to ensure that the metric space doesn't collapse
         # """
@@ -411,6 +455,14 @@ def sac_train_step(
         # uA = jnp.maximum(g_sA, g_As).squeeze(-1)
         # probs = uA / jnp.sum(uA)
         # diversity_loss = -jnp.sum(probs * jnp.log(probs))
+        triangle_ineq_upperbound = jax.lax.stop_gradient(
+            compute_triangle_inequality_upperbound(
+                state.models.target_state_metric, s, z, x
+            )
+        )
+        t_loss = jnp.mean(
+            jax.nn.relu(jnp.maximum(g_sx, g_xs) - triangle_ineq_upperbound)
+        )
 
         loss = (
             jnp.mean(p1)
@@ -418,6 +470,7 @@ def sac_train_step(
             + 0.1 * upper_bound_loss
             + 0.2 * jnp.mean(jnp.maximum(g_ss1, g_ss2) ** 2)
             # - 0.05 * diversity_loss
+            + 0.1 * t_loss
         )
 
         return loss
@@ -510,6 +563,19 @@ def sac_train_step(
         d_sa[max_indices],
     )
 
+    """ Validation of traingle inequality """
+    state_t_ineq_ubound = jnp.mean(
+        compute_triangle_inequality_upperbound(state.models.state_metric, s, z, x)
+    )
+    state_action_t_ineq_ubound = jnp.mean(
+        compute_triangle_inequality_upperbound(
+            state.models.state_action_metric,
+            jnp.concatenate([s, a], axis=-1),
+            jnp.concatenate([z, c], axis=-1),
+            jnp.concatenate([x, b], axis=-1),
+        )
+    )
+
     agent_aux = AgentAux(
         critic_loss=critic_loss,
         actor_loss=actor_loss,
@@ -545,6 +611,8 @@ def sac_train_step(
         max_state_distances=jnp.mean(max_state_distances),
         min_state_action_distances=jnp.mean(min_state_action_distances),
         max_state_action_distances=jnp.mean(max_state_action_distances),
+        state_t_ineq_ubound=state_t_ineq_ubound,
+        state_action_t_ineq_ubound=state_action_t_ineq_ubound,
     )
 
     return (agent_aux, metric_aux)
@@ -1386,7 +1454,15 @@ def main(args, cfg_env=None):
             "Metric/max_state_action_distances",
             metric_aux.max_state_action_distances.item(),
         )
-
+        """ validation of traingle inequality"""
+        logger.log_tabular(
+            "Metric/state_t_ineq_ubound",
+            metric_aux.state_t_ineq_ubound.item(),
+        )
+        logger.log_tabular(
+            "Metric/state_action_t_ineq_ubound",
+            metric_aux.state_action_t_ineq_ubound.item(),
+        )
         prng_key, eval_key = jax.random.split(prng_key)
         eval_return, eval_std = evaluate(
             env=env,
