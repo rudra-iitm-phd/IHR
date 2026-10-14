@@ -217,8 +217,14 @@ def sac_train_step(
 
         rep_loss = jnp.mean(
             jax.nn.relu(1.0 - u) * ((d - h_sax) + (e - h_xbs))
-            + u * (jax.nn.relu(1.0 - d) + jax.nn.relu(1.0 - e))
+            + jax.nn.leaky_relu(u - 1.0, 0.5)
+            * (jax.nn.relu(1.0 - d) + jax.nn.relu(1.0 - e))
         )
+        # rep_loss = jnp.mean(
+        #     jax.nn.relu(1.0 - u) * jax.nn.relu((d - u) + (e - u))
+        #     + jax.nn.leaky_relu(u - 1.0, 1e-3)
+        #     * (jax.nn.relu(1.0 - d) + jax.nn.relu(1.0 - e))
+        # )
 
         loss = sac_loss + config.rep_lr_scale * rep_loss
         return loss, (jnp.mean(log_pi), sac_loss, rep_loss)
@@ -257,7 +263,7 @@ def sac_train_step(
 
         self_loss = jnp.mean(jnp.maximum(lambda_sa_sa1, lambda_sa_sa2) ** 2)
         upper_bound_loss = jnp.mean(
-            jax.nn.relu(jnp.maximum(lambda_sa_xb, lambda_xb_sa) - 1)
+            jax.nn.relu(jnp.maximum(lambda_sa_xb, lambda_xb_sa) - 1) ** 2
         )
         # diversity_loss = jnp.var(jnp.maximum(lambda_sa_xb, lambda_xb_sa))
         triangle_ineq_upperbound = jax.lax.stop_gradient(
@@ -373,33 +379,33 @@ def sac_train_step(
         h_sa_s = min_state_action_to_state_metric(jnp.concatenate([s, a], axis=-1), s)
         self_loss = jnp.mean(h_sa_s**2)
 
-        equivalence_loss = jnp.mean(
-            (jax.nn.relu(1 - u) ** 2) * ((h_sax + h_xbs).squeeze(-1)) ** 2
-        )
-        d_sa_xa1, d_sa_xa2 = state.models.target_state_action_metric(
-            jnp.concatenate([s, a], axis=-1), jnp.concatenate([x, a], axis=-1)
-        )
-        d_sa_xa = jax.lax.stop_gradient(jnp.maximum(d_sa_xa1, d_sa_xa2))
-        d_sb_xb1, d_sb_xb2 = state.models.target_state_action_metric(
-            jnp.concatenate([s, b], axis=-1), jnp.concatenate([x, b], axis=-1)
-        )
-        d_sb_xb = jax.lax.stop_gradient(jnp.maximum(d_sb_xb1, d_sb_xb2))
+        # equivalence_loss = jnp.mean(
+        #     (jax.nn.relu(1 - u) ** 2) * ((h_sax + h_xbs).squeeze(-1)) ** 2
+        # )
+        # d_sa_xa1, d_sa_xa2 = state.models.target_state_action_metric(
+        #     jnp.concatenate([s, a], axis=-1), jnp.concatenate([x, a], axis=-1)
+        # )
+        # d_sa_xa = jax.lax.stop_gradient(jnp.maximum(d_sa_xa1, d_sa_xa2))
+        # d_sb_xb1, d_sb_xb2 = state.models.target_state_action_metric(
+        #     jnp.concatenate([s, b], axis=-1), jnp.concatenate([x, b], axis=-1)
+        # )
+        # d_sb_xb = jax.lax.stop_gradient(jnp.maximum(d_sb_xb1, d_sb_xb2))
 
-        upperbound_loss1 = jnp.mean(jax.nn.relu(h_sax - d_sa_xa)) + jnp.mean(
-            jax.nn.relu(h_xbs - d_sb_xb)
-        )
-        upperbound_loss2 = jnp.mean(jax.nn.relu(h_sax - u)) + jnp.mean(
-            jax.nn.relu(h_xbs - u)
+        # upperbound_loss1 = jnp.mean(jax.nn.relu(h_sax - d_sa_xa)) + jnp.mean(
+        #     jax.nn.relu(h_xbs - d_sb_xb)
+        # )
+        upperbound_loss = jnp.mean(jax.nn.relu(h_sax - g_sx)) + jnp.mean(
+            jax.nn.relu(h_xbs - g_xs)
         )
 
-        upperbound_loss = jnp.mean(upperbound_loss1 + upperbound_loss2)
+        # upperbound_loss = jnp.mean(upperbound_loss1 + upperbound_loss2)
 
         loss = (
             jnp.mean(p1)
             + jnp.mean(p2)
             + 0.2 * self_loss
-            + 0.2 * equivalence_loss
-            + 0.1 * upperbound_loss
+            # + 0.2 * equivalence_loss
+            + 0.2 * upperbound_loss
         )
         return loss
 
@@ -446,7 +452,7 @@ def sac_train_step(
 
         # loss = jnp.mean(p1) + jnp.mean(p2) + jnp.mean(p1_aug) + jnp.mean(p2_aug)
         g_ss1, g_ss2 = state_metric(s, s)
-        upper_bound_loss = jnp.mean(jax.nn.relu(jnp.maximum(g_sx, g_xs) - 1))
+        upper_bound_loss = jnp.mean(jax.nn.relu(jnp.maximum(g_sx, g_xs) - 1) ** 2)
         # """
         # Diversity loss to ensure that the metric space doesn't collapse
         # """
@@ -550,7 +556,19 @@ def sac_train_step(
 
     """
     d_sx = jnp.maximum(g_sx, g_xs).squeeze(-1)
-    min_state_distances, min_indices = jax.lax.top_k(-d_sx, 30)
+
+    # Min: threshold filter, padded to a static size
+    min_mask = d_sx < 1e-3
+    n_min = jnp.minimum(min_mask.sum(), 30)  # number of real entries (capped at 30)
+    min_indices = jnp.where(min_mask, size=30, fill_value=0)[0]
+    min_valid = jnp.arange(30) < n_min  # True for real indices, False for padding
+    min_denom = jnp.maximum(n_min, 1)
+
+    min_state_distances = (
+        jnp.sum(jnp.where(min_valid, d_sx[min_indices], 0.0)) / min_denom
+    )
+
+    # Max: unchanged
     max_state_distances, max_indices = jax.lax.top_k(d_sx, 30)
 
     pi_s, pi_x = state.models.actor.mean_action(s), state.models.actor.mean_action(x)
@@ -558,10 +576,11 @@ def sac_train_step(
         jnp.concatenate([s, pi_s], axis=-1), jnp.concatenate([x, pi_x], axis=-1)
     )
     d_sa = jnp.maximum(d_spi_xpi, d_xpi_spi).squeeze(-1)
-    min_state_action_distances, max_state_action_distances = (
-        d_sa[min_indices],
-        d_sa[max_indices],
+
+    min_state_action_distances = (
+        jnp.sum(jnp.where(min_valid, d_sa[min_indices], 0.0)) / min_denom
     )
+    max_state_action_distances = d_sa[max_indices]
 
     """ Validation of traingle inequality """
     state_t_ineq_ubound = jnp.mean(
@@ -607,7 +626,7 @@ def sac_train_step(
         h_lambda_diff_self=h_lambda_self,
         h_lambda_diff_cross=h_lambda_cross,
         act_rep_loss=act_rep_loss,
-        min_state_distances=jnp.mean(-min_state_distances),
+        min_state_distances=min_state_distances,
         max_state_distances=jnp.mean(max_state_distances),
         min_state_action_distances=jnp.mean(min_state_action_distances),
         max_state_action_distances=jnp.mean(max_state_action_distances),
