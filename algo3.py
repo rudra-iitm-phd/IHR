@@ -154,6 +154,32 @@ def sac_train_step(
     g_sx_next, g_xs_next = state.models.target_state_metric(s_next, x_next)
     u_target = jnp.maximum(g_sx_next, g_xs_next)
     lambda_target = jax.lax.stop_gradient(jnp.abs(r - y) + discount * u_target)
+    """ Integrating traingle inequality """
+    s, a, r, s_next = obs, act, reward[:, None], next_obs
+    batch2 = jnp.concatenate([s, a, r, s_next], axis=-1)
+    key, perm_key2 = jax.random.split(key)
+    batch2 = jax.random.permutation(perm_key2, batch2)
+    batch2 = batch2[:, -1]
+
+    z, c, r_zc, z_next = (
+        batch2[:, :obs_dim],
+        batch2[:, obs_dim : obs_dim + act_dim],
+        batch2[:, obs_dim + act_dim],
+        batch2[:, obs_dim + act_dim + 1 :],
+    )
+
+    r = r[:, -1]
+
+    z, c, r_zc, z_next = z[:, None, :], c[:, None, :], r_zc[:, None], z_next[:, None, :]
+
+    def compute_triangle_inequality_upperbound(model, pair1, pair2, pair3):
+        d1_asym1, d1_asym2 = model(pair1, pair2)
+        d1 = jnp.maximum(d1_asym1, d1_asym2)
+
+        d2_asym1, d2_asym2 = model(pair2, pair3)
+        d2 = jnp.maximum(d2_asym1, d2_asym2)
+
+        return d1 + d2
 
     def actor_loss_fn(actor):
         pi, log_pi = actor(obs, key_actor)
@@ -463,6 +489,49 @@ def sac_train_step(
     h_lambda_cross = jnp.mean(
         jnp.abs(lambda_cross - cross_state_action_to_state_distance)
     )
+    """
+    policy validation steps
+
+    """
+    d_sx = jnp.maximum(g_sx, g_xs).squeeze(-1)
+
+    # Min: threshold filter, padded to a static size
+    min_mask = d_sx < 1e-3
+    n_min = jnp.minimum(min_mask.sum(), 30)  # number of real entries (capped at 30)
+    min_indices = jnp.where(min_mask, size=30, fill_value=0)[0]
+    min_valid = jnp.arange(30) < n_min  # True for real indices, False for padding
+    min_denom = jnp.maximum(n_min, 1)
+
+    min_state_distances = (
+        jnp.sum(jnp.where(min_valid, d_sx[min_indices], 0.0)) / min_denom
+    )
+
+    # Max: unchanged
+    max_state_distances, max_indices = jax.lax.top_k(d_sx, 30)
+
+    pi_s, pi_x = state.models.actor.mean_action(s), state.models.actor.mean_action(x)
+    d_spi_xpi, d_xpi_spi = state.models.state_action_metric(
+        jnp.concatenate([s, pi_s], axis=-1), jnp.concatenate([x, pi_x], axis=-1)
+    )
+    d_sa = jnp.maximum(d_spi_xpi, d_xpi_spi).squeeze(-1)
+
+    min_state_action_distances = (
+        jnp.sum(jnp.where(min_valid, d_sa[min_indices], 0.0)) / min_denom
+    )
+    max_state_action_distances = d_sa[max_indices]
+
+    """ Validation of traingle inequality """
+    state_t_ineq_ubound = jnp.mean(
+        compute_triangle_inequality_upperbound(state.models.state_metric, s, z, x)
+    )
+    state_action_t_ineq_ubound = jnp.mean(
+        compute_triangle_inequality_upperbound(
+            state.models.state_action_metric,
+            jnp.concatenate([s, a], axis=-1),
+            jnp.concatenate([z, c], axis=-1),
+            jnp.concatenate([x, b], axis=-1),
+        )
+    )
 
     agent_aux = AgentAux(
         critic_loss=critic_loss,
@@ -495,6 +564,12 @@ def sac_train_step(
         h_lambda_diff_self=h_lambda_self,
         h_lambda_diff_cross=h_lambda_cross,
         act_rep_loss=act_rep_loss,
+        min_state_distances=min_state_distances,
+        max_state_distances=jnp.mean(max_state_distances),
+        min_state_action_distances=jnp.mean(min_state_action_distances),
+        max_state_action_distances=jnp.mean(max_state_action_distances),
+        state_t_ineq_ubound=state_t_ineq_ubound,
+        state_action_t_ineq_ubound=state_action_t_ineq_ubound,
     )
 
     return (agent_aux, metric_aux)
@@ -1320,6 +1395,30 @@ def main(args, cfg_env=None):
         )
         logger.log_tabular(
             "Metric/h_lambda_diff_cross", metric_aux.h_lambda_diff_cross.item()
+        )
+        """ Policy Validation steps"""
+        logger.log_tabular(
+            "Metric/min_state_distances", metric_aux.min_state_distances.item()
+        )
+        logger.log_tabular(
+            "Metric/min_state_action_distances",
+            metric_aux.min_state_action_distances.item(),
+        )
+        logger.log_tabular(
+            "Metric/max_state_distances", metric_aux.max_state_distances.item()
+        )
+        logger.log_tabular(
+            "Metric/max_state_action_distances",
+            metric_aux.max_state_action_distances.item(),
+        )
+        """ validation of traingle inequality"""
+        logger.log_tabular(
+            "Metric/state_t_ineq_ubound",
+            metric_aux.state_t_ineq_ubound.item(),
+        )
+        logger.log_tabular(
+            "Metric/state_action_t_ineq_ubound",
+            metric_aux.state_action_t_ineq_ubound.item(),
         )
 
         prng_key, eval_key = jax.random.split(prng_key)
